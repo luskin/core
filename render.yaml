@@ -5,6 +5,19 @@ services:
     rootDir: apps/docs
     buildCommand: pnpm build
     staticPublishPath: dist
+    branch: production
+    pullRequestPreviewsEnabled: true # optional
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: sameorigin
+  - type: web
+    name: mothership-web-docs-staging
+    runtime: static
+    rootDir: apps/docs
+    buildCommand: pnpm build
+    staticPublishPath: dist
+    branch: staging
     pullRequestPreviewsEnabled: true # optional
     headers:
       - path: /*
@@ -12,6 +25,19 @@ services:
         value: sameorigin
   - type: web
     name: mothership-web-app-production
+    runtime: static
+    rootDir: apps/web
+    buildCommand: pnpm build
+    branch: production
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: true # optional
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: sameorigin%
+  - type: web
+    name: mothership-web-app-staging
+    branch: staging
     runtime: static
     rootDir: apps/web
     buildCommand: pnpm build
