@@ -7,8 +7,8 @@ services:
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm build:docs
-    startCommand: pnpm start:docs
+    buildCommand: pnpm i; pnpm build:docs
+    startCommand: pnpm i; pnpm start:docs
     envVars:
       - key: NODE_ENV
         value: production
@@ -17,8 +17,8 @@ services:
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm build:docs
-    startCommand: pnpm start:docs
+    buildCommand: pnpm i; pnpm build:docs
+    startCommand: pnpm i; pnpm start:docs
     envVars:
       - key: NODE_ENV
         value: production
@@ -31,8 +31,8 @@ services:
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm build:web
-    startCommand: pnpm start:web
+    buildCommand: pnpm i; pnpm build:web
+    startCommand: pnpm i; pnpm start:web
     envVars:
       - key: NODE_ENV
         value: production
@@ -41,8 +41,8 @@ services:
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm build:web
-    startCommand: pnpm start:web
+    buildCommand: pnpm i; pnpm build:web
+    startCommand: pnpm i; pnpm start:web
     envVars:
       - key: NODE_ENV
         value: production
@@ -55,8 +55,8 @@ services:
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm build:backend
-    startCommand: pnpm start:backend
+    buildCommand: pnpm i; pnpm build:backend
+    startCommand: pnpm i; pnpm start:backend
     envVars:
       - key: NODE_ENV
         value: production
@@ -67,8 +67,8 @@ services:
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm build:backend
-    startCommand: pnpm start:backend
+    buildCommand: pnpm i; pnpm build:backend
+    startCommand: pnpm i; pnpm start:backend
     envVars:
       - key: NODE_ENV
         value: production
