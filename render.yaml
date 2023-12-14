@@ -3,7 +3,7 @@ services:
     name: mothership-web-docs-production
     runtime: static
     buildCommand: pnpm build:docs
-    staticPublishPath: apps/docs/dist
+    staticPublishPath: apps/docs/.next
     branch: production
     headers:
       - path: /*
@@ -13,7 +13,7 @@ services:
     name: mothership-web-docs-staging
     runtime: static
     buildCommand: pnpm build:docs
-    staticPublishPath: apps/docs/dist
+    staticPublishPath: apps/docs/.next
     branch: staging
     headers:
       - path: /*
@@ -24,7 +24,7 @@ services:
     runtime: static
     buildCommand: pnpm build:web
     branch: production
-    staticPublishPath: apps/web/dist
+    staticPublishPath: apps/web/.next
     headers:
       - path: /*
         name: X-Frame-Options
@@ -34,7 +34,7 @@ services:
     branch: staging
     runtime: static
     buildCommand: pnpm build:web
-    staticPublishPath: apps/web/dist
+    staticPublishPath: apps/web/.next
     headers:
       - path: /*
         name: X-Frame-Options
