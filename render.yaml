@@ -4,10 +4,11 @@ services:
   #
   - type: web
     name: mothership-web-docs-production
+    branch: production
+    plan: free
     env: node
     buildCommand: pnpm build:docs
     startCommand: pnpm start:docs
-    branch: production
     headers:
       - path: /*
         name: X-Frame-Options
@@ -17,10 +18,11 @@ services:
         value: production
   - type: web
     name: mothership-web-docs-staging
+    branch: staging
+    plan: free
     env: node
     buildCommand: pnpm build:docs
     startCommand: pnpm start:docs
-    branch: staging
     headers:
       - path: /*
         name: X-Frame-Options
@@ -34,10 +36,11 @@ services:
   #
   - type: web
     name: mothership-web-app-production
+    branch: production
+    plan: free
     env: node
     buildCommand: pnpm build:web
     startCommand: pnpm start:web
-    branch: production
     headers:
       - path: /*
         name: X-Frame-Options
@@ -48,6 +51,7 @@ services:
   - type: web
     name: mothership-web-app-staging
     branch: staging
+    plan: free
     env: node
     buildCommand: pnpm build:web
     startCommand: pnpm start:web
@@ -65,6 +69,7 @@ services:
   - type: web
     name: mothership-backend-production
     branch: production
+    plan: free
     env: node
     buildCommand: pnpm build:backend
     startCommand: pnpm start:backend
@@ -80,6 +85,7 @@ services:
   - type: web
     name: mothership-backend-staging
     branch: staging
+    plan: free
     env: node
     buildCommand: pnpm build:backend
     startCommand: pnpm start:backend
