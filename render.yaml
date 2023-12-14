@@ -1,4 +1,7 @@
 services:
+  #
+  # Web Docs
+  #
   - type: web
     name: mothership-web-docs-production
     env: node
@@ -25,6 +28,10 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+
+  #
+  # Web App
+  #
   - type: web
     name: mothership-web-app-production
     env: node
@@ -51,3 +58,37 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+
+  #
+  # Backend Services
+  #
+  - type: web
+    name: mothership-backend-production
+    branch: production
+    env: node
+    buildCommand: pnpm build:backend
+    startCommand: pnpm start:backend
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: sameorigin%
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+  - type: web
+    name: mothership-backend-staging
+    branch: staging
+    env: node
+    buildCommand: pnpm build:backend
+    startCommand: pnpm start:backend
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: sameorigin%
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
