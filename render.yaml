@@ -1,41 +1,53 @@
 services:
   - type: web
     name: mothership-web-docs-production
-    runtime: static
+    env: node
     buildCommand: pnpm build:docs
-    staticPublishPath: apps/docs/.next
+    startCommand: pnpm start:docs
     branch: production
     headers:
       - path: /*
         name: X-Frame-Options
         value: sameorigin
+    envVars:
+      - key: NODE_ENV
+        value: production
   - type: web
     name: mothership-web-docs-staging
-    runtime: static
+    env: node
     buildCommand: pnpm build:docs
-    staticPublishPath: apps/docs/.next
+    startCommand: pnpm start:docs
     branch: staging
     headers:
       - path: /*
         name: X-Frame-Options
         value: sameorigin
+    envVars:
+      - key: NODE_ENV
+        value: production
   - type: web
     name: mothership-web-app-production
-    runtime: static
+    env: node
     buildCommand: pnpm build:web
+    startCommand: pnpm start:web
     branch: production
-    staticPublishPath: apps/web/.next
     headers:
       - path: /*
         name: X-Frame-Options
         value: sameorigin%
+    envVars:
+      - key: NODE_ENV
+        value: production
   - type: web
     name: mothership-web-app-staging
     branch: staging
-    runtime: static
+    env: node
     buildCommand: pnpm build:web
-    staticPublishPath: apps/web/.next
+    startCommand: pnpm start:web
     headers:
       - path: /*
         name: X-Frame-Options
         value: sameorigin%
+    envVars:
+      - key: NODE_ENV
+        value: production

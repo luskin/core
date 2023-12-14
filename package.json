@@ -5,6 +5,10 @@
     "build": "turbo build",
     "build:web": "turbo build --filter web",
     "build:docs": "turbo build --filter docs",
+    "build:backend": "turbo build --filter backend",
+    "start:web": "turbo start --filter web",
+    "start:docs": "turbo start --filter docs",
+    "start:backend": "turbo start --filter backend",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
@@ -17,6 +21,6 @@
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9.0"
   }
 }
