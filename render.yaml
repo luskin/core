@@ -40,7 +40,7 @@ services:
     branch: staging
     runtime: static
     rootDir: apps/web
-    buildCommand: pnpm build
+    buildCommand: pnpm i; pnpm build
     staticPublishPath: dist
     pullRequestPreviewsEnabled: true # optional
     headers:
