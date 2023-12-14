@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/random-string')
+  randomString(): {
+    random: string;
+  } {
+    const random = this.appService.randomString();
+    return {
+      random,
+    };
+  }
 }
