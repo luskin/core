@@ -7,21 +7,15 @@ services:
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:docs
-    startCommand: pnpm i; pnpm start:docs
-    envVars:
-      - key: NODE_ENV
-        value: production
+    buildCommand: pnpm build:docs
+    startCommand: pnpm start:docs
   - type: web
     name: mothership-web-docs-staging
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:docs
-    startCommand: pnpm i; pnpm start:docs
-    envVars:
-      - key: NODE_ENV
-        value: production
+    buildCommand: pnpm build:docs
+    startCommand: pnpm start:docs
 
   #
   # Web App
@@ -31,21 +25,15 @@ services:
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:web
-    startCommand: pnpm i; pnpm start:web
-    envVars:
-      - key: NODE_ENV
-        value: production
+    buildCommand: pnpm build:web
+    startCommand: pnpm start:web
   - type: web
     name: mothership-web-app-staging
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:web
-    startCommand: pnpm i; pnpm start:web
-    envVars:
-      - key: NODE_ENV
-        value: production
+    buildCommand: pnpm build:web
+    startCommand: pnpm start:web
 
   #
   # Backend Services
@@ -55,11 +43,9 @@ services:
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:backend
-    startCommand: pnpm i; pnpm start:backend
+    buildCommand: pnpm build:backend
+    startCommand: pnpm start:backend
     envVars:
-      - key: NODE_ENV
-        value: production
       - key: PORT
         value: 5000
   - type: web
@@ -67,10 +53,8 @@ services:
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:backend
-    startCommand: pnpm i; pnpm start:backend
+    buildCommand: pnpm build:backend
+    startCommand: pnpm start:backend
     envVars:
-      - key: NODE_ENV
-        value: production
       - key: PORT
         value: 5000
