@@ -9,10 +9,6 @@ services:
     env: node
     buildCommand: pnpm build:docs
     startCommand: pnpm start:docs
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin
     envVars:
       - key: NODE_ENV
         value: production
@@ -23,10 +19,6 @@ services:
     env: node
     buildCommand: pnpm build:docs
     startCommand: pnpm start:docs
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin
     envVars:
       - key: NODE_ENV
         value: production
@@ -41,10 +33,6 @@ services:
     env: node
     buildCommand: pnpm build:web
     startCommand: pnpm start:web
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin%
     envVars:
       - key: NODE_ENV
         value: production
@@ -55,10 +43,6 @@ services:
     env: node
     buildCommand: pnpm build:web
     startCommand: pnpm start:web
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin%
     envVars:
       - key: NODE_ENV
         value: production
@@ -73,10 +57,6 @@ services:
     env: node
     buildCommand: pnpm build:backend
     startCommand: pnpm start:backend
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin%
     envVars:
       - key: NODE_ENV
         value: production
@@ -89,10 +69,6 @@ services:
     env: node
     buildCommand: pnpm build:backend
     startCommand: pnpm start:backend
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: sameorigin%
     envVars:
       - key: NODE_ENV
         value: production
