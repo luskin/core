@@ -6,7 +6,6 @@ services:
     buildCommand: pnpm build
     staticPublishPath: dist
     branch: production
-    pullRequestPreviewsEnabled: true # optional
     headers:
       - path: /*
         name: X-Frame-Options
@@ -18,7 +17,6 @@ services:
     buildCommand: pnpm build
     staticPublishPath: dist
     branch: staging
-    pullRequestPreviewsEnabled: true # optional
     headers:
       - path: /*
         name: X-Frame-Options
@@ -30,7 +28,6 @@ services:
     buildCommand: pnpm build
     branch: production
     staticPublishPath: dist
-    pullRequestPreviewsEnabled: true # optional
     headers:
       - path: /*
         name: X-Frame-Options
@@ -42,7 +39,6 @@ services:
     rootDir: apps/web
     buildCommand: pnpm i; pnpm build
     staticPublishPath: dist
-    pullRequestPreviewsEnabled: true # optional
     headers:
       - path: /*
         name: X-Frame-Options
