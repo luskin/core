@@ -37,7 +37,7 @@ services:
     branch: staging
     runtime: static
     rootDir: apps/web
-    buildCommand: pnpm i; pnpm build
+    buildCommand: npm install -g pnpm; pnpm i; pnpm build
     staticPublishPath: dist
     headers:
       - path: /*
