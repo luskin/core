@@ -1,8 +1,10 @@
 import { Config } from "../../../config/config"
 
+export const dynamic = "force-dynamic"
+
 async function getData() {
   const res = await fetch(`${Config.baseApiUrl}/random-string`, {
-    cache: "no-cache",
+    cache: "no-store",
   })
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
