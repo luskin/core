@@ -78,7 +78,7 @@ export default function Page(): JSX.Element {
           </a>
         </div>
       </div>
-      <Link href={`/settings/profile`}>
+      <Link href={`/dashboard/settings/profile`}>
         <Button appName="web" className={styles.button}>
           Click me to go to settings
         </Button>
