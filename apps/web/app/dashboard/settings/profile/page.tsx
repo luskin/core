@@ -19,6 +19,7 @@ async function getData() {
 
 export default async function Page() {
   const data = await getData()
+  await new Promise((resolve) => setTimeout(resolve, 1500))
 
   return <div>I generated {data}</div>
 }
