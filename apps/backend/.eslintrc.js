@@ -1,5 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   root: true,
-  extends: ['@repo/eslint-config/nest.js'],
+  extends: ['@configs/eslint/nest.js'],
 };
