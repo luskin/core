@@ -10,10 +10,10 @@ export default function SidebarItem(props: SidebarItemProps) {
         isSelected
           ? "bg-gray-800 text-white"
           : "text-gray-400 hover:text-white hover:bg-[#333]",
-        "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-[#757575] group-hover:text-white"
+        "group flex gap-x-4 rounded-md px-4 h-9 text-sm leading-5 font-semibold text-[#757575] group-hover:text-white items-center"
       )}
     >
-      {Icon && <Icon className="h-6 w-6 shrink-0" />}
+      {Icon && <Icon className="h-3 w-3 shrink-0" />}
       {children}
     </div>
   )

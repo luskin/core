@@ -19,7 +19,7 @@ export function SideNav() {
           <Sidebar.Item icon={Icon.Box}>Typography</Sidebar.Item>
         </Link>
         <Sidebar.Item icon={Icon.Box}>Button</Sidebar.Item>
-        <Sidebar.Item icon={Icon.Box}>Switch</Sidebar.Item>
+        <Sidebar.Item icon={Icon.User}>Switch</Sidebar.Item>
       </Sidebar.Group>
     </Sidebar>
   )
