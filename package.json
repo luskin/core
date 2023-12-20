@@ -2,6 +2,7 @@
   "name": "core",
   "private": true,
   "scripts": {
+    "clean": "turbo clean",
     "add:web": "pnpm add --filter web",
     "add:docs": "pnpm add --filter docs",
     "add:backend": "pnpm add --filter backend",

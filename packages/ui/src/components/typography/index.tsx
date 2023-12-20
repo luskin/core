@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react"
-import { Size, SizeProps } from "../../globals/properties/size"
+import { Size, SizeProps } from "../../globals/styles/types/size"
 
 // General typography component
 const TypographyComponent: React.FC<

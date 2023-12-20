@@ -1,5 +1,10 @@
 {
   "extends": "@configs/typescript/react-library.json",
+  "compilerOptions": {
+    "paths": {
+      "@styles": ["./src/globals/styles"]
+    }
+  },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

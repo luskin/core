@@ -6,4 +6,8 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.lint.json",
   },
+  plugins: ["@stylexjs"],
+  rules: {
+    "@stylexjs/valid-styles": ["error", { ...options }],
+  },
 }
