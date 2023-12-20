@@ -1,5 +1,7 @@
 import { SidebarProps } from "./sidebar.props"
-import Item from "./item/sidebar-item.component" // Assuming this is the correct path
+import Item from "./item/sidebar-item.component"
+import Header from "./header/sidebar-header.component"
+import Group from "./group/sidebar-group.component"
 
 const Sidebar = ({ children, collapsed }: SidebarProps) => {
   const classNames = ["flex flex-col h-full bg-black text-white"]
@@ -9,10 +11,15 @@ const Sidebar = ({ children, collapsed }: SidebarProps) => {
     classNames.push("w-64")
   }
 
-  return <section className={classNames.join(" ")}>{children}</section>
+  return (
+    <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-black px-2">
+      {children}
+    </div>
+  )
 }
 
-// Assign Item as a static property of Sidebar
 Sidebar.Item = Item
+Sidebar.Header = Header
+Sidebar.Group = Group
 
 export default Sidebar
