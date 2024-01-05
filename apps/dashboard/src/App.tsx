@@ -3,17 +3,13 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-  Separator,
   TooltipProvider,
 } from "@repo/ui"
 import { User } from "@repo/ui/src/icons"
-import { cn } from "@repo/ui/src/utils"
 import { useState } from "react"
 
 function App() {
-  const [isCollapsed, setIsCollapsed] = useState(true)
-
-  console.log("isCollapsed is: ", isCollapsed)
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
   return (
     <div className="flex w-full h-screen">
@@ -25,84 +21,65 @@ function App() {
               sizes
             )}`
           }}
-          className="h-full max-h-[800px] items-stretch"
+          className="h-full items-stretch"
         >
-          <ResizablePanel
-            defaultSize={265}
-            collapsedSize={4}
-            collapsible={true}
-            minSize={15}
-            maxSize={20}
-            onCollapse={(): void => {
-              setIsCollapsed(true)
-              document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-                true
-              )}`
-            }}
-            onExpand={(): void => {
-              setIsCollapsed(false)
-              document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-                false
-              )}`
-            }}
-            className={cn(
-              isCollapsed &&
-                "min-w-[50px] transition-all duration-300 ease-in-out"
-            )}
-          >
-            <div
-              className={cn(
-                "flex h-[52px] items-center justify-center",
-                isCollapsed ? "h-[52px]" : "px-2"
-              )}
-            >
-              <p>ACCOUNT SWITCHER HERE</p>
-            </div>
-            <Separator />
-            <Nav
-              isCollapsed={true}
-              links={[
-                {
-                  title: "Inbox",
-                  label: "128",
-                  icon: User,
-                  variant: "default",
-                },
-                {
-                  title: "Drafts",
-                  label: "9",
-                  icon: User,
-                  variant: "ghost",
-                },
-                {
-                  title: "Sent",
-                  label: "",
-                  icon: User,
-                  variant: "ghost",
-                },
-                {
-                  title: "Junk",
-                  label: "23",
-                  icon: User,
-                  variant: "ghost",
-                },
-                {
-                  title: "Trash",
-                  label: "",
-                  icon: User,
-                  variant: "ghost",
-                },
-                {
-                  title: "Archive",
-                  label: "",
-                  icon: User,
-                  variant: "ghost",
-                },
-              ]}
-            />
-          </ResizablePanel>
+          <Nav
+            isCollapsed={isCollapsed}
+            onCollapse={() => setIsCollapsed(true)}
+            onExpand={() => setIsCollapsed(false)}
+            links={[
+              {
+                title: "Ship",
+                label: "128",
+                icon: User,
+                variant: "default",
+              },
+              {
+                title: "Track",
+                label: "9",
+                icon: User,
+                variant: "ghost",
+              },
+              {
+                title: "Billing",
+                label: "",
+                icon: User,
+                variant: "ghost",
+              },
+              {
+                title: "People",
+                label: "23",
+                icon: User,
+                variant: "ghost",
+              },
+              {
+                title: "Claims",
+                label: "",
+                icon: User,
+                variant: "ghost",
+              },
+              {
+                title: "Coverage",
+                label: "",
+                icon: User,
+                variant: "ghost",
+              },
+              {
+                title: "Reporting",
+                label: "",
+                icon: User,
+                variant: "ghost",
+              },
+              {
+                title: "Support",
+                label: "",
+                icon: User,
+                variant: "ghost",
+              },
+            ]}
+          />
           <ResizableHandle withHandle />
-          <ResizablePanel defaultSize={440} minSize={30}>
+          <ResizablePanel defaultSize={85} minSize={30}>
             <div className="flex items-center px-4 py-2">
               <h1 className="text-xl font-bold">Inbox</h1>
               <p>something here</p>
