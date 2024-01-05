@@ -15,12 +15,12 @@ interface NavProps {
   isCollapsed?: boolean
   onCollapse?: () => void
   onExpand?: () => void
-  links: {
+  links: Array<{
     title: string
     label?: string
     icon: Icon
     variant: "default" | "ghost"
-  }[]
+  }>
 }
 
 export function Nav({
