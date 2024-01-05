@@ -11,3 +11,4 @@ export {
   ResizablePanel,
   ResizablePanelGroup,
 } from "./resizable"
+export { Separator } from "./separator"
