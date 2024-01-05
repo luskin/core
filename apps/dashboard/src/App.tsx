@@ -6,7 +6,11 @@ function App() {
       <div className="flex flex-row gap-4">
         <p>One</p>
         <p>Two</p>
-        <Button variant={"destructive"} onClick={() => console.log("Clicked")}>
+        <Button
+          variant={"default"}
+          isLoading={false}
+          onClick={() => console.log("Clicked")}
+        >
           Button
         </Button>
       </div>
