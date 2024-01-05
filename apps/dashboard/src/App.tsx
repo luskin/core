@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-4">
         <p>One</p>
         <p>Two</p>
       </div>
