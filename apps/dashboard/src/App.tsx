@@ -11,7 +11,9 @@ import { cn } from "@repo/ui/src/utils"
 import { useState } from "react"
 
 function App() {
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(true)
+
+  console.log("isCollapsed is: ", isCollapsed)
 
   return (
     <div className="flex w-full h-screen">
@@ -26,8 +28,8 @@ function App() {
           className="h-full max-h-[800px] items-stretch"
         >
           <ResizablePanel
-            defaultSize={undefined}
-            collapsedSize={30}
+            defaultSize={265}
+            collapsedSize={4}
             collapsible={true}
             minSize={15}
             maxSize={20}
@@ -58,7 +60,7 @@ function App() {
             </div>
             <Separator />
             <Nav
-              isCollapsed={isCollapsed}
+              isCollapsed={true}
               links={[
                 {
                   title: "Inbox",
@@ -100,15 +102,11 @@ function App() {
             />
           </ResizablePanel>
           <ResizableHandle withHandle />
-          <ResizablePanel defaultSize={80} minSize={30}>
+          <ResizablePanel defaultSize={440} minSize={30}>
             <div className="flex items-center px-4 py-2">
               <h1 className="text-xl font-bold">Inbox</h1>
               <p>something here</p>
             </div>
-          </ResizablePanel>
-          <ResizableHandle withHandle />
-          <ResizablePanel defaultSize={30}>
-            <p>Something else here</p>
           </ResizablePanel>
         </ResizablePanelGroup>
       </TooltipProvider>
