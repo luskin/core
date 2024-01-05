@@ -2,6 +2,24 @@ import { Icon, Sidebar } from "@repo/ui"
 import Image from "next/image"
 import Link from "next/link"
 
+const navItems = [
+  {
+    label: "Typography",
+    icon: Icon.Box,
+    href: "/docs/components/typography",
+  },
+  {
+    label: "Button",
+    icon: Icon.Box,
+    href: "/docs/components/button",
+  },
+  {
+    label: "Switch",
+    icon: Icon.User,
+    href: "/docs/components/switch",
+  },
+]
+
 export function SideNav() {
   return (
     <Sidebar>
@@ -15,11 +33,11 @@ export function SideNav() {
         />
       </Sidebar.Header>
       <Sidebar.Group label="Components">
-        <Link href={"/docs/components/typography"}>
-          <Sidebar.Item icon={Icon.Box}>Typography</Sidebar.Item>
-        </Link>
-        <Sidebar.Item icon={Icon.Box}>Button</Sidebar.Item>
-        <Sidebar.Item icon={Icon.User}>Switch</Sidebar.Item>
+        {navItems.map((item) => (
+          <Link key={item.href} href={item.href} passHref>
+            <Sidebar.Item icon={item.icon}>{item.label}</Sidebar.Item>
+          </Link>
+        ))}
       </Sidebar.Group>
     </Sidebar>
   )
