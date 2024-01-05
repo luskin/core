@@ -2,6 +2,8 @@
   "name": "core",
   "private": true,
   "scripts": {
+    "-----CLEAN-----": "-----CLEAN-----",
+    "clean": "turbo clean && rm -rf node_modules .turbo && pnpm i",
     "-----DEPENDENCY MANAGEMENT-----": "-----DEPENDENCY MANAGEMENT-----",
     "add:web": "pnpm add --filter web",
     "add:dashboard": "pnpm add --filter dashboard",
@@ -16,6 +18,7 @@
     "build:web": "turbo build --filter web",
     "build:docs": "turbo build --filter docs",
     "build:backend": "turbo build --filter backend",
+    "build:dashboard": "turbo build --filter dashboard",
     "-----DEVELOPMENT-----": "-----DEVELOPMENT-----",
     "dev": "turbo dev",
     "dev:dashboard": "turbo dev --filter dashboard",
