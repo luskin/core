@@ -1,4 +1,6 @@
+import auth from "@/libs/auth"
 import {
+  Button,
   Nav,
   ResizableHandle,
   ResizablePanel,
@@ -6,11 +8,11 @@ import {
   TooltipProvider,
 } from "@repo/ui"
 import { User } from "@repo/ui/src/icons"
+import { Outlet } from "@tanstack/react-router"
 import { useState } from "react"
 
-function App() {
+export default function ApplicationLayout() {
   const [isCollapsed, setIsCollapsed] = useState(false)
-
   return (
     <div className="flex w-full h-screen">
       <TooltipProvider delayDuration={0}>
@@ -23,6 +25,7 @@ function App() {
           }}
           className="h-full items-stretch"
         >
+          <Button onClick={() => auth.signOut()}>Sign Out</Button>
           <Nav
             isCollapsed={isCollapsed}
             onCollapse={() => setIsCollapsed(true)}
@@ -80,9 +83,9 @@ function App() {
           />
           <ResizableHandle withHandle />
           <ResizablePanel defaultSize={85} minSize={30}>
-            <div className="flex items-center px-4 py-2">
+            <div className="flex-col items-center px-4 py-2">
               <h1 className="text-xl font-bold">Inbox</h1>
-              <p>something here</p>
+              <Outlet />
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>
@@ -90,5 +93,3 @@ function App() {
     </div>
   )
 }
-
-export default App
