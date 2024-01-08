@@ -1,5 +1,5 @@
 {
-  "name": "@repo/utils",
+  "name": "@core/utils",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -7,7 +7,7 @@
     "./string": "./src/string/index.ts"
   },
   "scripts": {
-    "clean": "rm -rf .turbo",
+    "clean": "rm -rf node_modules .turbo",
     "lint": "eslint . --max-warnings 0",
     "test": "jest"
   },

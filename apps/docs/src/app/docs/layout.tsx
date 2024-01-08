@@ -1,4 +1,4 @@
-import { LeftSidebarLayout } from "@repo/ui"
+import { LeftSidebarLayout } from "@core/ui"
 import { SideNav } from "../components/sidenav"
 
 export default function Layout({ children }: { children: React.ReactNode }) {

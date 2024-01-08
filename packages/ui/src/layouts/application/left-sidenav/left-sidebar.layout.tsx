@@ -96,7 +96,7 @@ export default function LeftSidebarLayout(props: LeftSidebarLayoutProps) {
             <HamburgerMenu className="h-6 w-6" aria-hidden="true" />
           </button>
           <div className="flex-1 text-sm font-semibold leading-6 text-white">
-            Dashboard
+            web
           </div>
           <a href="#">
             <span className="sr-only">Your profile</span>

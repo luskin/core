@@ -29,7 +29,7 @@ services:
     startCommand: pnpm start:web
     envVars:
       - key: BASE_API_URL
-        value: https://mothership-backend-production.onrender.com
+        value: https://mothership-api-production.onrender.com
   - type: web
     name: mothership-web-app-staging
     branch: staging
@@ -39,28 +39,28 @@ services:
     startCommand: pnpm start:web
     envVars:
       - key: BASE_API_URL
-        value: https://mothership-backend-staging.onrender.com
+        value: https://mothership-api-staging.onrender.com
 
   #
-  # Backend Services
+  # api Services
   #
   - type: web
-    name: mothership-backend-production
+    name: mothership-api-production
     branch: production
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:backend
-    startCommand: pnpm start:backend
+    buildCommand: pnpm i; pnpm build:api
+    startCommand: pnpm start:api
     envVars:
       - key: PORT
         value: 5000
   - type: web
-    name: mothership-backend-staging
+    name: mothership-api-staging
     branch: staging
     plan: free
     env: node
-    buildCommand: pnpm i; pnpm build:backend
-    startCommand: pnpm start:backend
+    buildCommand: pnpm i; pnpm build:api
+    startCommand: pnpm start:api
     envVars:
       - key: PORT
         value: 5000

@@ -1,5 +1,5 @@
 import { SidebarItemProps } from "./sidebar-item.props"
-import { joinDefinedBySpace } from "@repo/utils/string"
+import { joinDefinedBySpace } from "@core/utils/string"
 
 export default function SidebarItem(props: SidebarItemProps) {
   const { children, icon: Icon, onClick, isSelected } = props

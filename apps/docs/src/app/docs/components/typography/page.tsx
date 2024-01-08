@@ -1,5 +1,5 @@
-import { Typography } from "@repo/ui"
-import { Size } from "@repo/ui"
+import { Typography } from "@core/ui"
+import { Size } from "@core/ui"
 
 export default function Page() {
   // Define sample text for demonstration
