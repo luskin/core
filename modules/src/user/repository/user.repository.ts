@@ -11,6 +11,7 @@ export class UserRepository {
       firstName: "John",
       lastName: "Doe",
       email: "john.doe@mothership.com",
+      permissions: ["shipper.team.manage"],
     }
   }
 }

@@ -1,3 +1,5 @@
+import { UserPermission } from "./user-permission.type"
+
 export class User {
   id: string
   createdAt: Date
@@ -5,4 +7,5 @@ export class User {
   firstName: string
   lastName: string
   email: string
+  permissions: Array<UserPermission>
 }
