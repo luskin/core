@@ -19,6 +19,7 @@
       "dependsOn": ["^clean"]
     },
     "dev": {
+      "dependsOn": ["^clean"],
       "cache": false,
       "persistent": true
     }
