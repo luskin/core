@@ -2,7 +2,6 @@
   "extends": "@configs/typescript/base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "src",
     "outDir": "dist"
   },
   "exclude": ["node_modules", "dist"]
