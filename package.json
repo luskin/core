@@ -19,7 +19,7 @@
     "build:api": "turbo build --filter api",
     "-----DEVELOPMENT-----": "-----DEVELOPMENT-----",
     "dev": "turbo dev",
-    "dev:api": "turbo dev --filter api",
+    "dev:api": "turbo dev --filter @core/modules --filter api",
     "dev:web": "turbo dev --filter web --filter api",
     "dev:docs": "turbo dev --filter docs",
     "-----START-----": "-----START-----",
@@ -34,6 +34,8 @@
     "test:utils": "turbo test --filter @core/utils"
   },
   "devDependencies": {
+    "@configs/eslint": "workspace:*",
+    "@configs/typescript": "workspace:*",
     "prettier": "^3.1.0",
     "turbo": "^1.11.3"
   },
