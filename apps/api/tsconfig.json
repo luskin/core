@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@config": ["src/config"]
+    }
   },
   "include": ["src/**/*.ts"],
   "extends": "@configs/typescript/nestjs.json"
