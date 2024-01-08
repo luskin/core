@@ -13,7 +13,7 @@ export class AuthMiddleware implements NestMiddleware {
     }
 
     try {
-      const decodedToken = await Auth.decodeAuthorizationTokenToUID(token);
+      const decodedToken = await Auth.verifyToken(token);
       req['identity'] = {
         id: decodedToken,
       };

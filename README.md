@@ -1,81 +1,55 @@
-# Turborepo starter
+# Core
+- [/apps](#apps)
+- [/modules](#modules)
+- [/packages](#packages)
 
-This is an official starter Turborepo.
+# Apps
 
-## Using this example
+# Modules
 
-Run the following command:
+# Packages
 
-```sh
-npx create-turbo@latest
-```
+## Extracting Libraries and Utilities into `packages/*` Directory
 
-## What's inside?
+## Introduction
 
-This Turborepo includes the following packages/apps:
+In our TypeScript NodeJS monorepo, utilizing Turborepo, we have adopted a structured approach to managing our codebase by extracting libraries (`libs`) and utilities (`utils`) into the `packages/*` directory. This README explains the rationale behind this architecture, focusing on the benefits it brings in terms of build optimization, separation of concerns, reusability, and overall codebase maintainability.
 
-### Apps and Packages
+## Why Extract `libs` and `utils`?
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@core/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@configs/eslint`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@configs/typescript`: `tsconfig.json`s used throughout the monorepo
+### 1. Build Optimization
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+#### Pre-transpiled TypeScript Directories:
+NodeJS, by default, does not understand TypeScript. Typically, TypeScript files need to be transpiled into JavaScript before they can be executed by NodeJS. By extracting our libraries and utilities into separate packages and pre-transpiling them, we optimize our build process in several ways:
 
-### Utilities
+- **Faster Build Times:** Pre-transpiling these directories means that during the build process, the TypeScript compilation step can be skipped for these packages. This significantly reduces build times, especially in large-scale projects.
+- **Caching Benefits:** Turborepo leverages robust caching mechanisms. By isolating libraries and utilities, we can cache their build artifacts independently, ensuring that unchanged code does not need to be rebuilt, further speeding up the build process.
+- **Parallelization:** Turborepo allows for parallel execution of tasks. By structuring our code into separate packages, we can build or transpile multiple packages in parallel, utilizing system resources more efficiently.
 
-This Turborepo has some additional tools already setup for you:
+### 2. Separation of Concerns
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+By extracting `libs` and `utils` into separate packages, we adhere to the principle of separation of concerns:
 
-### Build
+- **Clear Boundaries:** Each library or utility serves a distinct purpose. Keeping them in separate packages enforces clear boundaries and reduces the complexity within each package.
+- **Focused Development:** Developers can focus on specific aspects of the overall application without being overwhelmed by the entire codebase. This leads to better code quality and easier maintenance.
 
-To build all apps and packages, run the following command:
+### 3. Reusability Across Applications
 
-```
-cd my-turborepo
-pnpm build
-```
+One of the key advantages of this approach is the enhanced reusability:
 
-### Develop
+- **Shared Codebase:** Common functionalities that are used across different parts of the application, or even across different projects, can be shared easily without duplication.
+- **Independent Versioning:** Each package can be versioned independently. This allows for more controlled and safe updates, as changes in one library do not necessarily affect others unless explicitly updated.
 
-To develop all apps and packages, run the following command:
+### 4. Improved Code Management and Collaboration
 
-```
-cd my-turborepo
-pnpm dev
-```
+- **Easier Code Reviews:** Smaller, well-defined packages are easier to understand and review.
+- **Collaboration-Friendly:** Different teams can work on different packages without causing conflicts, making it easier to manage a large team and codebase.
 
-### Remote Caching
+### 5. Scalability and Flexibility
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- **Scalable Structure:** As the project grows, new libraries and utilities can be added seamlessly without impacting the existing structure.
+- **Flexibility in Tech Choices:** Different packages can potentially use different technologies or versions, providing flexibility in tech choices and upgrades.
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+## Conclusion
 
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+The extraction of libraries and utilities into the `packages/*` directory in our TypeScript NodeJS monorepo is a strategic decision that brings numerous benefits. It optimizes the build process, enforces separation of concerns, enhances reusability, facilitates better code management, and supports scalability. This structure, empowered by Turborepo, sets a strong foundation for a maintainable, efficient, and collaborative development environment.

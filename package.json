@@ -18,6 +18,7 @@
     "build:web": "turbo build --filter web",
     "build:docs": "turbo build --filter docs",
     "build:api": "turbo build --filter api",
+    "build:modules": "turbo build --filter @core/modules",
     "build:packages": "turbo build --filter=./packages/*",
     "-----DEVELOPMENT-----": "-----DEVELOPMENT-----",
     "dev": "turbo dev",
