@@ -1,3 +1,3 @@
 export interface CreateUser {
-  id: string
+  id: string;
 }
