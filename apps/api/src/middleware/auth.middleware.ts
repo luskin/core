@@ -1,4 +1,4 @@
-import { Auth } from '@core/libs';
+import { Auth } from '@core/libs/dist/auth';
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 

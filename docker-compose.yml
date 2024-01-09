@@ -11,7 +11,7 @@ services:
     container_name: pg-database
     image: postgres:latest
     environment:
-      POSTGRES_DB: core
+      POSTGRES_DB: coredb
       POSTGRES_USER: devuser
       POSTGRES_PASSWORD: password
     ports:

@@ -5,7 +5,7 @@ dotenv.config({
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Config } from '@core/libs';
+import { Config } from '@core/libs/dist/config';
 import { UserInterceptor } from './interceptors/user.interceptor';
 import { UserService } from '@core/modules';
 
