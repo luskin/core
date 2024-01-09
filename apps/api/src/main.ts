@@ -15,7 +15,7 @@ async function bootstrap() {
   // Inject user into request
   app.useGlobalInterceptors(new UserInterceptor(app.get(UserService)));
 
-  await app.listen(Config.port);
+  await app.listen(Config.environment.port);
 
   console.log(
     `Application is running on: http://localhost:${process.env.PORT}`,

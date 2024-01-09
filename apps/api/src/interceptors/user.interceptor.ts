@@ -20,7 +20,7 @@ export class UserInterceptor implements NestInterceptor {
     const uid = request.auth?.uid;
 
     if (uid) {
-      const user = await this.userService.getUserById(uid);
+      const user = await this.userService.getById(uid);
       request.user = user;
     }
 

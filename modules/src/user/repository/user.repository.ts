@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common"
 import { User } from "../domain/user.entity"
+import { CreateUser } from "./user.repository.types"
 
 @Injectable()
 export class UserRepository {
@@ -13,5 +14,13 @@ export class UserRepository {
       email: "john.doe@mothership.com",
       permissions: ["shipper.team.manage"],
     }
+  }
+
+  async create({ id }: CreateUser): Promise<User> {
+    return this.getById(id)
+  }
+
+  async delete(id: string): Promise<User> {
+    return this.getById(id)
   }
 }

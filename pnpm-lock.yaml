@@ -250,6 +250,10 @@ importers:
         version: 5.0.11(@types/node@20.10.7)
 
   modules:
+    dependencies:
+      '@core/libs':
+        specifier: workspace:*
+        version: link:../packages/libs
     devDependencies:
       '@configs/eslint':
         specifier: workspace:*
@@ -499,6 +503,10 @@ importers:
         version: 5.3.3
 
   packages/utils:
+    dependencies:
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
     devDependencies:
       '@configs/eslint':
         specifier: workspace:*
@@ -515,6 +523,9 @@ importers:
       '@types/jest':
         specifier: ^29.5.2
         version: 29.5.11
+      '@types/lodash':
+        specifier: ^4.14.202
+        version: 4.14.202
       '@types/node':
         specifier: ^20.5.2
         version: 20.10.7
@@ -3436,6 +3447,10 @@ packages:
     dependencies:
       '@types/node': 20.10.7
     dev: false
+
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+    dev: true
 
   /@types/long@4.0.2:
     resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}

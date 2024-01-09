@@ -14,6 +14,12 @@ export class AuthMiddleware implements NestMiddleware {
 
     try {
       const decodedToken = await Auth.verifyToken(token);
+
+      if (!decodedToken) {
+        // TODO - return MSHP Unauthorized exception
+        return res.status(401).send('Unauthorized');
+      }
+
       req['auth'] = {
         uid: decodedToken,
       };
