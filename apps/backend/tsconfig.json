@@ -3,9 +3,11 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@config": ["src/config"]
+      "@api/*": ["apps/api/*"],
+      "@config": ["config"],
+      "@modules/*": ["modules/*"],
+      "@libs/*": ["libs/*"]
     }
   },
-  "include": ["src/**/*.ts"],
   "extends": "@configs/typescript/nestjs.json"
 }
