@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@api/*": ["apps/api/*"],
+      "@config": ["config"],
+      "@modules/*": ["modules/*"],
+      "@libs/*": ["libs/*"]
+    }
+  },
+  "extends": "@configs/typescript/nestjs.json"
+}

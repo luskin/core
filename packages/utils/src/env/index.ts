@@ -1,1 +1,1 @@
-export * from "./get-or-throw"
+export * from "./get-or-throw.util"
