@@ -41,7 +41,7 @@ services:
       - "9098:9098" # Port for Emulator UI
       - "9099:9099" # Port for Authentication Emulator
     volumes:
-      - ./firebase.json:/home/node/firebase.json
+      - ./apps/backend/firebase.json:/home/node/firebase.json
       - firebase-emulators:/home/node/.cache/firebase/emulators
 volumes:
   redis-data:
