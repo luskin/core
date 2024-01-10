@@ -18,4 +18,6 @@ class LoggerStatic {
   }
 }
 
-export const Logger = new LoggerStatic();
+export const logger = new LoggerStatic();
+
+export default logger;

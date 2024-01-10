@@ -7,6 +7,7 @@ import {
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { UserService } from '@modules/user';
+import config from '@config';
 
 @Injectable()
 export class UserInterceptor implements NestInterceptor {
@@ -19,7 +20,7 @@ export class UserInterceptor implements NestInterceptor {
     const request = context.switchToHttp().getRequest();
     const uid = request.auth?.uid;
 
-    if (uid) {
+    if (uid && !config.environment.isLocal) {
       const user = await this.userService.getById(uid);
       request.user = user;
     }

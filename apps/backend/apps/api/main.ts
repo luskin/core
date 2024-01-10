@@ -6,9 +6,11 @@ dotenv.config({
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Config } from '@config';
+import config from '@config';
 import { UserInterceptor } from './interceptors/user.interceptor';
 import { UserService } from '@modules/user';
+import database from '@libs/database';
+import { connection } from '@libs/database/database';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -16,7 +18,10 @@ async function bootstrap() {
   // Inject user into request
   app.useGlobalInterceptors(new UserInterceptor(app.get(UserService)));
 
-  await app.listen(Config.environment.port);
+  // Connect to database
+  await connection.connect();
+
+  await app.listen(config.environment.port);
 
   console.log(
     `Application is running on: http://localhost:${process.env.PORT}`,

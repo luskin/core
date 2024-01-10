@@ -1,15 +1,15 @@
 import { NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres';
 import { Client } from 'pg';
-import { Config } from '../../config';
+import config from '@config';
 import * as schema from './schema';
 
 class ConnectionStatic {
   private _client: Client = new Client({
-    host: Config.database.host,
-    port: Config.database.port,
-    user: Config.database.user,
-    password: Config.database.password,
-    database: Config.database.database,
+    host: config.database.host,
+    port: config.database.port,
+    user: config.database.user,
+    password: config.database.password,
+    database: config.database.database,
   });
 
   private _db: NodePgDatabase<typeof schema> | null = null;
@@ -32,14 +32,14 @@ class ConnectionStatic {
   }
 
   public async connect(): Promise<void> {
-    await this.client.connect();
+    await this._client.connect();
   }
 
   public async disconnect(): Promise<void> {
-    await this.client.end();
+    await this._client.end();
   }
 }
 
-export const Connection = new ConnectionStatic();
+export const connection = new ConnectionStatic();
 
-export const Database = Connection.db;
+export const database = connection.db;

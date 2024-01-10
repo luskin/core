@@ -1,3 +1,3 @@
-import { Database } from './database';
+import { database } from './database';
 export * as schema from './schema';
-export default Database;
+export default database;

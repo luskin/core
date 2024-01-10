@@ -1,6 +1,7 @@
 import { Controller, Get, Inject, Param, Post } from '@nestjs/common';
 import { User, UserService } from '@modules/user';
 import { RequestUser } from '@api/decorators/request-user.decorator';
+import logger from '@libs/logger';
 
 @Controller('v1/user')
 export class InternalApiV1UserController {
@@ -13,11 +14,8 @@ export class InternalApiV1UserController {
   }
 
   @Get(':id')
-  async getById(
-    @Param('id') id: string,
-    @RequestUser() rqUser: User | null,
-  ): Promise<User> {
-    console.log('The request user is: ', rqUser);
+  async getById(@Param('id') id: string): Promise<User> {
+    logger.log('The id is: ', id);
     return await this.userService.getById(id);
   }
 }

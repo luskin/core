@@ -1,5 +1,5 @@
 import * as admin from 'firebase-admin';
-import { Config } from '../../config';
+import config from '@config';
 import { Cluster } from '../../config/environment';
 import { envUtils } from '@core/utils';
 
@@ -13,9 +13,9 @@ export class FirebaseAuthAdmin {
     this._validateEmulator();
     this.app = admin.initializeApp({
       credential: admin.credential.cert({
-        projectId: Config.firebase.projectId,
-        clientEmail: Config.firebase.clientEmail,
-        privateKey: Config.firebase.privateKey,
+        projectId: config.firebase.projectId,
+        clientEmail: config.firebase.clientEmail,
+        privateKey: config.firebase.privateKey,
       }),
     });
   }
@@ -46,12 +46,12 @@ export class FirebaseAuthAdmin {
 
   async _validateEmulator(): Promise<void> {
     // Validate that the Firebase Auth emulator is running if we're in a local cluster
-    if (Config.environment.is(Cluster.Local)) {
+    if (config.environment.is(Cluster.Local)) {
       envUtils.getOrThrow(this._emulatorHostEnv);
     }
 
     // Firebase Auth emulator is not supported in production or staging clusters
-    if (Config.environment.is([Cluster.Production, Cluster.Staging])) {
+    if (config.environment.is([Cluster.Production, Cluster.Staging])) {
       envUtils.throwIfSet(this._emulatorHostEnv);
     }
   }

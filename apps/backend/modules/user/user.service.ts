@@ -15,11 +15,15 @@ export class UserService {
   async create(): Promise<User> {
     let uid: string;
     try {
-      uid = await Auth.createUserWithEmailAndPassword(
-        'shipper@mothership.com',
-        'password',
-      );
-      const user = await this.repository.create({ id: uid });
+      const email = `user-${Date.now()}@mshp.io`;
+      uid = await Auth.createUserWithEmailAndPassword(email, 'password');
+      const user = await this.repository.create({
+        firebaseAuthId: uid,
+        firstName: 'John',
+        lastName: 'Doe',
+        email,
+        status: 'active',
+      });
       return user;
     } catch (error) {
       // Clean-up (TODO: move to event queue?)
