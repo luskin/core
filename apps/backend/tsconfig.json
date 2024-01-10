@@ -3,7 +3,7 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@api/*": ["apps/api/*"],
+      "@api/*": ["api/*"],
       "@config": ["config"],
       "@modules/*": ["modules/*"],
       "@libs/*": ["libs/*"]

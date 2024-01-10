@@ -1,6 +1,6 @@
 import { Controller, Get, Inject, Param, Post } from '@nestjs/common';
 import { User, UserService } from '@modules/user';
-import { RequestUser } from '@api/decorators/request-user.decorator';
+import { RequestUser } from 'api/decorators/request-user.decorator';
 import logger from '@libs/logger';
 
 @Controller('v1/user')
