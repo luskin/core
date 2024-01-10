@@ -12,6 +12,7 @@ export class UserMapper {
       firstName: dbModel.firstName,
       lastName: dbModel.lastName,
       email: dbModel.email,
+      firebaseAuthId: dbModel.firebaseAuthId,
     };
   }
 }

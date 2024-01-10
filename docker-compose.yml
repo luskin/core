@@ -30,10 +30,24 @@ services:
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
 
+  firebase-emulator:
+    image: fixl/firebase-emulator-suite
+    environment:
+      - FIREBASE_PROJECT=mothership-axel-staging
+      - AUTH=true
+      - AUTH_PORT=9099
+      - UI_PORT=9098
+    ports:
+      - "9098:9098" # Port for Emulator UI
+      - "9099:9099" # Port for Authentication Emulator
+    volumes:
+      - ./firebase.json:/home/node/firebase.json
+      - firebase-emulators:/home/node/.cache/firebase/emulators
 volumes:
   redis-data:
   postgres-data:
   rabbitmq-data:
+  firebase-emulators:
 
 secrets:
   npm-token:

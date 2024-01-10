@@ -27,6 +27,7 @@
     "dev:web": "turbo dev --filter web --filter api",
     "dev:docs": "turbo dev --filter docs",
     "ui:firebase": "open http://127.0.0.1:9098/auth",
+    "db:migrate": "pnpm -r --filter backend run migrate",
     "-----START-----": "-----START-----",
     "start": "turbo start",
     "start:web": "turbo start --filter web",
