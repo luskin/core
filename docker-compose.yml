@@ -11,13 +11,13 @@ services:
     container_name: pg-database
     image: postgres:latest
     environment:
-      POSTGRES_DATABASE: coredb
+      POSTGRES_DB: coredb
       POSTGRES_USER: devuser
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - /var/lib/postgresql/data
 
   rabbitmq:
     image: rabbitmq:3-management
