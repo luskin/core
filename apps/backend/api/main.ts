@@ -4,16 +4,17 @@ dotenv.config({
   path: '.env',
 });
 
-import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import config from '@config';
 import { UserInterceptor } from './interceptors/user.interceptor';
 import { UserService } from '@modules/user';
-import database from '@libs/database';
 import { connection } from '@libs/database/database';
+import { MshpNestFactory } from '@mothership/nest';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await MshpNestFactory.create(AppModule, {
+    logger: false,
+  });
 
   // Inject user into request
   app.useGlobalInterceptors(new UserInterceptor(app.get(UserService)));

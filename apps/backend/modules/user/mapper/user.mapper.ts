@@ -9,6 +9,7 @@ export class UserMapper {
       id: dbModel.id,
       createdAt: dbModel.createdAt,
       updatedAt: dbModel.updatedAt,
+      deletedAt: dbModel.deletedAt,
       firstName: dbModel.firstName,
       lastName: dbModel.lastName,
       email: dbModel.email,
