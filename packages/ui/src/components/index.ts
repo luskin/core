@@ -12,3 +12,5 @@ export {
   ResizablePanelGroup,
 } from "./resizable"
 export { Separator } from "./separator"
+export { Label } from "./label"
+export { Input } from "./input"
