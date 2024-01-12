@@ -37,12 +37,28 @@ export abstract class BaseRepository<E extends Entity> {
       .insert(schema[this.table])
       .values(data)
       .returning();
-    return this.mapper.toDomain(dbUser);
+    const entity = this.mapper.toDomain(dbUser);
+    await this.onCreateCallback?.(entity);
+    return entity;
+  }
+
+  async updateById(
+    id: string,
+    data: Partial<(typeof schema)[typeof this.table]['$inferSelect']>,
+  ): Promise<E> {
+    const beforeUpdateEntity = await this.getById(id);
+    const [updatedDbUser] = await database
+      .update(schema[this.table])
+      .set(data)
+      .where(eq(schema[this.table].id, id))
+      .returning();
+    const afterUpdateEntity = this.mapper.toDomain(updatedDbUser);
+    await this.onUpdateCallback?.(beforeUpdateEntity, afterUpdateEntity);
+    return afterUpdateEntity;
   }
 
   async delete(id: string, hard?: boolean): Promise<E> {
     const dbUser = await this.getById(id);
-    logger.info(`Deleting ${this.table} ${id}`, { dbUser });
     if (dbUser.deletedAt && !hard) {
       throw new ConflictException(
         `${stringUtils.capitalizeFirstLetter(this.table)} already deleted`,
@@ -60,6 +76,16 @@ export abstract class BaseRepository<E extends Entity> {
         })
         .where(eq(schema[this.table].id, id));
     }
+    await this.onDeleteCallback?.(dbUser);
     return dbUser;
   }
+
+  public onCreateCallback?(entity: E): Promise<void>;
+
+  public onUpdateCallback?(
+    beforeUpdateEntity: E,
+    afterUpdateEntity: E,
+  ): Promise<void>;
+
+  public onDeleteCallback?(entity: E): Promise<void>;
 }

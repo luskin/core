@@ -10,7 +10,7 @@ export class InternalApiV1UserController {
   @Inject()
   private readonly userService: UserService;
 
-  @api.Post('/create', {
+  @api.Post('/', {
     description: 'Create a user',
     operationId: 'createUser',
     responseType: User,
