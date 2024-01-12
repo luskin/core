@@ -14,7 +14,7 @@ class LoggerStatic {
   }
 
   public info(message: string, ...params: Array<unknown>) {
-    console.info(message, ...params);
+    console.log(message, ...params);
   }
 }
 
