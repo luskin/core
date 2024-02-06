@@ -2,7 +2,7 @@
   "name": "@core/ui",
   "version": "0.0.0",
   "private": true,
-  "main": "./src/index.ts",
+  "main": "./src/index.js",
   "types": "./src/index.ts",
   "scripts": {
     "clean": "rm -rf dist node_modules .turbo",
