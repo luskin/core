@@ -8,10 +8,9 @@ import {
   FolderIcon,
   HomeIcon,
   UsersIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline"
 import { LeftSidebarLayoutProps } from "./left-sidebar.layout.props"
-import { XMark } from "../../../icons"
-import HamburgerMenu from "../../../icons/HamburgerMenu"
 
 export default function LeftSidebarLayout(props: LeftSidebarLayoutProps) {
   const { sidebar } = props
@@ -65,7 +64,7 @@ export default function LeftSidebarLayout(props: LeftSidebarLayoutProps) {
                         onClick={() => setSidebarOpen(false)}
                       >
                         <span className="sr-only">Close sidebar</span>
-                        <XMark
+                        <XMarkIcon
                           className="h-6 w-6 text-white"
                           aria-hidden="true"
                         />
@@ -93,7 +92,7 @@ export default function LeftSidebarLayout(props: LeftSidebarLayoutProps) {
             onClick={() => setSidebarOpen(true)}
           >
             <span className="sr-only">Open sidebar</span>
-            <HamburgerMenu className="h-6 w-6" aria-hidden="true" />
+            <HomeIcon className="h-6 w-6" aria-hidden="true" />
           </button>
           <div className="flex-1 text-sm font-semibold leading-6 text-white">
             web

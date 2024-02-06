@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss"
-import { default as UIConfig } from "@core/ui/tailwind.config"
+import { default as UIConfig } from "@configs/tailwind/tailwind.config"
 
 export default {
   ...UIConfig,
