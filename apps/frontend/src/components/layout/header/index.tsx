@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export function Header(props: HeaderProps) {
-  const { icon = "wordmark", onIconClickHref = "/" } = props
+  const { icon = "mothershipWordmark", onIconClickHref = "/" } = props
   return (
     <header className="flex items-center justify-between p-4">
       <div className="justify-start flex h-8 items-center">
