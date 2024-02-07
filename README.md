@@ -2,7 +2,7 @@
 
 - [/apps](#apps)
   - [/backend](#backend)
-  - [/web](#web)
+  - [/frontend](#frontend)
 - [/packages](#packages)
   - [/configs](#configs)
 
@@ -30,13 +30,9 @@ After cloning the repository, follow the following few steps to be up and runnin
 
 > TODO - Explanation of libs
 
-## Web
+## Frontend
 
-> TODO - Write docs for Web
-
-## Docs
-
-> TODO - Write docs for docs
+> TODO - Write docs for Frontend
 
 # Packages
 
