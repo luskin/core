@@ -1,9 +1,10 @@
-import { stringUtils } from "@core/utils"
+import { arrayUtils, stringUtils } from "@core/utils"
 import clsx from "clsx"
 
 export interface FlexProps {
   direction?: "row" | "col"
   children?: React.ReactNode
+  classNames?: string | Array<string>
   justify?: "start" | "end" | "center" | "between" | "around"
   align?: "start" | "end" | "center" | "stretch"
   space?:
@@ -47,6 +48,7 @@ export interface FlexProps {
 export function Flex({
   children,
   justify = "start",
+  classNames = "",
   align = "start",
   space,
   direction = "row",
@@ -56,7 +58,8 @@ export function Flex({
     direction === "col" && "flex-col",
     space && `space-${direction === "col" ? "y" : "x"}-${space}`,
     `justify-${justify}`,
-    `items-${align}`
+    `items-${align}`,
+    ...arrayUtils.ensure(classNames)
   )
 
   return <div className={className}>{children}</div>

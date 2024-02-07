@@ -5,23 +5,22 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/tailwind/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-br from-emerald-700 to-emerald-800 text-primary-foreground text",
-        secondary: "bg-neutral-800 text-neutral-50 hover:bg-neutral-500",
-        tertiary: "bg-emerald-100 text-emerald-800 hover:bg-emerald-200",
-        ghost:
-          "border border-gray-300 text-neutral-800 hover:border-neutral-800",
-        destructive: "bg-red-500 text-neutral-50 hover:bg-red-600",
+          "bg-gradient-to-br from-accent-10 to-accent-11 text-slate-1 hover:from-accent-11 hover:to-accent-11",
+        secondary: "bg-slate-12 text-slate-1 hover:bg-slate-11",
+        tertiary: "bg-accent-5 text-accent-11 hover:bg-accent-6",
+        ghost: "border border-slate-7 text-slate-12 hover:border-slate-12",
+        destructive: "bg-error-10 text-slate-1 hover:bg-error-11",
       },
       size: {
-        lg: "px-6 py-[18px] font-bold leading-[14px]",
-        md: "p-3 text-xs font-semibold leading-3",
-        sm: "p-2 text-xs font-semibold leading-3",
-        xs: "px-1.5 py-1 font-semibold leading-3 text-[10px]",
+        lg: "px-6 py-[18px] font-bold leading-[14px] rounded-md",
+        md: "p-3 text-xs font-semibold leading-3 rounded-md",
+        sm: "p-2 text-xs font-semibold leading-3 rounded-md",
+        xs: "px-1.5 py-1 font-semibold leading-3 text-[10px] rounded",
       },
     },
     defaultVariants: {
