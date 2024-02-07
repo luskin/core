@@ -2,14 +2,25 @@ import type { Config } from "tailwindcss"
 
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    colors: {
+      slate: {
+        1: "#FCFCFD",
+        2: "#F9F9FB",
+        3: "#F2F2F5",
+        4: "#EBEBEF",
+        5: "#E4E4E9",
+        6: "#DDDDE3",
+        7: "#D3D4DB",
+        8: "#B9BBC6",
+        9: "#8B8D98",
+        10: "#7E808A",
+        11: "#60646C",
+        12: "#1C2024",
+      },
+    },
     container: {
       center: true,
       padding: "2rem",

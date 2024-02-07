@@ -13,6 +13,7 @@
     "build": "turbo build",
     "build:frontend": "turbo build --filter frontend",
     "build:backend": "turbo build --filter backend",
+    "build:packages": "turbo build --filter=./packages/*",
     "codegen": "pnpm -r --filter backend run codegen",
     "-----DEVELOPMENT-----": "-----DEVELOPMENT-----",
     "docker:nuke": "docker ps -q | awk '{print $1}' | xargs -o docker stop",
