@@ -5,9 +5,13 @@ function ColorShade({ className }: { className: string }) {
   return <div className={`${className} h-4 w-8 rounded`} />
 }
 
-function Label({ label }: { label: string }) {
+function Label({ label, long }: { label: string; long?: boolean }) {
   return (
-    <div className="text-xs h-4 w-8 flex justify-center items-center">
+    <div
+      className={`text-xs h-4 ${long ? "w-20" : "w-8"} flex ${
+        long ? "justify-end" : "justify-center"
+      } items-center`}
+    >
       {label}
     </div>
   )
@@ -17,7 +21,7 @@ export default function Page() {
   return (
     <Column space={2}>
       <Row space={1}>
-        <Label label="" />
+        <Label label="" long />
         <Label label="1" />
         <Label label="2" />
         <Label label="3" />
@@ -33,7 +37,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Slate" />
+        <Label label="Slate" long />
         <ColorShade className="bg-slate-1" />
         <ColorShade className="bg-slate-2" />
         <ColorShade className="bg-slate-3" />
@@ -49,7 +53,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Accent" />
+        <Label label="Accent" long />
         <ColorShade className="bg-accent-1" />
         <ColorShade className="bg-accent-2" />
         <ColorShade className="bg-accent-3" />
@@ -65,7 +69,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Success" />
+        <Label label="Success" long />
         <ColorShade className="bg-success-1" />
         <ColorShade className="bg-success-2" />
         <ColorShade className="bg-success-3" />
@@ -81,7 +85,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Error" />
+        <Label label="Error" long />
         <ColorShade className="bg-error-1" />
         <ColorShade className="bg-error-2" />
         <ColorShade className="bg-error-3" />
@@ -97,7 +101,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Warning" />
+        <Label label="Warning" long />
         <ColorShade className="bg-warning-1" />
         <ColorShade className="bg-warning-2" />
         <ColorShade className="bg-warning-3" />
@@ -113,7 +117,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Information" />
+        <Label label="Information" long />
         <ColorShade className="bg-information-1" />
         <ColorShade className="bg-information-2" />
         <ColorShade className="bg-information-3" />
@@ -129,7 +133,7 @@ export default function Page() {
       </Row>
 
       <Row space={1}>
-        <Label label="Update" />
+        <Label label="Update" long />
         <ColorShade className="bg-update-1" />
         <ColorShade className="bg-update-2" />
         <ColorShade className="bg-update-3" />
