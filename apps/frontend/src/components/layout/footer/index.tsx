@@ -1,3 +1,3 @@
 export function Footer() {
-  return <div className="footer bg-slate-10">Footer</div>
+  return <footer className="footer bg-slate-10">Footer</footer>
 }

@@ -1,11 +1,47 @@
 import { stringUtils } from "@core/utils"
+import clsx from "clsx"
 
 export interface FlexProps {
   direction?: "row" | "col"
   children?: React.ReactNode
   justify?: "start" | "end" | "center" | "between" | "around"
   align?: "start" | "end" | "center" | "stretch"
-  space?: number
+  space?:
+    | 0
+    | 0.5
+    | 1
+    | 1.5
+    | 2
+    | 2.5
+    | 3
+    | 3.5
+    | 4
+    | 5
+    | 6
+    | 7
+    | 8
+    | 9
+    | 10
+    | 11
+    | 12
+    | 14
+    | 16
+    | 20
+    | 24
+    | 28
+    | 32
+    | 36
+    | 40
+    | 44
+    | 48
+    | 52
+    | 56
+    | 60
+    | 64
+    | 72
+    | 80
+    | 96
+    | "px"
 }
 
 export function Flex({
@@ -15,22 +51,13 @@ export function Flex({
   space,
   direction = "row",
 }: FlexProps) {
-  const className = ["flex"]
-  if (direction === "col") {
-    className.push("flex-col")
-  }
-  if (space) {
-    className.push(`space-${direction === "col" ? "y" : "x"}-${space}`)
-  }
-  if (justify) {
-    className.push(`justify-${justify}`)
-  }
-  if (align) {
-    className.push(`items-${align}`)
-  }
-  return (
-    <div className={stringUtils.joinDefinedBySpace(...className)}>
-      {children}
-    </div>
+  const className = clsx(
+    "flex",
+    direction === "col" && "flex-col",
+    space && `space-${direction === "col" ? "y" : "x"}-${space}`,
+    `justify-${justify}`,
+    `items-${align}`
   )
+
+  return <div className={className}>{children}</div>
 }

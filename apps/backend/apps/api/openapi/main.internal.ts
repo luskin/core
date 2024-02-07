@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import { InternalApiDocs } from '@api/ingress/internal/internal.api.docs';
-import { InternalModule } from '@api/ingress/internal/internal.module';
+import { InternalApiDocs } from 'apps/api/ingress/internal/internal.api.docs';
+import { InternalModule } from 'apps/api/ingress/internal/internal.module';
 import logger from '@libs/logger';
 import { MshpDocumentBuilder, MshpNestFactory } from '@mothership/nest';
 import { writeFileSync } from 'fs';

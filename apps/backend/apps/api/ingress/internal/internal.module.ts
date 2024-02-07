@@ -1,6 +1,6 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { InternalApiV1UserModule } from './v1/user/user.module';
-import { AuthMiddleware } from 'api/middleware/auth.middleware';
+import { AuthMiddleware } from 'apps/api/middleware/auth.middleware';
 import { unauthenticatedRoutes } from './unauthenticated-routes';
 
 @Module({
