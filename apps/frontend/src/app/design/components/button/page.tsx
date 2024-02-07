@@ -1,4 +1,5 @@
-import { Button, Column, Row } from "@/components"
+import { Column, Row } from "@/components/layout/flex"
+import { Button } from "@/components/primitives/button"
 import React from "react"
 
 const sizes: Array<"xs" | "sm" | "md" | "lg"> = ["lg", "md", "sm", "xs"]

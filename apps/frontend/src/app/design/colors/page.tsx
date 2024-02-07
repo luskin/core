@@ -1,4 +1,4 @@
-import { Column, Row } from "@/components"
+import { Column, Row } from "@/components/layout/flex"
 
 function ColorShade({ className }: { className: string }) {
   return <div className={`${className} h-4 w-8 rounded`} />

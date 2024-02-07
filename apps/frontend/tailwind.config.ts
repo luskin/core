@@ -39,6 +39,8 @@ const config: MshpTailwindConfig = {
   prefix: "",
   theme: {
     colors: {
+      white: "#FFFFFF",
+      black: "#000000",
       slate: {
         1: "#FCFCFD",
         2: "#F9F9FB",
