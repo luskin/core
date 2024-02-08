@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Icon, IconName } from "../icon"
 import { twMerge } from "tailwind-merge"
+import { Paragraph } from "../typography"
 export interface NavItemProps {
   isActive?: boolean
   icon?: IconName
@@ -16,11 +17,10 @@ export function NavItem({
   isActive,
   disableHover,
 }: NavItemProps) {
-  console.log("The current path is: ", href, isActive)
   const className = twMerge(
-    `inline-flex px-4 py-2 items-center justify-start rounded-lg transition ease-in-out text-slate-6`,
+    `inline-flex px-4 py-2 w-full items-center justify-start rounded-lg transition ease-in-out text-slate-6`,
     isActive ? "bg-slate-3 text-slate-12" : "bg-white",
-    disableHover ? undefined : "hover:bg-slate-4 hover:text-slate-12"
+    disableHover ? undefined : "hover:bg-slate-12 hover:text-slate-1"
   )
   return (
     <Link className={className} href={href}>
@@ -30,12 +30,14 @@ export function NavItem({
             name={icon}
             className={twMerge(
               "w-4 h-4",
-              isActive ? "text-slate-12" : undefined
+              isActive ? "text-slate-12" : "text-slate-6"
             )}
           />
         )}
       </div>
-      <div className="ml-4">{label}</div>
+      <Paragraph size={"md"} variant={"secondary"} className="ml-2">
+        {label}
+      </Paragraph>
     </Link>
   )
 }

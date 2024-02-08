@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Row } from "../flex"
 import { Button } from "@/components/primitives/button"
 
@@ -11,9 +12,11 @@ export function UnauthenticatedHeaderActions(
       <Button variant={"tertiary"} icon="truckSideRight">
         Drive with us
       </Button>
-      <Button variant={"ghost"} icon="userFlat">
-        Sign in
-      </Button>
+      <Link href="/sign-in">
+        <Button variant={"ghost"} icon="userFlat">
+          Sign in
+        </Button>
+      </Link>
     </Row>
   )
 }
