@@ -22,10 +22,10 @@ function sizeToName(size: "xs" | "sm" | "md" | "lg") {
 
 export default function Page() {
   return (
-    <Row space={4} classNames={"p-4"}>
+    <Row gap={4} classNames={"p-4"}>
       {sizes.map((size) => {
         return (
-          <Column space={4} key={size}>
+          <Column gap={4} key={size}>
             {variants.map((variant) => (
               <React.Fragment key={"variant"}>
                 <Button

@@ -3,6 +3,7 @@ import { stringUtils } from "@core/utils"
 import { Row } from "../flex"
 import { Button } from "@/components/primitives/button"
 import Link from "next/link"
+import { UnauthenticatedHeaderActions } from "./unauthenticated.actions"
 
 interface HeaderProps {
   icon?: IconName | React.ReactNode
@@ -22,10 +23,7 @@ export function Header(props: HeaderProps) {
           icon
         )}
       </div>
-      <Row>
-        <Button>Thing 1</Button>
-        <div>Thing 2</div>
-      </Row>
+      <UnauthenticatedHeaderActions />
     </header>
   )
 }

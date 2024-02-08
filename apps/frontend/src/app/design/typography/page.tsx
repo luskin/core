@@ -4,14 +4,14 @@ import { Heading, Label, Paragraph } from "@/components/primitives/typography"
 export default function Typography() {
   return (
     <Column>
-      <Column space={2} className="mt-8">
+      <Column gap={2} className="mt-8">
         <Heading size={"h1"}>Typography</Heading>
         <Heading size={"h2"} variant={"secondary"}>
           Text reference material
         </Heading>
       </Column>
 
-      <Column space={2} className="mt-8">
+      <Column gap={2} className="mt-8">
         <Heading size={"h1"}>Heading/Large (h1)</Heading>
         <Heading size={"h1"} variant={"secondary"}>
           Heading/Large (h1 secondary)
@@ -30,7 +30,7 @@ export default function Typography() {
         </Heading>
       </Column>
 
-      <Column space={2} className="mt-8">
+      <Column gap={2} className="mt-8">
         <Label size={"lg"}>Label/Large</Label>
         <Label size={"lg"} variant={"secondary"}>
           Label/Large
@@ -45,7 +45,7 @@ export default function Typography() {
         </Label>
       </Column>
 
-      <Column space={2} className="mt-8">
+      <Column gap={2} className="mt-8">
         <Paragraph size={"lg"}>Paragraph/Large</Paragraph>
         <Paragraph size={"lg"} variant={"secondary"}>
           Paragraph/Large

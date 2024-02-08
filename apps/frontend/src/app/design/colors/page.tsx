@@ -18,8 +18,8 @@ function Label({ label, long }: { label: string; long?: boolean }) {
 
 export default function Page() {
   return (
-    <Column space={2}>
-      <Row space={1}>
+    <Column gap={2}>
+      <Row gap={1}>
         <Label label="" long />
         <Label label="1" />
         <Label label="2" />
@@ -35,7 +35,7 @@ export default function Page() {
         <Label label="12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Slate" long />
         <ColorShade className="bg-slate-1" />
         <ColorShade className="bg-slate-2" />
@@ -51,7 +51,7 @@ export default function Page() {
         <ColorShade className="bg-slate-12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Accent" long />
         <ColorShade className="bg-accent-1" />
         <ColorShade className="bg-accent-2" />
@@ -67,7 +67,7 @@ export default function Page() {
         <ColorShade className="bg-accent-12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Success" long />
         <ColorShade className="bg-success-1" />
         <ColorShade className="bg-success-2" />
@@ -83,7 +83,7 @@ export default function Page() {
         <ColorShade className="bg-success-12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Error" long />
         <ColorShade className="bg-error-1" />
         <ColorShade className="bg-error-2" />
@@ -99,7 +99,7 @@ export default function Page() {
         <ColorShade className="bg-error-12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Warning" long />
         <ColorShade className="bg-warning-1" />
         <ColorShade className="bg-warning-2" />
@@ -115,7 +115,7 @@ export default function Page() {
         <ColorShade className="bg-warning-12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Information" long />
         <ColorShade className="bg-information-1" />
         <ColorShade className="bg-information-2" />
@@ -131,7 +131,7 @@ export default function Page() {
         <ColorShade className="bg-information-12" />
       </Row>
 
-      <Row space={1}>
+      <Row gap={1}>
         <Label label="Update" long />
         <ColorShade className="bg-update-1" />
         <ColorShade className="bg-update-2" />

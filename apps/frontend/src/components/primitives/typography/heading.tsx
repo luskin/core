@@ -6,7 +6,7 @@ import { cn } from "@/lib/tailwind/utils"
 import { Slot } from "@radix-ui/react-slot"
 import { brandFont } from "@/lib/fonts/brand.font"
 
-const headingVariants = cva("font-bold mt-0", {
+const headingVariants = cva("mt-0", {
   variants: {
     variant: {
       primary: "text-slate-12",
@@ -15,7 +15,7 @@ const headingVariants = cva("font-bold mt-0", {
       destructive: "text-error-12",
     },
     size: {
-      h1: `text-[33px] leading-[38.86px] tracking-[-1.6px] ${brandFont.className}`,
+      h1: `text-[33px] leading-[35px] tracking-[-1.6px] font-medium ${brandFont.className}`,
       h2: "text-xl tracking-[-0.55px] leading-6",
       h3: "text-sm tracking-[-0.25px] leading-[14px]",
       h4: "text-xs tracking-[-0.25px] leading-[14px]",

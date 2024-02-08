@@ -5,6 +5,8 @@ import history from "./history"
 import trucks from "./trucks"
 import locationArrow from "./location-arrow"
 import paymentCard from "./payment-card"
+import truckSideRight from "./truck-side-right"
+import userFlat from "./user-flat"
 
 export {
   alienShip,
@@ -14,4 +16,6 @@ export {
   trucks,
   paymentCard,
   mothershipWordmark,
+  truckSideRight,
+  userFlat,
 }

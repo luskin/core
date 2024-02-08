@@ -31,11 +31,6 @@ export interface MshpTailwindConfig extends Config {
 const config: MshpTailwindConfig = {
   darkMode: ["class"],
   content: ["./src/**/*.{ts,tsx}"],
-  safelist: [
-    {
-      pattern: /space-(x|y)-(\d+)/,
-    },
-  ],
   prefix: "",
   theme: {
     colors: {

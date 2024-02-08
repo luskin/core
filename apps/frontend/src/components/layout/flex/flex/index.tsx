@@ -7,7 +7,7 @@ export interface FlexProps {
   className?: string | Array<string>
   justify?: "start" | "end" | "center" | "between" | "around"
   align?: "start" | "end" | "center" | "stretch"
-  space?:
+  gap?:
     | 0
     | 0.5
     | 1
@@ -50,13 +50,13 @@ export function Flex({
   justify = "start",
   className = "",
   align = "start",
-  space,
+  gap,
   direction = "row",
 }: FlexProps) {
   const classNameMerged = clsx(
     "flex",
     direction === "col" && "flex-col",
-    space && `space-${direction === "col" ? "y" : "x"}-${space}`,
+    gap && `gap-${gap}`,
     `justify-${justify}`,
     `items-${align}`,
     ...arrayUtils.ensure(className)
