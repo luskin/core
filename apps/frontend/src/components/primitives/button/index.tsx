@@ -6,7 +6,7 @@ import { cn } from "@/lib/tailwind/utils"
 import { Icon, IconName } from "../icon"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 transition",
   {
     variants: {
       variant: {
