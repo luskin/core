@@ -2,6 +2,7 @@ import { Column, Row } from "@/ui/layout/flex"
 import { Button } from "@/ui/components/button"
 import React from "react"
 import { DesignComponentHeader } from "../component-header"
+import { Tooltip } from "@/ui/components/tooltip"
 
 const sizes: Array<"xs" | "sm" | "md" | "lg"> = ["lg", "md", "sm", "xs"]
 const variants: Array<
@@ -36,13 +37,22 @@ export default function Page() {
             <Column gap={4} key={size}>
               {variants.map((variant) => (
                 <React.Fragment key={"variant"}>
-                  <Button
-                    variant={variant}
-                    size={size}
-                    className="mt-2 first:mt-0"
+                  <Tooltip
+                    content={
+                      <Column>
+                        <code>variant: '{variant}'</code>
+                        <code>size: '{size}'</code>
+                      </Column>
+                    }
                   >
-                    {sizeToName(size)}
-                  </Button>
+                    <Button
+                      variant={variant}
+                      size={size}
+                      className="mt-2 first:mt-0"
+                    >
+                      {sizeToName(size)}
+                    </Button>
+                  </Tooltip>
                   <Button
                     variant={variant}
                     size={size}
