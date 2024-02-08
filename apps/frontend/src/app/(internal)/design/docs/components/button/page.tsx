@@ -27,7 +27,7 @@ export default function Page() {
       <DesignComponentHeader
         title="Button"
         description={
-          "Buttons to serve various actions throughout the application."
+          "Buttons are used to perform an action or navigate to a new location. They are typically placed throughout your UI, in places like: dialogs, forms, cards, and toolbars."
         }
       />
       <Row gap={4} className={"p-4"}>
