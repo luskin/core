@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react"
+import React from "react"
 
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -14,7 +14,7 @@ const paragraphVariants = cva("", {
       destructive: "text-error-12",
     },
     size: {
-      lg: "text-sm leading-none",
+      lg: "text-sm leading-4",
       md: "text-xs leading-3",
       sm: "text-[10px] leading-3",
     },
@@ -32,11 +32,12 @@ export interface ParagraphProps
 }
 
 const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
-  ({ className, variant, size, asChild = false, ...props }) => {
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "p"
     return (
       <Comp
         className={cn(paragraphVariants({ variant, size, className }))}
+        ref={ref}
         {...props}
       />
     )

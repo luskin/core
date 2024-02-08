@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react"
+import React from "react"
 
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -14,9 +14,9 @@ const labelVariants = cva("font-semibold", {
       destructive: "text-error-12",
     },
     size: {
-      lg: "text-sm",
-      md: "text-xs",
-      sm: "text-[10px]",
+      lg: "text-sm leading-4",
+      md: "text-xs leading-3",
+      sm: "text-[10px] leading-3",
     },
   },
   defaultVariants: {
@@ -32,11 +32,12 @@ export interface LabelProps
 }
 
 const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
-  ({ className, variant, size, asChild = false, ...props }) => {
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "label"
     return (
       <Comp
         className={cn(labelVariants({ variant, size, className }))}
+        ref={ref}
         {...props}
       />
     )

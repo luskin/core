@@ -1,14 +1,11 @@
 import { Footer } from "@/components/layout/footer"
-import { Header } from "@/components/layout/header"
-import { Paragraph } from "@/components/primitives/typography"
-import { Label } from "@/components/primitives/typography/label"
+import { Heading, Paragraph, Label } from "@/components/primitives/typography"
 
 export default function Home() {
   return (
     <main className="flex-1">
       <div>
-        <Label>My Label</Label>
-        <Paragraph>My Main Text</Paragraph>
+        <Heading size="h1">This is heading</Heading>
       </div>
       <Footer />
     </main>

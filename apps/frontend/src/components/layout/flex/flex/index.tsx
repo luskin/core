@@ -4,7 +4,7 @@ import clsx from "clsx"
 export interface FlexProps {
   direction?: "row" | "col"
   children?: React.ReactNode
-  classNames?: string | Array<string>
+  className?: string | Array<string>
   justify?: "start" | "end" | "center" | "between" | "around"
   align?: "start" | "end" | "center" | "stretch"
   space?:
@@ -48,19 +48,19 @@ export interface FlexProps {
 export function Flex({
   children,
   justify = "start",
-  classNames = "",
+  className = "",
   align = "start",
   space,
   direction = "row",
 }: FlexProps) {
-  const className = clsx(
+  const classNameMerged = clsx(
     "flex",
     direction === "col" && "flex-col",
     space && `space-${direction === "col" ? "y" : "x"}-${space}`,
     `justify-${justify}`,
     `items-${align}`,
-    ...arrayUtils.ensure(classNames)
+    ...arrayUtils.ensure(className)
   )
 
-  return <div className={className}>{children}</div>
+  return <div className={classNameMerged}>{children}</div>
 }
