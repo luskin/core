@@ -7,6 +7,8 @@ import locationArrow from "./location-arrow"
 import paymentCard from "./payment-card"
 import truckSideRight from "./truck-side-right"
 import userFlat from "./user-flat"
+import exclamationPointSquare from "./exclamation-point-square"
+import infoSquare from "./info-square"
 
 export {
   alienShip,
@@ -18,4 +20,6 @@ export {
   mothershipWordmark,
   truckSideRight,
   userFlat,
+  exclamationPointSquare,
+  infoSquare,
 }

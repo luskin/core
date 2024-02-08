@@ -1,9 +1,9 @@
 "use client"
-import { Nav, NavItem } from "@/components/primitives/nav"
+import { Nav, NavItem } from "@/ui/components/nav"
 import { usePathname } from "next/navigation"
 import { createSideNavRoutes } from "./routes"
 import { useMemo } from "react"
-import { Column } from "@/components/layout/flex"
+import { Column } from "@/ui/layout/flex"
 
 export function SideNav() {
   const currentPath = usePathname()

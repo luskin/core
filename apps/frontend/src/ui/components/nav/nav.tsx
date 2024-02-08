@@ -1,4 +1,4 @@
-import { Column } from "@/components/layout/flex"
+import { Column } from "@/ui/layout/flex"
 import { PropsWithChildren } from "react"
 
 export interface NavProps extends PropsWithChildren {

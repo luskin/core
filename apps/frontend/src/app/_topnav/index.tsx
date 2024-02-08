@@ -1,4 +1,4 @@
-import { Header } from "@/components/layout/header"
+import { Header } from "@/ui/layout/header"
 import { firebaseServer } from "@/lib/auth/firebase.server"
 
 export default async function TopNav() {

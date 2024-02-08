@@ -1,5 +1,5 @@
-import { Footer } from "@/components/layout/footer"
-import { Heading, Paragraph, Label } from "@/components/primitives/typography"
+import { Footer } from "@/ui/layout/footer"
+import { Heading, Paragraph, Label } from "@/ui/components/typography"
 
 export default function QuotePage() {
   return (

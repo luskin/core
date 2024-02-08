@@ -1,4 +1,4 @@
-import { NavItemProps } from "@/components/primitives/nav"
+import { NavItemProps } from "@/ui/components/nav"
 
 export function createSideNavRoutes(): Array<NavItemProps> {
   return [

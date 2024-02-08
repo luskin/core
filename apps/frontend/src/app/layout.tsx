@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { Header } from "@/components/layout/header"
-import { DashboardLayout } from "@/components/layout/dashboard/dashboard.layout"
+import { Header } from "@/ui/layout/header"
+import { DashboardLayout } from "@/ui/layout/dashboard/dashboard.layout"
 import { SideNav } from "./_sidenav"
 import TopNav from "./_topnav"
 

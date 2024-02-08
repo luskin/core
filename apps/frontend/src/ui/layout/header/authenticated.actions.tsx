@@ -1,9 +1,8 @@
 "use client"
 import Link from "next/link"
 import { Row } from "../flex"
-import { Button } from "@/components/primitives/button"
+import { Button } from "@/ui/components/button"
 import { auth } from "@/lib/auth/auth"
-import { revalidatePath } from "next/cache"
 import { useRouter } from "next/navigation"
 
 interface AuthenticatedHeaderActionsProps {}

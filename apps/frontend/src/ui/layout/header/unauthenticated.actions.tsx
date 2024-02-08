@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Row } from "../flex"
-import { Button } from "@/components/primitives/button"
+import { Button } from "@/ui/components/button"
 
 interface UnauthenticatedHeaderActionsProps {}
 

@@ -1,8 +1,8 @@
 "use client"
 
-import { Column } from "@/components/layout/flex"
-import { Button } from "@/components/primitives/button"
-import { Heading } from "@/components/primitives/typography"
+import { Column } from "@/ui/layout/flex"
+import { Button } from "@/ui/components/button"
+import { Heading } from "@/ui/components/typography"
 import { auth } from "@/lib/auth/auth"
 import { useRouter } from "next/navigation"
 

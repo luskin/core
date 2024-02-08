@@ -1,5 +1,5 @@
-import { Column } from "@/components/layout/flex"
-import { Heading, Label, Paragraph } from "@/components/primitives/typography"
+import { Column } from "@/ui/layout/flex"
+import { Heading, Label, Paragraph } from "@/ui/components/typography"
 
 export default function Typography() {
   return (
