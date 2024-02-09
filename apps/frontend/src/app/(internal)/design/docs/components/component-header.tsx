@@ -12,7 +12,7 @@ export function DesignComponentHeader({
   description,
 }: DesignComponentHeaderProps) {
   return (
-    <Column gap={2}>
+    <Column gap={2} className={"w-1/2"}>
       {title && <Heading size="h1">{title}</Heading>}
       {stringUtils.isString(description) ? (
         <Paragraph>{description}</Paragraph>

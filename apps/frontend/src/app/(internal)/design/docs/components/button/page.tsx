@@ -31,7 +31,7 @@ export default function Page() {
           "Buttons are used to perform an action or navigate to a new location. They are typically placed throughout your UI, in places like: dialogs, forms, cards, and toolbars."
         }
       />
-      <Row gap={4} className={"p-4"}>
+      <Row gap={4} className={"mt-4"}>
         {sizes.map((size) => {
           return (
             <Column gap={4} key={size}>
