@@ -15,6 +15,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/icon",
     },
     {
+      label: "Radio",
+      href: "/design/docs/components/radio",
+    },
+    {
       label: "Tooltip",
       href: "/design/docs/components/tooltip",
     },
