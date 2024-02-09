@@ -2,6 +2,7 @@ import { Column } from "@/ui/layout/flex"
 import { DesignComponentHeader } from "../component-header"
 import { Tooltip } from "@/ui/components/tooltip"
 import { Button } from "@/ui/components/button"
+import { ComponentPropsGrid } from "../component-props-grid"
 
 export default function Page() {
   return (
@@ -27,6 +28,22 @@ export default function Page() {
         >
           <Button variant={"destructive"}>Hover over me (Destructive)</Button>
         </Tooltip>
+        <ComponentPropsGrid
+          params={[
+            {
+              name: "content",
+              type: ["string", "ReactNode"],
+              optional: true,
+              description: "The current selection of the radio group.",
+            },
+            {
+              name: "variant",
+              type: "string",
+              optional: true,
+              description: "The style variant of the tooltip.",
+            },
+          ]}
+        />
       </Column>
     </>
   )

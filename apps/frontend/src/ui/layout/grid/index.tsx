@@ -9,7 +9,7 @@ export interface GridProps extends PropsWithChildren {
 
 export function Grid({ children, numCols, className }: GridProps) {
   const classNameMerged = clsx(
-    "container grid",
+    "grid",
     numCols && `grid-cols-${numCols}`,
     ...arrayUtils.ensure(className)
   )

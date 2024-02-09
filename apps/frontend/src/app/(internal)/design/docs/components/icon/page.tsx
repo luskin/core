@@ -3,6 +3,7 @@ import { DesignComponentHeader } from "../component-header"
 import { Icon, IconName } from "@/ui/components/icon"
 import { Column } from "@/ui/layout/flex"
 import { Paragraph } from "@/ui/components/typography"
+import { ComponentPropsGrid } from "../component-props-grid"
 
 export default function IconPage() {
   return (
@@ -25,6 +26,15 @@ export default function IconPage() {
           )
         })}
       </div>
+      <ComponentPropsGrid
+        params={[
+          {
+            name: "name",
+            type: "string",
+            description: "The name of the icon to display",
+          },
+        ]}
+      />
     </>
   )
 }

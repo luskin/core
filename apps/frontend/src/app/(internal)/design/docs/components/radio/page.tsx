@@ -3,6 +3,7 @@ import { DesignComponentHeader } from "../component-header"
 import { Column } from "@/ui/layout/flex"
 import { Radio } from "@/ui/components/radio"
 import { useState } from "react"
+import { ComponentPropsGrid } from "../component-props-grid"
 
 export default function RadioPage() {
   const [value, setValue] = useState("option1")
@@ -29,6 +30,21 @@ export default function RadioPage() {
             {
               value: "option3",
               label: "Option 3",
+            },
+          ]}
+        />
+        <ComponentPropsGrid
+          params={[
+            {
+              name: "value",
+              type: "boolean",
+              optional: true,
+              description: "The current selection of the radio group.",
+            },
+            {
+              name: "onValueChange",
+              type: "function",
+              description: "Callback when the state of the selection changes",
             },
           ]}
         />

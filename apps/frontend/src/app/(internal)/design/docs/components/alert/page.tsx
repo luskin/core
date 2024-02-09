@@ -2,6 +2,7 @@ import { Alert } from "@/ui/components/alert"
 import { Heading, Label, Paragraph } from "@/ui/components/typography"
 import { Column } from "@/ui/layout/flex"
 import { DesignComponentHeader } from "../component-header"
+import { ComponentPropsGrid } from "../component-props-grid"
 
 export default function AlertPage() {
   return (
@@ -44,6 +45,40 @@ export default function AlertPage() {
         title="Shipment delivered"
         message="Your shipment has been successfully delivered. Thank you for trusting Mothership."
         variant={"success"}
+      />
+
+      <Label size="lg">Custom Icon</Label>
+      <Alert
+        icon="alienShip"
+        title="You have been abducted"
+        message="The Mothership has you now."
+        variant={"info"}
+      />
+      <ComponentPropsGrid
+        params={[
+          {
+            name: "icon",
+            type: ["string"],
+            optional: true,
+            description: "Override the default icon with a custom icon.",
+          },
+          {
+            name: "title",
+            type: ["string"],
+            description: "The title of the alert",
+          },
+          {
+            name: "message",
+            type: ["string"],
+            description: "The message of the alert",
+          },
+          {
+            name: "variant",
+            type: "string",
+            optional: true,
+            description: "The style variant of the button.",
+          },
+        ]}
       />
     </Column>
   )
