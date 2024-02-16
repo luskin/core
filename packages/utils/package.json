@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "tsup --watch",
+    "dev": "pnpm build --watch",
     "build": "tsup",
     "clean": "rm -rf dist node_modules .turbo",
     "lint": "eslint . --max-warnings 0",
