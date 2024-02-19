@@ -39,7 +39,7 @@
     "@configs/eslint": "workspace:*",
     "@configs/typescript": "workspace:*",
     "prettier": "^3.1.0",
-    "turbo": "^1.11.3"
+    "turbo": "^1.12.4"
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {
