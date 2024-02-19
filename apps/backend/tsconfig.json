@@ -6,7 +6,9 @@
       "@api/*": ["apps/api/*"],
       "@config": ["config"],
       "@modules/*": ["modules/*"],
-      "@libs/*": ["libs/*"]
+      "@libs/*": ["libs/*"],
+      "@shared": ["../../packages/modules/src"],
+      "@shared/*": ["../../packages/modules/src/*"]
     }
   },
   "extends": "@configs/typescript/nestjs.json"

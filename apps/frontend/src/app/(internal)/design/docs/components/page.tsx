@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react"
-
-export default function ComponentsPage(props: PropsWithChildren) {
+export default function ComponentsPage() {
   return <div>Components</div>
 }
