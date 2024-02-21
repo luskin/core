@@ -1,8 +1,7 @@
 {
-  "extends": "@configs/typescript/base.json",
+  "extends": "@tooling/typescript/base.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist"
+    "baseUrl": "."
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules"]
 }

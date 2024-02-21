@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "."
+  },
+  "extends": "@tooling/typescript/nestjs.json"
+}

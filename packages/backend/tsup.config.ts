@@ -7,5 +7,10 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
-  external: ["@nestjs/common", "@nestjs/core", "@mothership/nest"],
+  external: [
+    "@nestjs/common",
+    "@nestjs/core",
+    "@mothership/nest",
+    "@core/utils",
+  ],
 })
