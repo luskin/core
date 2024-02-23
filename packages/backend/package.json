@@ -6,8 +6,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "dev": "yarn run build -- --watch",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "dev": "yarn run build -- --watch"
   },
   "dependencies": {
     "@core/utils": "*",

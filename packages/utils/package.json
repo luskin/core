@@ -2,13 +2,13 @@
   "name": "@core/utils",
   "version": "0.0.0",
   "private": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup",
-    "dev": "yarn run build -- --watch",
-    "clean": "rm -rf node_modules"
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@tooling/eslint": "*",
@@ -23,8 +23,5 @@
     "ts-jest": "^29.1.0",
     "tsup": "^8.0.1",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }
