@@ -2,6 +2,6 @@ import { stringUtils } from "@core/utils"
 
 export class TestClass {
   public hello() {
-    return stringUtils.capitalizeFirstLetter("hello")
+    return stringUtils.capitalizeFirstLetter("hellonew new")
   }
 }

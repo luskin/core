@@ -1,7 +1,8 @@
-import { TestClass } from "@package/basic";
+import { stringUtils } from '@core/utils';
+import { TestClass } from '@package/basic';
 
 async function bootstrap() {
   const test = new TestClass();
-  console.log(test.hello());
+  console.log(stringUtils.capitalizeFirstLetter('lower') + ' ' + test.hello());
 }
 bootstrap();
