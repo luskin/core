@@ -3,6 +3,7 @@
   "collection": "@nestjs/schematics",
   "entryFile": "main",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "builder": "webpack"
   }
 }

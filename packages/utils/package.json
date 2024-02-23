@@ -7,12 +7,12 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "dev": "pnpm run build -- --watch",
+    "dev": "yarn run build -- --watch",
     "clean": "rm -rf node_modules"
   },
   "devDependencies": {
-    "@tooling/eslint": "workspace:*",
-    "@tooling/typescript": "workspace:*",
+    "@tooling/eslint": "*",
+    "@tooling/typescript": "*",
     "@turbo/gen": "^1.10.12",
     "@types/eslint": "^8.44.7",
     "@types/jest": "^29.5.2",

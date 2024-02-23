@@ -6,7 +6,8 @@ dotenv.config({
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { config, logger, databaseConnection, UserService } from '@core/backend';
+import { config, logger, databaseConnection } from '@core/backend';
+import { UserService } from '@core/modules';
 import { UserInterceptor } from './interceptors/user.interceptor';
 import { MshpNestFactory } from '@mothership/nest';
 import { InternalApiDocs } from './ingress/internal/internal.api.docs';
@@ -14,22 +15,21 @@ import { InternalApiDocs } from './ingress/internal/internal.api.docs';
 async function bootstrap() {
   console.log('One');
 
-  const app = await NestFactory.create(AppModule, {
-    logger: false,
-  });
+  // const app = await NestFactory.create(AppModule, {
+  //   logger: false,
+  // });
 
-  console.log('Two');
-
-  console.log('What is: ', UserService);
+  const userService = new UserService();
+  const user = userService.getUser();
+  logger.info('User:', user);
 
   // Inject user into request
   // app.useGlobalInterceptors(new UserInterceptor(app.get(UserService)));
 
-  console.log('Here?');
   // Connect to database
-  await databaseConnection.connect();
+  // await databaseConnection.connect();
 
-  await app.listen(config.environment.port);
+  // await app.listen(config.environment.port);
 
   logger.info(
     `Application is running on: http://localhost:${process.env.PORT}`,

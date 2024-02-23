@@ -18,9 +18,9 @@
 
 After cloning the repository, follow the following few steps to be up and running locally.
 
-1. In one terminal, run `pnpm docker`. Wait for docker to finish booting, and keep it live.
-2. Once docker is up, in another terminal, run `pnpm db:migrate`. This will migrate your local Postgres database.
-3. Begin developing in any of the applications you wish. The root [package.json](./package.json) will contain all the dev commands you need. For example, if you'd like to develop on the `api`, simply run `pnpm dev:api` in the root of the monorepo and you should be up-and-running.
+1. In one terminal, run `yarn docker`. Wait for docker to finish booting, and keep it live.
+2. Once docker is up, in another terminal, run `yarn db:migrate`. This will migrate your local Postgres database.
+3. Begin developing in any of the applications you wish. The root [package.json](./package.json) will contain all the dev commands you need. For example, if you'd like to develop on the `api`, simply run `yarn dev:api` in the root of the monorepo and you should be up-and-running.
 
 ### Modules
 

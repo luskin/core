@@ -1,16 +1,17 @@
 {
   "name": "@core/backend",
+  "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "dev": "pnpm run build -- --watch",
+    "dev": "yarn run build -- --watch",
     "clean": "rm -rf node_modules"
   },
   "dependencies": {
-    "@core/utils": "workspace:*",
-    "@mothership/nest": "0.1.4",
+    "@core/utils": "*",
+    "@mothership/nest": "0.1.7",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/cqrs": "^10.2.7",
