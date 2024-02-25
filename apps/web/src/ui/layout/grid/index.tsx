@@ -1,4 +1,4 @@
-import { arrayUtils } from "@core/utils"
+import { arrayUtils } from "@shared/utils"
 import clsx from "clsx"
 import { PropsWithChildren } from "react"
 

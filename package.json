@@ -4,14 +4,16 @@
   "workspaces": [
     "apps/*",
     "tooling/*",
-    "packages/*"
+    "packages/shared/*",
+    "packages/backend/*",
+    "packages/frontend/*"
   ],
   "scripts": {
-    "add:api": "yarn add --filter api",
-    "add:libs": "yarn add --filter @core/libs",
-    "add:utils": "yarn add --filter @core/utils",
-    "add:web": "yarn add --filter web",
-    "add:worker": "yarn add --filter worker",
+    "add:api": "yarn add -W api",
+    "add:libs": "yarn add -W @core/libs",
+    "add:utils": "yarn add -W @shared/utils",
+    "add:web": "yarn add -W web",
+    "add:worker": "yarn add -W worker",
     "build": "turbo build",
     "build:api": "turbo build --filter api",
     "build:packages": "turbo build --filter=./packages/*",
@@ -23,25 +25,26 @@
     "dev": "turbo dev",
     "dev:api": "turbo dev --filter api",
     "dev:local": "turbo dev --filter local",
-    "dev:utils": "turbo dev --filter @core/utils",
+    "dev:utils": "turbo dev --filter @shared/utils",
     "dev:web": "turbo dev --filter web --filter api",
     "docker": "docker compose up",
     "docker:nuke": "docker ps -q | awk '{print $1}' | xargs -o docker stop",
     "docker:start-clean": "yarn docker:nuke && docker compose up --force-recreate -V",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint",
-    "remove:api": "yarn remove --filter api",
-    "remove:libs": "yarn remove --filter @core/libs",
-    "remove:utils": "yarn remove --filter @core/utils",
-    "remove:web": "yarn remove --filter web",
-    "remove:worker": "yarn remove --filter worker",
+    "remove:api": "yarn remove -w api",
+    "remove:libs": "yarn remove -w @core/libs",
+    "remove:utils": "yarn remove -w @shared/utils",
+    "remove:web": "yarn remove -w web",
+    "remove:worker": "yarn remove -w worker",
     "start": "turbo start",
     "start:api": "turbo start --filter api",
     "start:web": "turbo start --filter web",
-    "test:utils": "turbo test --filter @core/utils",
+    "test:utils": "turbo test --filter @shared/utils",
     "ui:firebase": "open http://127.0.0.1:9098/auth"
   },
   "devDependencies": {
+    "@nestjs/schematics": "^10.1.1",
     "@tooling/eslint": "*",
     "@tooling/prettier": "*",
     "@tooling/typescript": "*",
@@ -49,5 +52,9 @@
   },
   "engines": {
     "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "api": "^6.1.1",
+    "cache-manager-redis-store": "^3.0.1"
   }
 }

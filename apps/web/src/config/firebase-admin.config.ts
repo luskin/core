@@ -1,4 +1,4 @@
-import { envUtils } from "@core/utils"
+import { envUtils } from "@shared/utils"
 
 export class FirebaseAdminConfig {
   public readonly projectId = envUtils.getOrThrow(

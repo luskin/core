@@ -5,7 +5,7 @@ import { ApiTags } from '@nestjs/swagger';
 
 @Controller('v1/quote')
 @ApiTags('quote')
-export class InternalApiV1QuoteController {
+export class QuoteController {
   @Inject()
   private readonly quoteService: QuoteService;
 

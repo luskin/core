@@ -1,6 +1,6 @@
 import { Heading, Label, Paragraph } from "@/ui/components/typography"
 import { Grid } from "@/ui/layout/grid"
-import { arrayUtils, stringUtils } from "@core/utils"
+import { arrayUtils, stringUtils } from "@shared/utils"
 import React, { PropsWithChildren } from "react"
 
 type ParamType =
@@ -23,17 +23,17 @@ interface ComponentPropsGridProps {
 }
 
 function BorderedL(props: PropsWithChildren) {
-  return <div className="border-l border-slate-5">{props.children}</div>
+  return <div className="border-slate-5 border-l">{props.children}</div>
 }
 
 function Bordered(props: PropsWithChildren) {
   return (
-    <div className="border-l border-r border-slate-5">{props.children}</div>
+    <div className="border-slate-5 border-l border-r">{props.children}</div>
   )
 }
 
 function BorderedR(props: PropsWithChildren) {
-  return <div className="border-r border-slate-5">{props.children}</div>
+  return <div className="border-slate-5 border-r">{props.children}</div>
 }
 
 export function ComponentPropsGrid(props: ComponentPropsGridProps) {
@@ -43,10 +43,10 @@ export function ComponentPropsGrid(props: ComponentPropsGridProps) {
       <Grid
         numCols={3}
         className={
-          "border-r border-b border-slate-5 divide-y divide-x divide-slate-5"
+          "border-slate-5 divide-slate-5 divide-x divide-y border-b border-r"
         }
       >
-        <Label className="p-2 border-t border-l border-slate-5">
+        <Label className="border-slate-5 border-l border-t p-2">
           parameter
         </Label>
         <Label className="p-2">type</Label>

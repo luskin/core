@@ -1,4 +1,4 @@
-import { arrayUtils, stringUtils } from "@core/utils"
+import { arrayUtils, stringUtils } from "@shared/utils"
 import clsx from "clsx"
 
 export interface FlexProps {

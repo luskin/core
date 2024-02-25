@@ -21,4 +21,16 @@ module.exports = {
       },
     ],
   },
+  externals: {
+    "class-transformer/storage": "commonjs class-transformer/storage",
+    kafkajs: "commonjs kafkajs",
+    mqtt: "commonjs mqtt",
+    nats: "commonjs nats",
+    ioredis: "commonjs ioredis",
+    "@nestjs/websockets/socket-module":
+      "commonjs @nestjs/websockets/socket-module",
+    "amqp-connection-manager": "commonjs amqp-connection-manager",
+    amqplib: "commonjs amqplib",
+    "ts-loader": "commonjs ts-loader",
+  },
 }

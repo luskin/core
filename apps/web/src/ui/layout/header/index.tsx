@@ -1,5 +1,5 @@
 import { Icon, IconName } from "@/ui/components/icon"
-import { stringUtils } from "@core/utils"
+import { stringUtils } from "@shared/utils"
 import { Row } from "../flex"
 import { Button } from "@/ui/components/button"
 import Link from "next/link"
@@ -20,7 +20,7 @@ export function Header(props: HeaderProps) {
   } = props
   return (
     <header className="flex items-center justify-between p-4">
-      <div className="justify-start flex h-8 items-center">
+      <div className="flex h-8 items-center justify-start">
         {stringUtils.isString(icon) ? (
           <Link href={onIconClickHref}>
             <Icon name={icon as IconName} className="h-4" />

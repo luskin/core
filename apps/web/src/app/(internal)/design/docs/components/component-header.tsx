@@ -1,6 +1,6 @@
 import { Heading, Paragraph } from "@/ui/components/typography"
 import { Column } from "@/ui/layout/flex"
-import { stringUtils } from "@core/utils"
+import { stringUtils } from "@shared/utils"
 
 export interface DesignComponentHeaderProps {
   title?: string
