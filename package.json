@@ -13,7 +13,7 @@
     "dev:api": "turbo dev --filter server -- -c src/api/nest-cli.json",
     "dev:local": "turbo dev --filter local",
     "dev:utils": "turbo dev --filter @shared/utils",
-    "dev:web": "turbo dev --filter web --filter api",
+    "dev:web": "turbo dev --filter web",
     "dev:packages": "turbo dev --filter=./packages/*",
     "docker": "docker compose up",
     "docker:nuke": "docker ps -q | awk '{print $1}' | xargs -o docker stop",

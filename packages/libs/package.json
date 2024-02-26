@@ -4,15 +4,16 @@
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src/**/*.d.ts"
   ],
   "dependencies": {
     "@shared/utils": "*"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && tsc --emitDeclarationOnly",
     "dev": "pnpm run build -- --watch",
     "test": "jest"
   },
