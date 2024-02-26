@@ -1,42 +1,30 @@
 {
   "name": "core",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "tooling/*",
-    "packages/shared/*",
-    "packages/backend/*",
-    "packages/frontend/*"
-  ],
   "scripts": {
-    "add:api": "yarn add -W api",
-    "add:libs": "yarn add -W @core/libs",
-    "add:utils": "yarn add -W @shared/utils",
-    "add:web": "yarn add -W web",
-    "add:worker": "yarn add -W worker",
     "build": "turbo build",
-    "build:api": "turbo build --filter api",
+    "build:server": "turbo build --filter server",
     "build:packages": "turbo build --filter=./packages/*",
     "build:web": "turbo build --filter web",
-    "build:worker": "turbo build --filter worker",
     "clean": "./scripts/clean.sh",
-    "codegen": "yarn -r --filter api run codegen",
-    "db:migrate": "yarn -r --filter api run migrate",
+    "codegen": "pnpm -r --filter api run codegen",
+    "db:migrate": "pnpm -r --filter api run migrate",
     "dev": "turbo dev",
-    "dev:api": "turbo dev --filter api",
+    "dev:api": "turbo dev --filter server -- -c src/api/nest-cli.json",
     "dev:local": "turbo dev --filter local",
     "dev:utils": "turbo dev --filter @shared/utils",
     "dev:web": "turbo dev --filter web --filter api",
+    "dev:packages": "turbo dev --filter=./packages/*",
     "docker": "docker compose up",
     "docker:nuke": "docker ps -q | awk '{print $1}' | xargs -o docker stop",
-    "docker:start-clean": "yarn docker:nuke && docker compose up --force-recreate -V",
+    "docker:start-clean": "pnpm docker:nuke && docker compose up --force-recreate -V",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "preinstall": "npx only-allow pnpm",
     "lint": "turbo lint",
-    "remove:api": "yarn remove -w api",
-    "remove:libs": "yarn remove -w @core/libs",
-    "remove:utils": "yarn remove -w @shared/utils",
-    "remove:web": "yarn remove -w web",
-    "remove:worker": "yarn remove -w worker",
+    "remove:api": "pnpm remove --filter server",
+    "remove:libs": "pnpm remove --filter @shared/libs",
+    "remove:utils": "pnpm remove --filter @shared/utils",
+    "remove:web": "pnpm remove -w web",
     "start": "turbo start",
     "start:api": "turbo start --filter api",
     "start:web": "turbo start --filter web",
@@ -50,11 +38,8 @@
     "@tooling/typescript": "*",
     "turbo": "^1.12.4"
   },
+  "packageManager": "pnpm@8.14.3",
   "engines": {
     "node": ">=20.9.0"
-  },
-  "dependencies": {
-    "api": "^6.1.1",
-    "cache-manager-redis-store": "^3.0.1"
   }
 }
