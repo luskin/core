@@ -5,13 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/tailwind/utils"
 import { Slot } from "@radix-ui/react-slot"
 
-const paragraphVariants = cva("font-normal", {
+const paragraphVariants = cva("", {
   variants: {
     variant: {
       primary: "text-slate-12",
       secondary: "text-slate-11",
-      inverted: "text-white",
+      inverted: "text-slate-1",
       destructive: "text-error-12",
+      colorless: "",
     },
     size: {
       lg: "text-sm leading-4",

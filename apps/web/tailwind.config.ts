@@ -33,6 +33,11 @@ const config: MshpTailwindConfig = {
   content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    extend: {
+      fontWeight: {
+        bold: "550",
+      },
+    },
     colors: {
       white: "#FFFFFF",
       black: "#000000",

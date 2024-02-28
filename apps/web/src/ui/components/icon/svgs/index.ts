@@ -9,8 +9,10 @@ import truckSideRight from "./truck-side-right"
 import userFlat from "./user-flat"
 import exclamationPointSquare from "./exclamation-point-square"
 import infoSquare from "./info-square"
+import arrow from "./arrow"
 
 export {
+  arrow,
   alienShip,
   claimsShield,
   history,

@@ -22,20 +22,6 @@ interface ComponentPropsGridProps {
   noClassName?: boolean
 }
 
-function BorderedL(props: PropsWithChildren) {
-  return <div className="border-slate-5 border-l">{props.children}</div>
-}
-
-function Bordered(props: PropsWithChildren) {
-  return (
-    <div className="border-slate-5 border-l border-r">{props.children}</div>
-  )
-}
-
-function BorderedR(props: PropsWithChildren) {
-  return <div className="border-slate-5 border-r">{props.children}</div>
-}
-
 export function ComponentPropsGrid(props: ComponentPropsGridProps) {
   return (
     <>

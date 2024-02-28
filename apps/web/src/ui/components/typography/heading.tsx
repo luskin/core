@@ -11,14 +11,15 @@ const headingVariants = cva("mt-0", {
     variant: {
       primary: "text-slate-12",
       secondary: "text-slate-11",
-      inverted: "text-white",
+      inverted: "text-slate-1",
       destructive: "text-error-12",
     },
     size: {
       h1: `text-[33px] leading-[35px] tracking-[-1.6px] font-medium ${brandFont.className}`,
-      h2: "text-xl tracking-[-0.55px] leading-6",
-      h3: "text-sm tracking-[-0.25px] leading-[14px]",
-      h4: "text-xs tracking-[-0.25px] leading-[14px]",
+      h2: "text-xl tracking-[-0.55px] leading-6 font-bold",
+      h3: "text-sm tracking-[-0.25px] leading-[14px] font-bold",
+      h4: "text-xs tracking-[-0.25px] leading-[14px] font-bold",
+      h5: "text-xs font-bold",
     },
   },
   defaultVariants: {
