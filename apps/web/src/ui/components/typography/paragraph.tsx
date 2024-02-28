@@ -16,8 +16,8 @@ const paragraphVariants = cva("", {
     },
     size: {
       lg: "text-sm leading-4",
-      md: "text-xs leading-3",
-      sm: "text-[10px] leading-3",
+      md: "text-xs leading-4",
+      sm: "text-[10px] leading-[10px]",
     },
   },
   defaultVariants: {

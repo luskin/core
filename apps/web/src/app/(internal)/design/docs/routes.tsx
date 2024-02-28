@@ -11,8 +11,8 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/button",
     },
     {
-      label: "Date Picker",
-      href: "/design/docs/components/datepicker",
+      label: "Calendar",
+      href: "/design/docs/components/calendar",
     },
     {
       label: "Icon",
@@ -25,6 +25,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
     {
       label: "Switch",
       href: "/design/docs/components/switch",
+    },
+    {
+      label: "Tabs",
+      href: "/design/docs/components/tabs",
     },
     {
       label: "Tooltip",

@@ -10,24 +10,29 @@ import { labelVariants } from "../typography/label"
 import { paragraphVariants } from "../typography/paragraph"
 import { headingVariants } from "../typography/heading"
 
-export type DatePickerProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
-function DatePicker({
+function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  numberOfMonths = 1,
   ...props
-}: DatePickerProps) {
+}: CalendarProps) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      numberOfMonths={numberOfMonths}
       className={cn(
         "border border-slate-7 rounded-2xl overflow-hidden shadow",
         className
       )}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-0",
+        months: "flex flex-col sm:flex-row",
+        month: cn(
+          "space-y-0",
+          numberOfMonths > 1 ? "first:border-r first:border-slate-9" : ""
+        ),
         caption: "flex justify-center relative items-center bg-slate-3 py-4",
         caption_label: cn(
           labelVariants({
@@ -59,18 +64,23 @@ function DatePicker({
             size: "h4",
             variant: "inverted",
           }),
-          "!text-slate-1"
+          "!text-slate-1 !text-sm"
         ),
         day_outside: "text-slate-9 hover:bg-transparent",
         // day_disabled: "text-slate-9",
-        // day_range_end: "day-range-end",
-        day_today: headingVariants({
-          size: "h4",
-          variant: "primary",
-        }),
-        // day_range_middle:
-        //   "aria-selected:bg-accent aria-selected:text-accent-foreground",
+        day_range_start: "rounded-tr-none rounded-br-none",
+        day_range_end: "rounded-tl-none rounded-bl-none",
+        day_today: cn(
+          headingVariants({
+            size: "h4",
+            variant: "primary",
+          }),
+          "!text-sm"
+        ),
+        day_range_middle: "rounded-none",
         day_hidden: "invisible",
+        multiple_months: "",
+
         ...classNames,
       }}
       components={{
@@ -83,6 +93,6 @@ function DatePicker({
     />
   )
 }
-DatePicker.displayName = "DatePicker"
+Calendar.displayName = "Calendar"
 
-export { DatePicker }
+export { Calendar }
