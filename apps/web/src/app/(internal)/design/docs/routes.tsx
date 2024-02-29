@@ -23,6 +23,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/radio",
     },
     {
+      label: "Slider",
+      href: "/design/docs/components/slider",
+    },
+    {
       label: "Switch",
       href: "/design/docs/components/switch",
     },

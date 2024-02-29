@@ -14,18 +14,23 @@ interface ColorSwatch {
   11: string
   12: string
 }
-export interface MshpTailwindConfig extends Config {
-  theme: Config["theme"] & {
-    colors: {
-      slate: ColorSwatch
-      accent: ColorSwatch
-      success: ColorSwatch
-      error: ColorSwatch
-      warning: ColorSwatch
-      information: ColorSwatch
-      update: ColorSwatch
-    }
+
+export type MshpTheme = Config["theme"] & {
+  colors: {
+    slate: ColorSwatch
+    accent: ColorSwatch
+    success: ColorSwatch
+    error: ColorSwatch
+    warning: ColorSwatch
+    information: ColorSwatch
+    update: ColorSwatch
+    border: string
+    white: string
+    black: string
   }
+}
+export interface MshpTailwindConfig extends Config {
+  theme: MshpTheme
 }
 
 const config: MshpTailwindConfig = {
@@ -33,20 +38,13 @@ const config: MshpTailwindConfig = {
   content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
-    extend: {
-      fontWeight: {
-        bold: "550",
-      },
-    },
     colors: {
-      white: "#FFFFFF",
-      black: "#000000",
       slate: {
         1: "#FCFCFD",
         2: "#F9F9FB",
         3: "#F2F2F5",
         4: "#EBEBEF",
-        5: "#E4E4E9",
+        5: "#E4E4E9", // Also border color, make sure to update this below if you change it
         6: "#DDDDE3",
         7: "#D3D4DB",
         8: "#B9BBC6",
@@ -139,6 +137,9 @@ const config: MshpTailwindConfig = {
         11: "#422CB4",
         12: "#2F265F",
       },
+      white: "#FFFFFF",
+      black: "#000000",
+      border: "#E4E4E9", // slate 5
     },
     container: {
       center: true,

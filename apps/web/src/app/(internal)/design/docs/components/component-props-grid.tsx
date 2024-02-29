@@ -1,3 +1,4 @@
+import { Separator } from "@/ui/components/separator"
 import { Heading, Label, Paragraph } from "@/ui/components/typography"
 import { Grid } from "@/ui/layout/grid"
 import { arrayUtils, stringUtils } from "@shared/utils"
@@ -25,7 +26,10 @@ interface ComponentPropsGridProps {
 export function ComponentPropsGrid(props: ComponentPropsGridProps) {
   return (
     <>
-      <Heading size={"h3"}>Params</Heading>
+      <Separator className="mt-4" />
+      <Heading size={"h3"} className="mt-4">
+        Params
+      </Heading>
       <Grid
         numCols={3}
         className={
@@ -39,9 +43,9 @@ export function ComponentPropsGrid(props: ComponentPropsGridProps) {
         <Label className="p-2">description</Label>
         {props.params.map((property) => (
           <React.Fragment key={property.name}>
-            <code className="p-2">{property.name}</code>
+            <code className="p-2 text-xs">{property.name}</code>
 
-            <code className="p-2">
+            <code className="p-2 text-xs">
               {arrayUtils
                 .ensure(property.type)
                 .map((type) => (property.optional ? `${type}?` : type))
@@ -49,7 +53,7 @@ export function ComponentPropsGrid(props: ComponentPropsGridProps) {
             </code>
 
             {stringUtils.isString(property.description) ? (
-              <Paragraph className="p-2" size={"lg"}>
+              <Paragraph className="p-2" size={"md"}>
                 {property.description}
               </Paragraph>
             ) : (
@@ -59,11 +63,11 @@ export function ComponentPropsGrid(props: ComponentPropsGridProps) {
         ))}
         {!props.noClassName && (
           <>
-            <code className="p-2">{"className"}</code>
+            <code className="p-2 text-xs">{"className"}</code>
 
-            <code className="p-2">string?</code>
+            <code className="p-2 text-xs">string?</code>
 
-            <Paragraph className="p-2" size="lg">
+            <Paragraph className="p-2" size="md">
               Additional styling
             </Paragraph>
           </>

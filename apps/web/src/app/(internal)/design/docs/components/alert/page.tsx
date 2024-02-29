@@ -1,5 +1,5 @@
 import { Alert } from "@/ui/components/alert"
-import { Heading, Label, Paragraph } from "@/ui/components/typography"
+import { Label, Paragraph } from "@/ui/components/typography"
 import { Column } from "@/ui/layout/flex"
 import { DesignComponentHeader } from "../component-header"
 import { ComponentPropsGrid } from "../component-props-grid"

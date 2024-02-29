@@ -1,3 +1,4 @@
+"use client"
 import { Column, Row } from "@/ui/layout/flex"
 import { Button } from "@/ui/components/button"
 import React from "react"
