@@ -5,27 +5,27 @@ export default function Typography() {
   return (
     <Column>
       <Column gap={2} className="mt-8">
-        <Heading size={"h1"}>Typography</Heading>
-        <Heading size={"h2"} variant={"secondary"}>
+        <Heading size={"xl"}>Typography</Heading>
+        <Heading size={"lg"} variant={"secondary"}>
           Text reference material
         </Heading>
       </Column>
 
       <Column gap={2} className="mt-8">
-        <Heading size={"h1"}>Heading/Large (h1)</Heading>
-        <Heading size={"h1"} variant={"secondary"}>
+        <Heading size={"xl"}>Heading/Large (h1)</Heading>
+        <Heading size={"xl"} variant={"secondary"}>
           Heading/Large (h1 secondary)
         </Heading>
-        <Heading size={"h2"}>Heading/Medium (h2)</Heading>
-        <Heading size={"h2"} variant={"secondary"}>
+        <Heading size={"lg"}>Heading/Medium (h2)</Heading>
+        <Heading size={"lg"} variant={"secondary"}>
           Heading/Medium (h2 secondary)
         </Heading>
-        <Heading size={"h3"}>Heading/Small (h3)</Heading>
-        <Heading size={"h3"} variant={"secondary"}>
+        <Heading size={"md"}>Heading/Small (h3)</Heading>
+        <Heading size={"md"} variant={"secondary"}>
           Heading/Small (h3 secondary)
         </Heading>
-        <Heading size={"h4"}>Heading/XSmall (h4)</Heading>
-        <Heading size={"h4"} variant={"secondary"}>
+        <Heading size={"sm"}>Heading/XSmall (h4)</Heading>
+        <Heading size={"sm"} variant={"secondary"}>
           Heading/XSmall (h4 secondary)
         </Heading>
       </Column>

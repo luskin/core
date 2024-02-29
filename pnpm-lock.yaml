@@ -165,6 +165,9 @@ importers:
       '@shared/libs':
         specifier: '*'
         version: link:../../packages/libs
+      '@shared/types':
+        specifier: '*'
+        version: link:../../packages/types
       '@shared/utils':
         specifier: '*'
         version: link:../../packages/utils
@@ -254,6 +257,30 @@ importers:
       tsup:
         specifier: ^8.0.1
         version: 8.0.2(typescript@5.3.3)
+      typescript:
+        specifier: latest
+        version: 5.3.3
+
+  packages/types:
+    devDependencies:
+      '@tooling/eslint':
+        specifier: '*'
+        version: link:../../tooling/eslint
+      '@tooling/typescript':
+        specifier: '*'
+        version: link:../../tooling/typescript
+      '@types/eslint':
+        specifier: ^8.44.7
+        version: 8.56.3
+      '@types/jest':
+        specifier: ^29.5.2
+        version: 29.5.12
+      '@types/lodash':
+        specifier: ^4.14.202
+        version: 4.14.202
+      '@types/node':
+        specifier: ^20.5.2
+        version: 20.11.20
       typescript:
         specifier: latest
         version: 5.3.3

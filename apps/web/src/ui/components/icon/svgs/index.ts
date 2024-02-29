@@ -11,6 +11,7 @@ import exclamationPointSquare from "./exclamation-point-square"
 import infoSquare from "./info-square"
 import arrow from "./arrow"
 import spinner from "./spinner"
+import plus from "./plus"
 
 export {
   arrow,
@@ -26,4 +27,5 @@ export {
   exclamationPointSquare,
   infoSquare,
   spinner,
+  plus,
 }

@@ -4,5 +4,10 @@ import { firebaseServer } from "@/lib/auth/firebase.server"
 export default async function TopNav() {
   const user = await firebaseServer.getCurrentUser()
 
-  return <Header authenticated={Boolean(user)} />
+  return (
+    <Header
+      authenticated={Boolean(user)}
+      isAdmin={user?.email?.endsWith("@mothership.com")}
+    />
+  )
 }

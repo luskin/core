@@ -17,14 +17,14 @@ export default function Page() {
         description={"Serve a calendar to select a date or a range of dates."}
       />
       <Column gap={4} className={"mt-4"}>
-        <Heading size={"h3"}>Single Month</Heading>
+        <Heading size={"md"}>Single Month</Heading>
         <Calendar
           mode="single"
           selected={firstDate}
           onSelect={setFirstDate}
           numberOfMonths={1}
         />
-        <Heading size={"h3"}>Multiple Months</Heading>
+        <Heading size={"md"}>Multiple Months</Heading>
         <Calendar
           mode="single"
           selected={secondDate}

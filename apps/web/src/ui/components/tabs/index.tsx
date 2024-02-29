@@ -33,22 +33,22 @@ const TabsTrigger = React.forwardRef<
 ))
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
-type TabProp = {
+type TabProps<T = string> = {
   label: string
   disabled?: boolean
-  value: string
+  value: T
 }
 
-type TabsProps = {
-  tabs: Array<TabProp>
-  value?: string
-  onValueChange?: (value: string) => void
+type TabsProps<T = string> = {
+  tabs: Array<TabProps<T>>
+  value?: T
+  onValueChange?: (value: T) => void
 }
 
 const Tabs = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,
   TabsProps
->(({ value, onValueChange, ...props }) => {
+>(({ value, onValueChange, ...props }, ref) => {
   if (value && !props.tabs.find((tab) => tab.value === value)) {
     throw new Error(
       `The value "${value}" does not match any of the tab values: ${props.tabs
@@ -73,6 +73,7 @@ const Tabs = React.forwardRef<
   )
   return (
     <TabsPrimitive.Root
+      ref={ref}
       defaultValue={value}
       onValueChange={onValueChange}
       className="bg-slate-3 rounded-md p-[2px] h-7"
@@ -83,5 +84,6 @@ const Tabs = React.forwardRef<
 })
 
 export { Tabs }
+export type { TabsProps, TabProps }
 
 //  whitespace-nowrap ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50

@@ -16,5 +16,8 @@
     "packages/**/src/**/*.d.ts": true,
     "packages/**/src/**/*.d.ts.map": true,
     "**/.turbo/": true
-  }
+  },
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "**/node_modules/@radix-ui/**"
+  ]
 }

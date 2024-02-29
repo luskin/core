@@ -22,7 +22,7 @@ export default function SignInPage() {
   return (
     <div className="w-full">
       <Column gap={2}>
-        <Heading size="h1">Sign in</Heading>
+        <Heading size="xl">Sign in</Heading>
         <Button variant="primary" onClick={handleSignIn}>
           Sign in with Google
         </Button>

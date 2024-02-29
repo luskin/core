@@ -18,7 +18,7 @@ export default function SignOutPage() {
   return (
     <div className="w-full">
       <Column gap={2}>
-        <Heading size="h1">Sign out</Heading>
+        <Heading size="xl">Sign out</Heading>
         <Button variant="primary" onClick={handleSignOut}>
           Sign out of session
         </Button>

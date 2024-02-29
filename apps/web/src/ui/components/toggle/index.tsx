@@ -9,8 +9,8 @@ interface ToggleProps
     React.ComponentPropsWithoutRef<typeof TogglePrimitives.Root>,
     "value" | "onChange" | "checked" | "onCheckedChange"
   > {
-  offLabel: string | React.ReactNode
-  onLabel: string | React.ReactNode
+  offLabel?: string | React.ReactNode
+  onLabel?: string | React.ReactNode
   toggled?: boolean
   onToggledChange?: (toggled: boolean) => void
 }
@@ -20,7 +20,14 @@ const Toggle = React.forwardRef<
   ToggleProps
 >(
   (
-    { className, toggled, onLabel, offLabel, onToggledChange, ...props },
+    {
+      className,
+      toggled,
+      onLabel = "On",
+      offLabel = "Off",
+      onToggledChange,
+      ...props
+    },
     ref
   ) => {
     const OffComponent = toggled ? Paragraph : Label

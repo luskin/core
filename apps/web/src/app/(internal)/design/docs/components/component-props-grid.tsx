@@ -27,7 +27,7 @@ export function ComponentPropsGrid(props: ComponentPropsGridProps) {
   return (
     <>
       <Separator className="mt-4" />
-      <Heading size={"h3"} className="mt-4">
+      <Heading size={"md"} className="mt-4">
         Params
       </Heading>
       <Grid

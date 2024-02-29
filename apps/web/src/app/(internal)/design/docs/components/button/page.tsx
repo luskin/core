@@ -5,6 +5,7 @@ import React from "react"
 import { DesignComponentHeader } from "../component-header"
 import { Tooltip } from "@/ui/components/tooltip"
 import { ComponentPropsGrid } from "../component-props-grid"
+import { Heading } from "@/ui/components/typography"
 
 const sizes: Array<"xs" | "sm" | "md" | "lg"> = ["lg", "md", "sm", "xs"]
 const variants: Array<
@@ -69,6 +70,41 @@ export default function Page() {
               </Column>
             )
           })}
+          {sizes
+            .filter((size) => size !== "xs")
+            .map((size) => {
+              return (
+                <Column gap={4} key={size}>
+                  {variants.map((variant) => (
+                    <React.Fragment key={"variant"}>
+                      <Tooltip
+                        content={
+                          <Column>
+                            <code>variant: '{variant}'</code>
+                            <code>size: '{size}'</code>
+                            <code>icon: 'plus'</code>
+                          </Column>
+                        }
+                      >
+                        <Button
+                          size={size}
+                          variant={variant}
+                          icon="plus"
+                          className="mt-2 first:mt-0"
+                        />
+                      </Tooltip>
+                      <Button
+                        size={size}
+                        variant={variant}
+                        icon="plus"
+                        className="mt-2"
+                        disabled
+                      />
+                    </React.Fragment>
+                  ))}
+                </Column>
+              )
+            })}
         </Row>
         <ComponentPropsGrid
           params={[
@@ -77,6 +113,12 @@ export default function Page() {
               type: ["string"],
               optional: true,
               description: "The size of the button",
+            },
+            {
+              name: "icon",
+              type: ["string"],
+              optional: true,
+              description: "The icon name to display in the button",
             },
             {
               name: "disabled",

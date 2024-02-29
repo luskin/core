@@ -4,6 +4,10 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/tailwind/utils"
 import { Icon, IconName } from "../icon"
+import { headingVariants } from "../typography/heading"
+import { labelVariants } from "../typography/label"
+
+const DEFAULT_BUTTON_SIZE = "md"
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 transition",
@@ -18,15 +22,27 @@ const buttonVariants = cva(
         destructive: "bg-error-10 text-slate-1 hover:bg-error-11",
       },
       size: {
-        lg: "px-6 py-[18px] font-bold leading-[14px] rounded-md",
-        md: "p-3 text-xs font-semibold leading-3 rounded-md",
-        sm: "p-2 text-xs font-semibold leading-3 rounded-md",
-        xs: "px-1.5 py-1 font-semibold leading-3 text-[10px] rounded",
+        lg: cn(
+          headingVariants({ size: "sm", variant: "colorless" }),
+          "h-12 rounded-lg"
+        ),
+        md: cn(
+          labelVariants({ size: "md", variant: "colorless" }),
+          "h-8 rounded-lg"
+        ),
+        sm: cn(
+          labelVariants({ size: "md", variant: "colorless" }),
+          "h-6 rounded-md"
+        ),
+        xs: cn(
+          labelVariants({ size: "sm", variant: "colorless" }),
+          "h-[15px] rounded"
+        ),
       },
     },
     defaultVariants: {
       variant: "primary",
-      size: "md",
+      size: DEFAULT_BUTTON_SIZE,
     },
   }
 )
@@ -38,19 +54,66 @@ export interface ButtonProps
   icon?: IconName
 }
 
+const getIconClassName = (
+  size: VariantProps<typeof buttonVariants>["size"]
+) => {
+  switch (size) {
+    case "lg":
+      return "h-4"
+    case "md":
+      return "h-3"
+    case "sm":
+      return "h-2"
+    case "xs":
+      throw new Error("Icons are not supported with the xs button size")
+    default:
+      throw new Error(`Invalid button size: ${size}`)
+  }
+}
+
+const getButtonPadding = (
+  size: VariantProps<typeof buttonVariants>["size"],
+  isIconOnly: boolean
+) => {
+  switch (size) {
+    case "lg":
+      return isIconOnly ? "w-12" : "px-4"
+    case "md":
+      return isIconOnly ? "w-8" : "px-3"
+    case "sm":
+      return isIconOnly ? "w-6" : "px-2"
+    case "xs":
+      return "px-1.5"
+    default:
+      throw new Error(`Invalid button size: ${size}`)
+  }
+}
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { className, children, icon, variant, size, asChild = false, ...props },
+    {
+      className,
+      children,
+      icon,
+      variant,
+      size = DEFAULT_BUTTON_SIZE,
+      asChild = false,
+      ...props
+    },
     ref
   ) => {
     const Comp = asChild ? Slot : "button"
+    const isIconOnly = Boolean(!children && icon)
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          getButtonPadding(size, isIconOnly)
+        )}
         {...props}
       >
-        {icon && <Icon name={icon} className="mr-2 h-2" />}
+        {icon && <Icon name={icon} className={getIconClassName(size)} />}
         {children}
       </Comp>
     )

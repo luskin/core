@@ -1,15 +1,14 @@
 import { Icon, IconName } from "@/ui/components/icon"
 import { stringUtils } from "@shared/utils"
-import { Row } from "../flex"
-import { Button } from "@/ui/components/button"
 import Link from "next/link"
 import { UnauthenticatedHeaderActions } from "./unauthenticated.actions"
-import { AuthenticatedHeaderActions } from "./authenticated.actions"
+import { AuthenticatedHeaderActions } from "./authenticated"
 
 interface HeaderProps {
   icon?: IconName | React.ReactNode
   onIconClickHref?: string
   authenticated?: boolean
+  isAdmin?: boolean
 }
 
 export function Header(props: HeaderProps) {
@@ -17,6 +16,7 @@ export function Header(props: HeaderProps) {
     icon = "mothershipWordmark",
     onIconClickHref = "/",
     authenticated,
+    isAdmin,
   } = props
   return (
     <header className="flex items-center justify-between p-4">
@@ -30,7 +30,7 @@ export function Header(props: HeaderProps) {
         )}
       </div>
       {authenticated ? (
-        <AuthenticatedHeaderActions />
+        <AuthenticatedHeaderActions isAdmin={isAdmin} />
       ) : (
         <UnauthenticatedHeaderActions />
       )}

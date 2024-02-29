@@ -61,7 +61,7 @@ function Calendar({
         ),
         day_selected: cn(
           headingVariants({
-            size: "h4",
+            size: "sm",
             variant: "inverted",
           }),
           "!text-slate-1 !text-sm"
@@ -72,7 +72,7 @@ function Calendar({
         day_range_end: "rounded-tl-none rounded-bl-none",
         day_today: cn(
           headingVariants({
-            size: "h4",
+            size: "sm",
             variant: "primary",
           }),
           "!text-sm"
