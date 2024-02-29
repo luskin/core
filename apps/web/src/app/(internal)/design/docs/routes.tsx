@@ -35,6 +35,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/tabs",
     },
     {
+      label: "Toggle",
+      href: "/design/docs/components/toggle",
+    },
+    {
       label: "Tooltip",
       href: "/design/docs/components/tooltip",
     },
