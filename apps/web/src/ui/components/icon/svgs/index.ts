@@ -10,6 +10,7 @@ import userFlat from "./user-flat"
 import exclamationPointSquare from "./exclamation-point-square"
 import infoSquare from "./info-square"
 import arrow from "./arrow"
+import spinner from "./spinner"
 
 export {
   arrow,
@@ -24,4 +25,5 @@ export {
   userFlat,
   exclamationPointSquare,
   infoSquare,
+  spinner,
 }
