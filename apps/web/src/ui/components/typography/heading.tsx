@@ -37,10 +37,10 @@ export interface HeadingProps
 
 function sizeToHeading(
   size?: "xl" | "lg" | "md" | "sm" | "xs" | null
-): "h1" | "h2" | "h3" | "h4" | "h5" {
+): "xl" | "h2" | "h3" | "h4" | "h5" {
   switch (size) {
     case "xl":
-      return "h1"
+      return "xl"
     case "lg":
       return "h2"
     case "md":
