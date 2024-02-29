@@ -35,6 +35,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/switch",
     },
     {
+      label: "Skeleton",
+      href: "/design/docs/components/skeleton",
+    },
+    {
       label: "Tabs",
       href: "/design/docs/components/tabs",
     },
