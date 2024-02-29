@@ -12,6 +12,8 @@ import infoSquare from "./info-square"
 import arrow from "./arrow"
 import spinner from "./spinner"
 import plus from "./plus"
+import bell from "./bell"
+import hamburgerMenu from "./hamburger-menu"
 
 export {
   arrow,
@@ -28,4 +30,6 @@ export {
   infoSquare,
   spinner,
   plus,
+  bell,
+  hamburgerMenu,
 }
