@@ -15,6 +15,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/calendar",
     },
     {
+      label: "Dropdown",
+      href: "/design/docs/components/dropdown",
+    },
+    {
       label: "Icon",
       href: "/design/docs/components/icon",
     },

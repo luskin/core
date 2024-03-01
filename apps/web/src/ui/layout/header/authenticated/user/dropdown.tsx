@@ -17,7 +17,7 @@ export default async function UserDropdown() {
       <DropdownMenuTrigger asChild>
         <Button variant={"ghost"} size={"md"} icon="userFlat" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         <DropdownMenuLabel>
           {user?.displayName ?? user?.email ?? "Account"}
         </DropdownMenuLabel>

@@ -18,7 +18,6 @@ export default function Layout({ children }: PropsWithChildren) {
         <Column className={"overflow-y-scroll w-full"}>
           {componentRoutes.map((routeProps) => {
             const isActive = currentPath.startsWith(routeProps.href)
-            console.log(routeProps.href, isActive)
             return (
               <NavItem
                 key={routeProps.href}
