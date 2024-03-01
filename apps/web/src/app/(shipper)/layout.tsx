@@ -1,5 +1,5 @@
 import { DashboardLayout } from "@/ui/layout/dashboard/dashboard.layout"
-import { SideNav } from "../_sidenav"
+import { MenuBar } from "../_menubar"
 
 export default async function RootLayout({
   children,
@@ -8,7 +8,7 @@ export default async function RootLayout({
 }>) {
   return (
     <DashboardLayout>
-      <SideNav />
+      <MenuBar />
       {children}
     </DashboardLayout>
   )

@@ -1,7 +1,7 @@
 import { Header } from "@/ui/layout/header"
 import { firebaseServer } from "@/lib/auth/firebase.server"
 
-export default async function TopNav() {
+export default async function AppBar() {
   const user = await firebaseServer.getCurrentUser()
 
   return (

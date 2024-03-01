@@ -19,7 +19,7 @@ export function Header(props: HeaderProps) {
     isAdmin,
   } = props
   return (
-    <header className="flex items-center justify-between p-4">
+    <div className="flex items-center justify-between p-4">
       <div className="flex h-8 items-center justify-start">
         {stringUtils.isString(icon) ? (
           <Link href={onIconClickHref}>
@@ -35,6 +35,6 @@ export function Header(props: HeaderProps) {
       ) : (
         <UnauthenticatedHeaderActions />
       )}
-    </header>
+    </div>
   )
 }

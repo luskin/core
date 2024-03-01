@@ -9,6 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/ui/components/dropdown"
+import Link from "next/link"
 
 export default async function UserDropdown() {
   const user = await firebaseServer.getCurrentUser()
@@ -29,6 +30,14 @@ export default async function UserDropdown() {
         <AdminBoundary>
           <DropdownMenuLabel>Admin</DropdownMenuLabel>
           <DropdownMenuSeparator />
+          <Link href="/design">
+            <DropdownMenuItem
+              icon="arrow"
+              description="Colors, components, typography... etc"
+            >
+              Design System
+            </DropdownMenuItem>
+          </Link>
           <DropdownMenuItem icon="alienShip" description="Company directory">
             Employees
           </DropdownMenuItem>

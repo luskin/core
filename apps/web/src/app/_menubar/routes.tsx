@@ -1,6 +1,6 @@
 import { NavItemProps } from "@/ui/components/nav"
 
-export function createSideNavRoutes(): Array<NavItemProps> {
+export function createMenuBarRoutes(): Array<NavItemProps> {
   return [
     {
       icon: "trucks",

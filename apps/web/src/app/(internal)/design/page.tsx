@@ -1,178 +1,74 @@
+import { Button } from "@/ui/components/button"
+import { Heading, Paragraph } from "@/ui/components/typography"
+import { Column } from "@/ui/layout/flex"
 import Link from "next/link"
 
 export default function DesignPage() {
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <Column justify="center" align="center" className={"h-full"}>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Build amazing logistics products
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Beautifully designed components that power Mothership.com
-                </p>
-              </div>
-              <div className="space-x-4">
+        <div className="relative isolate px-6 pt-14 lg:px-8">
+          <div
+            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true"
+          >
+            <div
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+            />
+          </div>
+          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                Announcing our next generation design system{" "}
                 <Link
-                  className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
                   href="/design/docs"
+                  className="font-semibold text-indigo-600"
                 >
-                  Get Started
+                  <span className="absolute inset-0" aria-hidden="true" />
+                  Read more <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </div>
+            </div>
+            <div className="text-center">
+              <Heading size={"xl"} className="sm:text-5xl">
+                Build amazing logistics products
+              </Heading>
+              <Paragraph size={"lg"} className="sm:text-xl">
+                Beautifully designed components that power Mothership.com
+              </Paragraph>
+              <div className="mt-10 flex items-center justify-center gap-x-6">
+                <Link href="/design/docs">
+                  <Button size={"lg"} variant={"tertiary"}>
+                    Get started
+                  </Button>
                 </Link>
                 <Link
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                  href="/design/docs/components"
+                  href="/design/docs"
+                  className="text-sm font-semibold leading-6 text-gray-900"
                 >
-                  View Components
+                  Learn more <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
           </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-4">
-          <div className="container px-4 md:px-6">
-            <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-              <img
-                alt="Image"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                height="310"
-                src="/placeholder.svg"
-                width="550"
-              />
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                    Collaboration
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Faster iteration. More innovation.
-                  </h2>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    The design language and component library for rapid
-                    progress. Focus on shipping features instead of tweaking UI
-                    with fully responsivle layouts, dark mode, accessibility and
-                    more.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    href="/design/docs"
-                  >
-                    View Documentation
-                  </Link>
-                  <Link
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                    href="/design/docs/components"
-                  >
-                    Tour Components
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div
+            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+            aria-hidden="true"
+          >
+            <div
+              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+            />
           </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Features
-              </div>
-              <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                New features should be exciting, not scary.
-              </h2>
-              <Link
-                className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="/design/docs"
-              >
-                Get Started
-              </Link>
-            </div>
-            <div className="flex flex-col items-start space-y-4">
-              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Bullet-proof
-              </div>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-                Fully responsive layouts and components allow you iterate and
-                develop quickly, without worrying about getting the designs
-                pixel-perfect. Focus on writing features, not CSS.
-              </p>
-              <Link
-                className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                href="/design/docs/components"
-              >
-                View Components
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                See what our developers are saying
-              </h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Trusted by the best teams in the world. We help teams of all
-                sizes.
-              </p>
-            </div>
-            <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-              <img
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <img
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <img
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <img
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <img
-                alt="Logo"
-                className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-            </div>
-          </div>
-        </section>
+        </div>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          © 2024 Mothership Technologies Inc. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
-    </div>
+    </Column>
   )
 }
