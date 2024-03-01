@@ -29,7 +29,11 @@ export function MenuBar() {
       </Column>
 
       <Column className={"mt-auto"}>
-        <NavItem href="/same-day-coverage" label="Same-day coverage" />
+        <NavItem
+          href="/same-day-coverage"
+          label="Same-day coverage"
+          icon="truckSideRight"
+        />
       </Column>
     </Nav>
   )

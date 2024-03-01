@@ -4,7 +4,6 @@ import { PropsWithChildren, useMemo } from "react"
 import { createDesignSideNavComponentRoutes } from "./routes"
 import { Nav, NavItem } from "@/ui/components/nav"
 import { Column } from "@/ui/layout/flex"
-import { DashboardLayout } from "@/ui/layout/dashboard/dashboard.layout"
 
 export default function Layout({ children }: PropsWithChildren) {
   const currentPath = usePathname()
@@ -13,7 +12,7 @@ export default function Layout({ children }: PropsWithChildren) {
     []
   )
   return (
-    <DashboardLayout>
+    <div>
       <Nav>
         <Column className={"overflow-y-scroll w-full"}>
           {componentRoutes.map((routeProps) => {
@@ -29,6 +28,6 @@ export default function Layout({ children }: PropsWithChildren) {
         </Column>
       </Nav>
       {children}
-    </DashboardLayout>
+    </div>
   )
 }

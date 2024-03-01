@@ -9,6 +9,7 @@ interface HeaderProps {
   onIconClickHref?: string
   authenticated?: boolean
   isAdmin?: boolean
+  hamburgerMenu?: boolean
 }
 
 export function Header(props: HeaderProps) {
@@ -16,6 +17,7 @@ export function Header(props: HeaderProps) {
     icon = "mothershipWordmark",
     onIconClickHref = "/",
     authenticated,
+    hamburgerMenu,
     isAdmin,
   } = props
   return (
@@ -28,7 +30,7 @@ export function Header(props: HeaderProps) {
         ) : (
           icon
         )}
-        <Icon name="hamburgerMenu" className="h-3 ml-4" />
+        {hamburgerMenu && <Icon name="hamburgerMenu" className="h-3 ml-4" />}
       </div>
       {authenticated ? (
         <AuthenticatedHeaderActions />

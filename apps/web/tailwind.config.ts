@@ -148,6 +148,10 @@ const config: MshpTailwindConfig = {
         "2xl": "1400px",
       },
     },
+    borderColor: (theme: any) => ({
+      ...theme("colors"),
+      DEFAULT: theme("colors.slate.5", "currentColor"),
+    }),
   },
   safelist: [
     {
