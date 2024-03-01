@@ -1,35 +1,37 @@
 import alienShip from "./alien-ship"
+import arrow from "./arrow"
+import bell from "./bell"
 import claimsShield from "./claims-shield"
-import mothershipWordmark from "./mothership-wordmark"
+import exclamationPointSquare from "./exclamation-point-square"
+import hamburgerMenu from "./hamburger-menu"
 import history from "./history"
-import trucks from "./trucks"
+import infoSquare from "./info-square"
 import locationArrow from "./location-arrow"
+import logout from "./logout"
+import mothershipWordmark from "./mothership-wordmark"
 import paymentCard from "./payment-card"
+import plus from "./plus"
+import spinner from "./spinner"
+import trucks from "./trucks"
 import truckSideRight from "./truck-side-right"
 import userFlat from "./user-flat"
-import exclamationPointSquare from "./exclamation-point-square"
-import infoSquare from "./info-square"
-import arrow from "./arrow"
-import spinner from "./spinner"
-import plus from "./plus"
-import bell from "./bell"
-import hamburgerMenu from "./hamburger-menu"
 
 export {
-  arrow,
   alienShip,
+  arrow,
+  bell,
   claimsShield,
+  exclamationPointSquare,
+  hamburgerMenu,
   history,
+  infoSquare,
   locationArrow,
-  trucks,
-  paymentCard,
+  logout,
   mothershipWordmark,
+  paymentCard,
+  plus,
+  spinner,
+  trucks,
   truckSideRight,
   userFlat,
-  exclamationPointSquare,
-  infoSquare,
-  spinner,
-  plus,
-  bell,
-  hamburgerMenu,
 }

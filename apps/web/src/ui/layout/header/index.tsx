@@ -31,7 +31,7 @@ export function Header(props: HeaderProps) {
         <Icon name="hamburgerMenu" className="h-3 ml-4" />
       </div>
       {authenticated ? (
-        <AuthenticatedHeaderActions isAdmin={isAdmin} />
+        <AuthenticatedHeaderActions />
       ) : (
         <UnauthenticatedHeaderActions />
       )}
