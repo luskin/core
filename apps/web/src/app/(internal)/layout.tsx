@@ -6,8 +6,10 @@ import { Footer } from "@/ui/layout/footer"
 
 export default function DesignLayout(props: PropsWithChildren) {
   return (
-    <AppBarLayout appBar={<AppBar />} footer={<Footer />}>
-      <AdminBoundary redirectOnFailHref="/not-found" {...props} />
-    </AppBarLayout>
+    <AdminBoundary redirectOnFailHref="/not-found">
+      <AppBarLayout appBar={<AppBar />} footer={<Footer />}>
+        {props.children}
+      </AppBarLayout>
+    </AdminBoundary>
   )
 }

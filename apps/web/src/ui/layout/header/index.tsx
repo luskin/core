@@ -21,7 +21,7 @@ export function Header(props: HeaderProps) {
     isAdmin,
   } = props
   return (
-    <div className="flex items-center justify-between p-4">
+    <div className="flex items-center justify-between px-4 h-16">
       <div className="flex h-8 items-center justify-start">
         {stringUtils.isString(icon) ? (
           <Link href={onIconClickHref}>

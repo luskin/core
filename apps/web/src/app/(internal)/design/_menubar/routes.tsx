@@ -7,6 +7,10 @@ export function createDesignSideNavComponentRoutes(): Array<NavItemProps> {
       href: "/design/docs/components/alert",
     },
     {
+      label: "Avatar",
+      href: "/design/docs/components/avatar",
+    },
+    {
       label: "Button",
       href: "/design/docs/components/button",
     },
