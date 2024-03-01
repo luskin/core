@@ -10,7 +10,9 @@ export default async function RootLayout({
 }>) {
   return (
     <AppBarLayout appBar={<AppBar />}>
-      <MenuBarLayout menuBar={<MenuBar />}>{children}</MenuBarLayout>
+      <MenuBarLayout menuBar={<MenuBar />} hasAppBar={true}>
+        {children}
+      </MenuBarLayout>
     </AppBarLayout>
   )
 }

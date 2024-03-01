@@ -6,5 +6,5 @@ export interface NavProps extends PropsWithChildren {
 }
 
 export function Nav({ isCollapsed, children }: NavProps) {
-  return <Column className="px-2 py-2 w-[232px] h-full">{children}</Column>
+  return <Column className="px-4 py-4 h-full w-full">{children}</Column>
 }

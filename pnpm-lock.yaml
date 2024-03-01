@@ -141,6 +141,12 @@ importers:
 
   apps/web:
     dependencies:
+      '@capsizecss/core':
+        specifier: ^4.0.0
+        version: 4.0.0
+      '@capsizecss/metrics':
+        specifier: ^2.1.0
+        version: 2.1.0
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.0.6
         version: 2.0.6(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0)
@@ -778,6 +784,16 @@ packages:
 
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
+
+  /@capsizecss/core@4.0.0:
+    resolution: {integrity: sha512-fcQRqAa4aqYqrsa1qNi72JllUkdcEG0vX4ix2YDhYT+O2l/+M7OVTBqqZFM26GytO/Iqsrt7xdzAv9Ca7oagzg==}
+    dependencies:
+      csstype: 3.1.3
+    dev: false
+
+  /@capsizecss/metrics@2.1.0:
+    resolution: {integrity: sha512-mLr8unABIsp+NXqS5nJws7P9zGhrQ16U1tWyPWA2sQFkO+0nzq5CtzbEJ3wdmH0wv9Sxo6BjO+OQvbm+LXuwlA==}
+    dev: false
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}

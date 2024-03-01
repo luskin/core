@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { Icon, IconName } from "../icon"
-import { twMerge } from "tailwind-merge"
-import { Paragraph } from "../typography"
+import { Label, Paragraph } from "../typography"
 import React from "react"
+import { cn } from "@/lib/tailwind/utils"
 
 export interface NavItemProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -15,28 +15,22 @@ export interface NavItemProps
 }
 
 const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
-  ({ icon, label, href, isActive, disableHover, ...props }, ref) => {
-    const className = twMerge(
-      `inline-flex px-4 py-2 w-full items-center justify-start rounded-lg transition ease-in-out text-slate-6`,
-      isActive ? "bg-slate-3 text-slate-12" : "bg-white",
-      disableHover ? undefined : "hover:bg-slate-12 hover:text-slate-1"
+  ({ icon, label, href, isActive, disableHover = false, ...props }, ref) => {
+    const className = cn(
+      `flex flex-row justify-start items-center h-10 px-4 w-full rounded-lg transition ease-in-out`,
+      isActive && "bg-slate-6",
+      !disableHover && "hover:bg-slate-3"
     )
     return (
       <Link className={className} href={href} ref={ref} {...props}>
-        <div className="w-4 h-4">
-          {icon && (
-            <Icon
-              name={icon}
-              className={twMerge(
-                "w-4 h-4",
-                isActive ? "text-slate-12" : "text-slate-6"
-              )}
-            />
-          )}
-        </div>
-        <Paragraph size={"md"} variant={"secondary"} className="ml-2">
+        {icon && <Icon name={icon} className={"h-4"} />}
+        <Label
+          size={"md"}
+          variant={isActive ? "primary" : "secondary"}
+          className={cn(icon && "ml-4")}
+        >
           {label}
-        </Paragraph>
+        </Label>
       </Link>
     )
   }

@@ -3,7 +3,7 @@ import { NavItemProps } from "@/ui/components/nav"
 export function createMenuBarRoutes(): Array<NavItemProps> {
   return [
     {
-      icon: "trucks",
+      icon: "truckSideRight",
       label: "Quote",
       href: "/",
     },
