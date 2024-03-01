@@ -35,7 +35,7 @@ export default async function UserDropdown() {
           <DropdownMenuItem icon="plus">Acquisition</DropdownMenuItem>
           <DropdownMenuItem icon="bell">Actions</DropdownMenuItem>
         </AdminBoundary>
-        <DropdownMenuItem icon="logout" dangerous className="mt-2">
+        <DropdownMenuItem icon="logout" destructive className="mt-2">
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>

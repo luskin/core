@@ -41,7 +41,7 @@ export default function RadioPage() {
             <DropdownMenuItem icon="truckSideRight" description="Description">
               Label
             </DropdownMenuItem>
-            <DropdownMenuItem icon="logout" dangerous className="mt-2">
+            <DropdownMenuItem icon="logout" destructive className="mt-2">
               Dangerous
             </DropdownMenuItem>
           </DropdownMenuContent>

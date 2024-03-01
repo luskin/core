@@ -11,7 +11,7 @@ const labelVariants = cva("font-semibold", {
       primary: "text-slate-12",
       secondary: "text-slate-11",
       inverted: "text-white",
-      destructive: "text-error-12",
+      destructive: "text-error-11",
       colorless: "",
     },
     size: {

@@ -83,12 +83,12 @@ const DropdownMenuItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
     inset?: boolean
     icon?: IconName
-    dangerous?: boolean
+    destructive?: boolean
     description?: string | React.ReactNode
   }
 >(
   (
-    { className, inset, icon, description, dangerous, children, ...props },
+    { className, inset, icon, description, destructive, children, ...props },
     ref
   ) => (
     <DropdownMenuPrimitive.Item
@@ -97,14 +97,21 @@ const DropdownMenuItem = React.forwardRef<
         "relative flex cursor-default select-none items-center rounded-md px-4 h-12 outline-none transition-colors focus:bg-slate-3 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         inset && "pl-8",
         description && "h-[58px]",
-        dangerous && "text-error-11 bg-error-3",
+        destructive && "text-error-11 bg-error-3 focus:bg-error-6",
         className
       )}
       {...props}
     >
       {icon && <Icon name={icon} className="mr-3 h-3" />}
       <Column gap={1}>
-        <div className={labelVariants({ size: "lg" })}>{children}</div>
+        <div
+          className={labelVariants({
+            size: "lg",
+            variant: destructive ? "destructive" : "primary",
+          })}
+        >
+          {children}
+        </div>
         {description && (
           <Paragraph size={"md"} variant={"secondary"}>
             {description}
