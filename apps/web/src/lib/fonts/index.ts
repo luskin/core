@@ -2,9 +2,10 @@ import localFont from "next/font/local"
 
 export const brandFont = localFont({
   src: "./AkzidenzMediumExtended.woff2",
+  variable: "--font-brand",
 })
 
-export const baseFont = localFont({
+export const bodyFont = localFont({
   src: [
     {
       path: "./SanFranciscoProRegular.woff2",
@@ -19,4 +20,5 @@ export const baseFont = localFont({
       weight: "700",
     },
   ],
+  variable: "--font-body",
 })
