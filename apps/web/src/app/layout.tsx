@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import { bodyFont } from "@/lib/fonts"
+import { baseFont } from "@/lib/fonts"
 
 export const metadata: Metadata = {
   title: "Mothership",
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.className} h-screen w-screen`}>
+      <body className={`${baseFont.className} h-screen w-screen`}>
         {children}
       </body>
     </html>

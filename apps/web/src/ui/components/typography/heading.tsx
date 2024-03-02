@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/tailwind/utils"
 import { Slot } from "@radix-ui/react-slot"
-import { brandFont } from "@/lib/fonts"
+import { baseFont, brandFont } from "@/lib/fonts"
 
 const headingVariants = cva("mt-0", {
   variants: {
@@ -16,11 +16,11 @@ const headingVariants = cva("mt-0", {
       colorless: "",
     },
     size: {
-      xl: `text-3xl leading-[35px] tracking-[-1.6px] font-medium ${brandFont.className}`,
-      lg: "text-[28px] tracking-[-0.55px] leading-6 font-bold",
-      md: "text-xl tracking-[-0.25px] leading-[14px] font-bold",
-      sm: "text-sm tracking-[-0.25px] leading-[14px] font-bold",
-      xs: "text-xs font-bold",
+      xl: `text-3xl tracking-[-1.6px] leading-4 pt-[7px] ${brandFont.className}`,
+      lg: `text-[28px] tracking-[-0.75px] leading-[22px] font-bold`,
+      md: "text-xl tracking-[-0.75px] leading-4 font-bold",
+      sm: "text-sm tracking-[-0.25px] leading-3 font-bold",
+      xs: "text-xs tracking-[-0.25px] leading-none font-bold ",
     },
   },
   defaultVariants: {

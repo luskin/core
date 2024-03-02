@@ -5,7 +5,9 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/tailwind/utils"
 import { Slot } from "@radix-ui/react-slot"
 
-const labelVariants = cva("font-semibold", {
+const DEFAULT_SIZE = "md"
+
+const labelVariants = cva("font-base font-semibold", {
   variants: {
     variant: {
       primary: "text-slate-12",
@@ -17,12 +19,12 @@ const labelVariants = cva("font-semibold", {
     size: {
       lg: "text-sm leading-4",
       md: "text-xs leading-3",
-      sm: "text-[10px] leading-[10px]",
+      sm: "text-xxs leading-xxs",
     },
   },
   defaultVariants: {
     variant: "primary",
-    size: "md",
+    size: DEFAULT_SIZE,
   },
 })
 

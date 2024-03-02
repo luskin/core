@@ -38,6 +38,11 @@ const config: MshpTailwindConfig = {
   content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    extend: {
+      fontSize: {
+        xxs: "10px",
+      },
+    },
     colors: {
       slate: {
         1: "#FCFCFD",

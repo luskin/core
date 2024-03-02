@@ -241,6 +241,9 @@ importers:
       tailwindcss:
         specifier: ^3.3.0
         version: 3.4.1
+      tailwindcss-capsize:
+        specifier: ^3.0.4
+        version: 3.0.4(tailwindcss@3.4.1)
       typescript:
         specifier: latest
         version: 5.3.3
@@ -784,6 +787,12 @@ packages:
 
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
+
+  /@capsizecss/core@3.1.1:
+    resolution: {integrity: sha512-1YxfErFXdxcyDyc8peDwH2hiJF5U8sBY5i5HX0f/tpvabbu40w9r8VHYMOOw9Fox5O/+kf2gAhyfVe+sLnaaBA==}
+    dependencies:
+      csstype: 3.1.3
+    dev: true
 
   /@capsizecss/core@4.0.0:
     resolution: {integrity: sha512-fcQRqAa4aqYqrsa1qNi72JllUkdcEG0vX4ix2YDhYT+O2l/+M7OVTBqqZFM26GytO/Iqsrt7xdzAv9Ca7oagzg==}
@@ -11147,6 +11156,16 @@ packages:
     dependencies:
       tailwindcss: 3.4.1
     dev: false
+
+  /tailwindcss-capsize@3.0.4(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-JuJN36DH8f1M0seRD4R+W2+vBI2G/hmmaoFLPvnvGtTI8n3e1YSDI9Ey2WRJiOkod2UcK0R/ut5qOGMy+ScjaA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      tailwindcss: '>= 1.5'
+    dependencies:
+      '@capsizecss/core': 3.1.1
+      tailwindcss: 3.4.1
+    dev: true
 
   /tailwindcss@3.4.1:
     resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
