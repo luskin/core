@@ -1,18 +1,18 @@
 # Core
 
 - [/apps](#apps)
-  - [/backend](#backend)
-  - [/frontend](#frontend)
+  - [/api](#api)
+  - [/web](#web)
+  - [/worker](#worker)
 - [/packages](#packages)
   - [/configs](#configs)
+  - TODO: All documentation
 
 # Apps
 
-## Backend
+## API
 
-`Backend` is a modular monolithic NodeJS application on the NestJS framework. It is comprised of two applications, `api` and `worker`...
-
-> TODO - WRITE EXPLANATION HERE OF WHY WE USE MODULAR MONOLITHIC ARCHITECTURE
+> TODO - Write Docs
 
 #### Setup
 
@@ -30,9 +30,13 @@ After cloning the repository, follow the following few steps to be up and runnin
 
 > TODO - Explanation of libs
 
-## Frontend
+## Web
 
-> TODO - Write docs for Frontend
+> TODO - Write docs for Web
+
+## Worker
+
+> TODO - Write docs for Web
 
 # Packages
 

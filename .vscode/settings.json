@@ -10,5 +10,15 @@
     {
       "mode": "auto"
     }
+  ],
+  "files.exclude": {
+    "**/node_modules/": true,
+    "packages/**/src/**/*.d.ts": true,
+    "packages/**/src/**/*.d.ts.map": true,
+    "**/.turbo/": true,
+    "**/.next/": true
+  },
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "**/node_modules/@radix-ui/**"
   ]
 }

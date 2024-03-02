@@ -1,4 +1,4 @@
-import { arrayUtils } from "src"
+import * as arrayUtils from "../array"
 
 /**
  * Retrieves the value of a specific environment variable. Throws an error if the environment variable is not set.

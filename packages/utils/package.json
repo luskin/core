@@ -1,20 +1,25 @@
 {
-  "name": "@core/utils",
+  "name": "@shared/utils",
   "version": "0.0.0",
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./src/index.d.ts",
+  "files": [
+    "dist",
+    "src/**/*.d.ts"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "scripts": {
-    "dev": "pnpm build --watch",
-    "build": "tsup",
-    "clean": "rm -rf dist node_modules .turbo",
-    "lint": "eslint . --max-warnings 0",
+    "build": "tsup && tsc --emitDeclarationOnly",
+    "dev": "pnpm run build -- --watch",
     "test": "jest"
   },
   "devDependencies": {
-    "@configs/eslint": "workspace:*",
-    "@configs/typescript": "workspace:*",
+    "@tooling/eslint": "*",
+    "@tooling/typescript": "*",
     "@turbo/gen": "^1.10.12",
     "@types/eslint": "^8.44.7",
     "@types/jest": "^29.5.2",
@@ -24,9 +29,6 @@
     "jest": "^29.5.0",
     "ts-jest": "^29.1.0",
     "tsup": "^8.0.1",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
+    "typescript": "latest"
   }
 }

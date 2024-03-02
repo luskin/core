@@ -1,0 +1,16 @@
+{
+  "extends": "@tooling/typescript/nestjs.json",
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@libs/*": ["libs/*"],
+      "@decorators/*": ["decorators/*"],
+      "@database": ["database"],
+      "@modules/*": ["modules/*"],
+      "@config": ["config"]
+    }
+  }
+}
