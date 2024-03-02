@@ -64,6 +64,10 @@ export function createDesignMenuBarComponentRoutes(): Array<NavItemProps> {
       href: '/design/docs/components/tabs',
     },
     {
+      label: 'Toaster',
+      href: '/design/docs/components/toaster',
+    },
+    {
       label: 'Toggle',
       href: '/design/docs/components/toggle',
     },
