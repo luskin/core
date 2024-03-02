@@ -17,8 +17,8 @@ const labelVariants = cva("font-base font-semibold", {
       colorless: "",
     },
     size: {
-      lg: "text-sm leading-4",
-      md: "text-xs leading-3",
+      lg: "text-sm leading-3",
+      md: "text-xs leading-2",
       sm: "text-xxs leading-xxs",
     },
   },

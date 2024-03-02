@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/tailwind/utils"
 import { Slot } from "@radix-ui/react-slot"
 
-const paragraphVariants = cva("font-base leading-none", {
+const paragraphVariants = cva("font-base leading-normal", {
   variants: {
     variant: {
       primary: "text-slate-12",
@@ -15,9 +15,9 @@ const paragraphVariants = cva("font-base leading-none", {
       colorless: "",
     },
     size: {
-      lg: "text-sm leading-4",
-      md: "text-xs leading-4",
-      sm: "text-xxs leading-xxs",
+      lg: "text-sm",
+      md: "text-xs",
+      sm: "text-xxs",
     },
   },
   defaultVariants: {

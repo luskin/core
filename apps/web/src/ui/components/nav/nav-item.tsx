@@ -23,7 +23,12 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
     )
     return (
       <Link className={className} href={href} ref={ref} {...props}>
-        {icon && <Icon name={icon} className={"h-4"} />}
+        {icon && (
+          <Icon
+            name={icon}
+            className={cn("h-4", isActive ? "text-slate-12" : "text-slate-8")}
+          />
+        )}
         <Label
           size={"md"}
           variant={isActive ? "primary" : "secondary"}
