@@ -22,10 +22,9 @@ export default function ToasterPage() {
           Note: Many toasts may be presented at once and can stack. Press the "Show toast" buttons several times then
           hover your mouse over the stack of notifications
         </Paragraph>
-        <Label>Success toast</Label>
-        <Grid numCols={2}>
+        <Grid numCols={2} gap={2}>
           <Button
-            variant={'ghost'}
+            variant={'primary'}
             onClick={() =>
               toast.success({
                 title: 'Success',
@@ -40,11 +39,11 @@ export default function ToasterPage() {
               })
             }
           >
-            Default
+            Success
           </Button>
 
           <Button
-            variant={'ghost'}
+            variant={'destructive'}
             onClick={() =>
               toast.error({
                 title: 'Error',
@@ -63,6 +62,9 @@ export default function ToasterPage() {
           </Button>
         </Grid>
 
+        <Label size={'lg'} className="mt-4">
+          Toasts
+        </Label>
         <div className="w-[465px]">
           <ToastSuccess
             description="This is a success message"
@@ -94,15 +96,27 @@ export default function ToasterPage() {
         <ComponentPropsGrid
           params={[
             {
-              name: 'param0',
-              type: ['string', 'ReactNode'],
-              description: 'The message to display in the toast, can be a string or a React component',
+              name: 'title',
+              type: ['string'],
+              description: 'The title to display in the toast',
             },
             {
-              name: 'param1',
+              name: 'description',
               type: 'object',
               optional: true,
-              description: 'Options to customize the toast, see details above',
+              description: 'The description to display in the toast',
+            },
+            {
+              name: 'actionButtons',
+              type: 'array',
+              optional: true,
+              description: 'An array of action buttons (ButtonProps) to display in the toast',
+            },
+            {
+              name: 'duration',
+              type: 'array',
+              optional: true,
+              description: 'How long to display the toast in milliseconds',
             },
           ]}
         />
