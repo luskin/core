@@ -1,11 +1,11 @@
 'use client';
 import { Column, Row } from '@/ui/layout/flex';
-import { Button } from '@/ui/components/button';
+import { Button, XButton } from '@/ui/components/button';
 import React from 'react';
 import { DesignComponentHeader } from '../component-header';
 import { Tooltip } from '@/ui/components/tooltip';
 import { ComponentPropsGrid } from '../component-props-grid';
-import { Heading } from '@/ui/components/typography';
+import { Heading, Label } from '@/ui/components/typography';
 
 const sizes: Array<'xs' | 'sm' | 'md' | 'lg'> = ['lg', 'md', 'sm', 'xs'];
 const variants: Array<'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'> = [
@@ -90,6 +90,8 @@ export default function Page() {
               );
             })}
         </Row>
+        <Label>X Button</Label>
+        <XButton />
         <ComponentPropsGrid
           params={[
             {

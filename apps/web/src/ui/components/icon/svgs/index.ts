@@ -17,6 +17,7 @@ import truckSideRight from './truck-side-right';
 import userFlat from './user-flat';
 import checkmark from './checkmark';
 import exclamationPoint from './exclamation-point';
+import xmark from './xmark';
 
 export {
   alienShip,
@@ -38,4 +39,5 @@ export {
   trucks,
   truckSideRight,
   userFlat,
+  xmark,
 };

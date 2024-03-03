@@ -19,6 +19,7 @@ const buttonVariants = cva(
         tertiary: 'bg-accent-5 text-accent-11 hover:bg-accent-6',
         ghost: 'border border-slate-7 text-slate-12 hover:border-slate-12',
         destructive: 'bg-error-10 text-slate-1 hover:bg-error-11',
+        colorless: '',
       },
       size: {
         lg: cn(headingVariants({ size: 'sm', variant: 'colorless' }), 'h-12 rounded-lg'),
@@ -89,4 +90,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = 'Button';
 
-export { Button, buttonVariants };
+const XButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => (
+  <Button
+    ref={ref}
+    variant={'colorless'}
+    className={cn('text-slate-8 hover:text-slate-6 transition-colors', props.className)}
+    {...props}
+  >
+    <Icon name={'xmark'} className={'h-3'} />
+  </Button>
+));
+
+export { Button, XButton, buttonVariants };

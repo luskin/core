@@ -6,7 +6,6 @@ import { Label, Paragraph } from '@/ui/components/typography';
 import { Button } from '@/ui/components/button';
 import { toast } from '@/ui/components/toaster';
 import { Grid } from '@/ui/layout/grid';
-import { ToastBase } from '@/ui/components/toaster/toast.base';
 import { ToastSuccess } from '@/ui/components/toaster/toast.success';
 import { ToastError } from '@/ui/components/toaster/toast.error';
 
@@ -25,7 +24,30 @@ export default function ToasterPage() {
         </Paragraph>
         <Label>Default toast</Label>
         <Grid numCols={2}>
-          <Button variant={'ghost'} onClick={() => toast('Default toast message')}>
+          <Button
+            variant={'ghost'}
+            onClick={() =>
+              toast.custom(
+                (id) => (
+                  <ToastSuccess
+                    description="This is a success message"
+                    title="Success"
+                    onClose={() => toast.dismiss(id)}
+                    actionButtons={[
+                      {
+                        variant: 'secondary',
+                        label: 'Action',
+                        onClick: () => console.log('Action clicked'),
+                      },
+                    ]}
+                  />
+                ),
+                {
+                  duration: 10000000,
+                }
+              )
+            }
+          >
             Default
           </Button>
 
@@ -34,29 +56,33 @@ export default function ToasterPage() {
           </Button>
         </Grid>
 
-        <ToastSuccess
-          description="This is a success message"
-          title="Success"
-          actionButtons={[
-            {
-              variant: 'secondary',
-              label: 'Action',
-              onClick: () => console.log('Action clicked'),
-            },
-          ]}
-        />
+        {/* <div className="w-[465px]">
+          <ToastSuccess
+            description="This is a success message"
+            title="Success"
+            actionButtons={[
+              {
+                variant: 'secondary',
+                label: 'Action',
+                onClick: () => console.log('Action clicked'),
+              },
+            ]}
+          />
+        </div>
 
-        <ToastError
-          description="This is an error message"
-          title="Error"
-          actionButtons={[
-            {
-              variant: 'secondary',
-              label: 'Action',
-              onClick: () => console.log('Action clicked'),
-            },
-          ]}
-        />
+        <div className="w-[465px]">
+          <ToastError
+            description="This is an error message"
+            title="Error"
+            actionButtons={[
+              {
+                variant: 'secondary',
+                label: 'Action',
+                onClick: () => console.log('Action clicked'),
+              },
+            ]}
+          />
+        </div> */}
 
         <ComponentPropsGrid
           params={[
