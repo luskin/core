@@ -22,41 +22,48 @@ export default function ToasterPage() {
           Note: Many toasts may be presented at once and can stack. Press the "Show toast" buttons several times then
           hover your mouse over the stack of notifications
         </Paragraph>
-        <Label>Default toast</Label>
+        <Label>Success toast</Label>
         <Grid numCols={2}>
           <Button
             variant={'ghost'}
             onClick={() =>
-              toast.custom(
-                (id) => (
-                  <ToastSuccess
-                    description="This is a success message"
-                    title="Success"
-                    onClose={() => toast.dismiss(id)}
-                    actionButtons={[
-                      {
-                        variant: 'secondary',
-                        label: 'Action',
-                        onClick: () => console.log('Action clicked'),
-                      },
-                    ]}
-                  />
-                ),
-                {
-                  duration: 10000000,
-                }
-              )
+              toast.success({
+                title: 'Success',
+                description: 'This is a success message',
+                actionButtons: [
+                  {
+                    variant: 'secondary',
+                    label: 'Action',
+                    onClick: () => console.log('Action clicked'),
+                  },
+                ],
+              })
             }
           >
             Default
           </Button>
 
-          <Button variant={'ghost'} onClick={() => toast.success('Success toast message')}>
-            Success
+          <Button
+            variant={'ghost'}
+            onClick={() =>
+              toast.error({
+                title: 'Error',
+                description: 'This is an error message',
+                actionButtons: [
+                  {
+                    variant: 'secondary',
+                    label: 'Action',
+                    onClick: () => console.log('Action clicked'),
+                  },
+                ],
+              })
+            }
+          >
+            Error
           </Button>
         </Grid>
 
-        {/* <div className="w-[465px]">
+        <div className="w-[465px]">
           <ToastSuccess
             description="This is a success message"
             title="Success"
@@ -82,7 +89,7 @@ export default function ToasterPage() {
               },
             ]}
           />
-        </div> */}
+        </div>
 
         <ComponentPropsGrid
           params={[

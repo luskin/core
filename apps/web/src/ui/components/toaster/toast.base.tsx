@@ -16,7 +16,6 @@ export interface ToastBaseProps {
   iconName?: IconName;
   iconClassName?: string;
   onClose?: () => void;
-  duration?: number;
   actionButtons?: Array<ToastActionButton>;
 }
 
@@ -27,7 +26,6 @@ export function ToastBase({
   description,
   descriptionClassName,
   onClose,
-  duration,
   actionButtons = [],
 }: ToastBaseProps) {
   return (
