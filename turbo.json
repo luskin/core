@@ -8,6 +8,10 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },
