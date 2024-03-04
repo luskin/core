@@ -29,7 +29,7 @@ export function ToastBase({
   actionButtons = [],
 }: ToastBaseProps) {
   return (
-    <Row gap={4} className={'w-full rounded-2xl p-4 shadow-lg'}>
+    <Row gap={4} className={'relative w-full rounded-2xl p-4 shadow-lg'}>
       {iconName && (
         <div className={cn(iconClassName, 'flex h-8 w-8 items-center justify-center rounded-lg')}>
           <Icon name={iconName} className="h-4" />
@@ -53,7 +53,7 @@ export function ToastBase({
           </Button>
         </Row>
       </Column>
-      <XButton onClick={onClose} />
+      <XButton onClick={onClose} align="top-right" />
     </Row>
   );
 }

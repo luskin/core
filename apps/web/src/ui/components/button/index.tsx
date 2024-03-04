@@ -79,7 +79,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cn(buttonVariants({ variant, size, className }), getButtonPadding(size, isIconOnly))}
+        className={cn(getButtonPadding(size, isIconOnly), buttonVariants({ variant, size, className }), className)}
         {...props}
       >
         {icon && <Icon name={icon} className={getIconClassName(size)} />}
@@ -90,15 +90,24 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = 'Button';
 
-const XButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => (
+type XButtonProps = ButtonProps & {
+  align?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+};
+
+const XButton = React.forwardRef<HTMLButtonElement, XButtonProps>(({ align, ...props }, ref) => (
   <Button
     ref={ref}
     variant={'colorless'}
-    className={cn('text-slate-8 hover:text-slate-6 transition-colors', props.className)}
+    className={cn(
+      'text-slate-8 hover:text-slate-6 px-1! w-8 transition-colors',
+      align === 'top-left' && 'items-start justify-start',
+      align === 'top-right' && 'items-start justify-end',
+      align === 'bottom-left' && 'items-end justify-start',
+      align === 'bottom-right' && 'items-end justify-end'
+    )}
+    icon="xmark"
     {...props}
-  >
-    <Icon name={'xmark'} className={'h-3'} />
-  </Button>
+  />
 ));
 
 export { Button, XButton, buttonVariants };
