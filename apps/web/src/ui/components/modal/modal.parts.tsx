@@ -47,16 +47,4 @@ const ModalContent = React.forwardRef<
 ));
 ModalContent.displayName = ModalPrimitive.Content.displayName;
 
-const ModalTitle = React.forwardRef<
-  React.ElementRef<typeof ModalPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof ModalPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <ModalPrimitive.Title
-    ref={ref}
-    className={cn('text-lg font-semibold leading-none tracking-tight', className)}
-    {...props}
-  />
-));
-ModalTitle.displayName = ModalPrimitive.Title.displayName;
-
 export { ModalPortal, ModalOverlay, ModalClose, ModalTrigger, ModalContent };
