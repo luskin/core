@@ -10,7 +10,7 @@ interface NotificationActionButton extends Pick<ButtonProps, 'variant' | 'classN
 
 export interface NotificationBaseProps {
   title: string;
-  description: string;
+  description?: string;
   descriptionClassName?: string;
   iconName?: IconName;
   iconClassName?: string;
@@ -28,19 +28,21 @@ export function NotificationBase({
   actionButtons = [],
 }: NotificationBaseProps) {
   return (
-    <Row gap={4} className={'relative w-full rounded-2xl p-4 shadow-lg'}>
+    <Row gap={4} className={'w-full rounded-2xl p-4 shadow-lg'}>
       {iconName && (
         <div className={cn(iconClassName, 'flex h-8 w-8 items-center justify-center rounded-lg')}>
           <Icon name={iconName} className="h-4" />
         </div>
       )}
       <Column className={'flex-1'}>
-        <Heading size={'sm'}>{title}</Heading>
-        {description && (
-          <Paragraph size={'lg'} className={cn('mt-2', descriptionClassName)}>
-            {description}
-          </Paragraph>
-        )}
+        <div className="flex h-8 w-full flex-col items-start justify-center">
+          <Heading size={'sm'}>{title}</Heading>
+          {description && (
+            <Paragraph size={'lg'} className={cn('mt-2', descriptionClassName)}>
+              {description}
+            </Paragraph>
+          )}
+        </div>
         <Row gap={2} className={'mt-5'}>
           {actionButtons.map(({ label, ...buttonProps }, index) => (
             <Button key={`${label}_${index}`} {...buttonProps}>

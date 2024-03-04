@@ -80,6 +80,19 @@ export default function NotificationPage() {
         </div>
 
         <div className="w-[465px]">
+          <NotificationSuccess
+            title="No description"
+            actionButtons={[
+              {
+                variant: 'secondary',
+                label: 'Action',
+                onClick: () => console.log('Action clicked'),
+              },
+            ]}
+          />
+        </div>
+
+        <div className="w-[465px]">
           <NotificationError
             description="This is an error message"
             title="Error"

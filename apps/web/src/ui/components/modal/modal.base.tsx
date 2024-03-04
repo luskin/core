@@ -48,8 +48,8 @@ const ModalBase = ({
   return (
     <Root {...props}>
       {trigger && <ModalTrigger asChild>{trigger}</ModalTrigger>}
-      <ModalContent onInteractOutside={onInteractOutside} className="rounded-2xl border-none shadow">
-        <Column className={'p-4'}>
+      <ModalContent onInteractOutside={onInteractOutside} className="rounded-2xl border-none p-6 shadow">
+        <Column>
           <Row gap={6} className={'w-full'} align="center">
             {iconName && (
               <div className={cn(iconClassName, 'flex h-10 w-10 items-center justify-center rounded-lg')}>
@@ -68,7 +68,7 @@ const ModalBase = ({
             </div>
           </Row>
           <div className="w-full flex-1 py-4">{children}</div>
-          <Row gap={2} className={'w-full'} justify="end">
+          <Row gap={4} className={'w-full'} justify="end">
             {!noCloseButton && (
               <ModalClose asChild>
                 <Button size="lg" variant="ghost" onClick={onClose}>
