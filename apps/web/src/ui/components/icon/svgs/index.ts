@@ -18,11 +18,13 @@ import userFlat from './user-flat';
 import checkmark from './checkmark';
 import exclamationPoint from './exclamation-point';
 import xmark from './xmark';
+import chatBubblesLeftRight from './chat-bubbles-left-right';
 
 export {
   alienShip,
   arrow,
   bell,
+  chatBubblesLeftRight,
   checkmark,
   claimsShield,
   exclamationPoint,
