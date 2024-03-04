@@ -79,7 +79,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cn(getButtonPadding(size, isIconOnly), buttonVariants({ variant, size, className }), className)}
+        className={cn(getButtonPadding(size, isIconOnly), buttonVariants({ variant, size, className }))}
         {...props}
       >
         {icon && <Icon name={icon} className={getIconClassName(size)} />}
@@ -94,7 +94,7 @@ type XButtonProps = ButtonProps & {
   align?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 };
 
-const XButton = React.forwardRef<HTMLButtonElement, XButtonProps>(({ align, ...props }, ref) => (
+const XButton = React.forwardRef<HTMLButtonElement, XButtonProps>(({ align, className, ...props }, ref) => (
   <Button
     ref={ref}
     variant={'colorless'}

@@ -4,39 +4,26 @@ import * as React from 'react';
 import { Root, DialogProps } from '@radix-ui/react-dialog';
 
 import { cn } from '@/lib/tailwind/utils';
-import { ModalClose, ModalContent, ModalTrigger } from './modal.parts';
-import { Column, Row } from '@/ui/layout/flex';
-import { Icon, IconName } from '../icon';
-import { Heading } from '../typography';
-import { Button, ButtonProps, XButton } from '../button';
+import { ModalClose, ModalContent, ModalRoot, ModalTrigger } from './modal.parts';
+import { XButton } from '../button';
 
 type ModalBaseProps = DialogProps & {
-  title?: string | React.ReactNode;
-  iconName?: IconName;
-  iconClassName?: string;
-  closeButtonLabel?: string;
+  contentClassName?: string;
   onClose?: () => void;
   trigger?: React.ReactNode;
   disableCloseOnClickOutside?: boolean;
-  noCloseButton?: boolean;
-  actionButtons?: Array<
-    Pick<ButtonProps, 'variant' | 'onClick'> & {
-      label: string;
-    }
-  >;
+  noCloseXButton?: boolean;
+  closeXButtonContainerClassName?: string;
 };
 
 const ModalBase = ({
   children,
-  iconName,
-  iconClassName,
-  title,
+  contentClassName,
   trigger,
-  actionButtons,
   disableCloseOnClickOutside,
-  closeButtonLabel = 'Close',
   onClose,
-  noCloseButton,
+  noCloseXButton,
+  closeXButtonContainerClassName,
   ...props
 }: ModalBaseProps) => {
   const onInteractOutside = (event: Event) => {
@@ -46,45 +33,22 @@ const ModalBase = ({
   };
 
   return (
-    <Root {...props}>
+    <ModalRoot {...props}>
       {trigger && <ModalTrigger asChild>{trigger}</ModalTrigger>}
-      <ModalContent onInteractOutside={onInteractOutside} className="rounded-2xl border-none p-6 shadow">
-        <Column>
-          <Row gap={6} className={'w-full'} align="center">
-            {iconName && (
-              <div className={cn(iconClassName, 'flex h-10 w-10 items-center justify-center rounded-lg')}>
-                <Icon name={iconName} className="h-4" />
-              </div>
-            )}
-            <div className="flex-1">
-              <Heading size={'md'} className="max-w-[310px]">
-                {title}
-              </Heading>
-            </div>
-            <div className="flex h-full items-start justify-end">
-              <ModalClose asChild>
-                <XButton align="top-right" />
-              </ModalClose>
-            </div>
-          </Row>
-          <div className="w-full flex-1 py-4">{children}</div>
-          <Row gap={4} className={'w-full'} justify="end">
-            {!noCloseButton && (
-              <ModalClose asChild>
-                <Button size="lg" variant="ghost" onClick={onClose}>
-                  {closeButtonLabel}
-                </Button>
-              </ModalClose>
-            )}
-            {actionButtons?.map(({ label, ...buttonProps }, index) => (
-              <Button key={`${label}_${index}`} size={'lg'} {...buttonProps}>
-                {label}
-              </Button>
-            ))}
-          </Row>
-        </Column>
+      <ModalContent
+        onInteractOutside={onInteractOutside}
+        className={cn('rounded-2xl border-none bg-white shadow', contentClassName)}
+      >
+        {children}
+        {!noCloseXButton && (
+          <div className={cn('absolute right-4 top-4 flex', closeXButtonContainerClassName)}>
+            <ModalClose asChild>
+              <XButton align="top-right" />
+            </ModalClose>
+          </div>
+        )}
       </ModalContent>
-    </Root>
+    </ModalRoot>
   );
 };
 

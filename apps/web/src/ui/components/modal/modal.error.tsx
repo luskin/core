@@ -1,9 +1,9 @@
-import { ModalBase, ModalBaseProps } from './modal.base';
+import { ModalDefault, ModalDefaultProps } from './modal.default';
 
-type ModalErrorProps = ModalBaseProps & {};
+type ModalErrorProps = ModalDefaultProps & {};
 
 const ModalError = (props: ModalErrorProps) => {
-  return <ModalBase iconName="exclamationPoint" iconClassName="bg-error-10 text-white" {...props} />;
+  return <ModalDefault iconName="exclamationPoint" iconClassName="bg-error-10 text-white" {...props} />;
 };
 
 export { ModalError };

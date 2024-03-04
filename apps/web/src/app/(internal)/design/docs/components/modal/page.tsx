@@ -4,7 +4,7 @@ import { ComponentPropsGrid } from '../component-props-grid';
 import { Button } from '@/ui/components/button';
 import { Grid } from '@/ui/layout/grid';
 import { Modal } from '@/ui/components/modal';
-import { Label } from '@/ui/components/typography';
+import { Label, Paragraph } from '@/ui/components/typography';
 import { notification } from '@/ui/components/notification';
 
 export default function ModalPage() {
@@ -65,6 +65,30 @@ export default function ModalPage() {
             <Label> - Content here</Label>
             <Label> ^ this area grows vertically with content</Label>
           </Modal.Default>
+
+          <Modal.Default noCloseButton={true} trigger={<Button variant={'tertiary'}>Empty modal</Button>}>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> - Content here</Label>
+            <Label> ^ this area grows vertically with content</Label>
+          </Modal.Default>
+
+          <Modal.Base trigger={<Button variant={'ghost'}>Custom content modal</Button>}>
+            <div className="bg-success-10 flex h-32 w-full items-center justify-center p-4">
+              <Label variant={'inverted'} size={'lg'}>
+                Completely custom content
+              </Label>
+            </div>
+            <div className="bg-warning-10 h-15 w-full p-4"></div>
+            <div className="bg-information-7 flex h-32 w-full items-center justify-center p-4">
+              <Paragraph>Anything can be put in a base modal</Paragraph>
+            </div>
+          </Modal.Base>
         </Grid>
 
         <ComponentPropsGrid
@@ -72,14 +96,26 @@ export default function ModalPage() {
             {
               name: 'title',
               type: 'string',
-              optional: false,
+              optional: true,
               description: 'The title of the modal',
             },
             {
               name: 'trigger',
               type: 'ReactNode',
-              optional: false,
-              description: 'The trigger element that opens the modal',
+              optional: true,
+              description: 'The trigger element that opens the modal (if not using controlled mode)',
+            },
+            {
+              name: 'open',
+              type: 'boolean',
+              optional: true,
+              description: 'When using controlled mode, this prop is used to set the modal as open',
+            },
+            {
+              name: 'onOpenChange',
+              type: 'function',
+              optional: true,
+              description: 'Callback function to execute when the modals open state changes',
             },
             {
               name: 'iconName',
@@ -92,6 +128,43 @@ export default function ModalPage() {
               type: 'string',
               optional: true,
               description: 'The class name to apply to the icon',
+            },
+            {
+              name: 'closeButtonLabel',
+              type: 'string',
+              optional: true,
+              description: 'The label to display on the close action button (not upper right X)',
+            },
+            {
+              name: 'noCloseButton',
+              type: 'boolean',
+              optional: true,
+              description: 'Whether to display the close action button (not upper right X)',
+            },
+            {
+              name: 'noCloseXButton',
+              type: 'boolean',
+              optional: true,
+              description: 'Whether to display the upper right X close button',
+            },
+            {
+              name: 'onClose',
+              type: 'function',
+              optional: true,
+              description: 'Callback function to execute when the modal is closed',
+            },
+            {
+              name: 'disableCloseOnClickOutside',
+              type: 'boolean',
+              optional: true,
+              description: 'Whether to disable closing the modal when clicking outside of it',
+            },
+            {
+              name: 'closeXButtonContainerClassName',
+              type: 'string',
+              optional: true,
+              description:
+                'The class name to apply to the container of the upper right X close button. For example, if you wanted it only 8px offset from top and right you would set this to "top-2 right-2"',
             },
             {
               name: 'actionButtons',

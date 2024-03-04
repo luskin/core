@@ -4,7 +4,8 @@ import * as React from 'react';
 import * as ModalPrimitive from '@radix-ui/react-dialog';
 
 import { cn } from '@/lib/tailwind/utils';
-import { XButton } from '../button';
+
+const ModalRoot = ModalPrimitive.Root;
 
 const ModalTrigger = ModalPrimitive.Trigger;
 
@@ -19,7 +20,7 @@ const ModalOverlay = React.forwardRef<
   <ModalPrimitive.Overlay
     ref={ref}
     className={cn(
-      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0  fixed inset-0 z-50 transform-gpu backdrop-blur supports-[backdrop-filter]:bg-black/30',
+      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0  fixed inset-0 z-50 transform-gpu supports-[backdrop-filter]:bg-black/20',
       className
     )}
     {...props}
@@ -47,4 +48,4 @@ const ModalContent = React.forwardRef<
 ));
 ModalContent.displayName = ModalPrimitive.Content.displayName;
 
-export { ModalPortal, ModalOverlay, ModalClose, ModalTrigger, ModalContent };
+export { ModalRoot, ModalPortal, ModalOverlay, ModalClose, ModalTrigger, ModalContent };

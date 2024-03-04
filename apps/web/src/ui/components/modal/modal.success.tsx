@@ -1,9 +1,9 @@
-import { ModalBase, ModalBaseProps } from './modal.base';
+import { ModalDefault, ModalDefaultProps } from './modal.default';
 
-type ModalSuccessProps = ModalBaseProps & {};
+type ModalSuccessProps = ModalDefaultProps & {};
 
 const ModalSuccess = (props: ModalSuccessProps) => {
-  return <ModalBase iconName="checkmark" iconClassName="bg-success-4 text-success-10" {...props} />;
+  return <ModalDefault iconName="checkmark" iconClassName="bg-success-4 text-success-10" {...props} />;
 };
 
 export { ModalSuccess };
