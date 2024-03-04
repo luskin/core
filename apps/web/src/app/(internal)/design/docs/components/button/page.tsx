@@ -90,9 +90,8 @@ export default function Page() {
               );
             })}
         </Row>
-        <Label>X Button</Label>
-        <XButton />
         <ComponentPropsGrid
+          label="Button Props"
           params={[
             {
               name: 'size',
@@ -123,6 +122,25 @@ export default function Page() {
               type: 'string',
               optional: true,
               description: 'The style variant of the button.',
+            },
+          ]}
+        />
+        <DesignComponentHeader
+          title="XButton"
+          description={
+            'XButton is a button with an X icon. It is used to close a modal or dismiss a notification. It is a convenience component that wraps the Button component.'
+          }
+        />
+        <XButton />
+        <ComponentPropsGrid
+          label="XButton Props (extends Button Props)"
+          params={[
+            {
+              name: 'align',
+              type: ['string'],
+              optional: true,
+              description:
+                'The alignment of the XButton in a 32x32 button. Defaults to center if not provided. Options are top-left, top-right, bottom-left, bottom-right.',
             },
           ]}
         />

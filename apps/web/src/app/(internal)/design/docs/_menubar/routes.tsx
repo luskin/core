@@ -40,6 +40,18 @@ export function createDesignMenuBarComponentRoutes(): Array<NavItemProps> {
       href: '/design/docs/components/icon',
     },
     {
+      label: 'Notification',
+      href: '/design/docs/components/notification',
+    },
+    {
+      label: 'Popover',
+      href: '/design/docs/components/popover',
+    },
+    {
+      label: 'Progress',
+      href: '/design/docs/components/progress',
+    },
+    {
       label: 'Radio',
       href: '/design/docs/components/radio',
     },
@@ -62,10 +74,6 @@ export function createDesignMenuBarComponentRoutes(): Array<NavItemProps> {
     {
       label: 'Tabs',
       href: '/design/docs/components/tabs',
-    },
-    {
-      label: 'Toaster',
-      href: '/design/docs/components/toaster',
     },
     {
       label: 'Toggle',

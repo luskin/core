@@ -1,8 +1,8 @@
-import { ToastBase, ToastBaseProps } from './toast.base';
+import { NotificationBase, NotificationBaseProps } from './notification.base';
 
-export function ToastError(props: ToastBaseProps) {
+export function NotificationError(props: NotificationBaseProps) {
   return (
-    <ToastBase
+    <NotificationBase
       iconName="exclamationPoint"
       iconClassName="bg-error-10 text-white"
       descriptionClassName={'text-error-11'}

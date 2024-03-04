@@ -2,24 +2,23 @@ import { Column, Row } from '@/ui/layout/flex';
 import { Heading, Paragraph } from '../typography';
 import { Button, ButtonProps, XButton } from '../button';
 import { Icon, IconName } from '../icon';
-import { MshpTheme } from '../../../../tailwind.config';
 import { cn } from '@/lib/tailwind/utils';
 
-interface ToastActionButton extends Pick<ButtonProps, 'variant' | 'className' | 'onClick'> {
+interface NotificationActionButton extends Pick<ButtonProps, 'variant' | 'className' | 'onClick'> {
   label: string | React.ReactNode;
 }
 
-export interface ToastBaseProps {
+export interface NotificationBaseProps {
   title: string;
   description: string;
   descriptionClassName?: string;
   iconName?: IconName;
   iconClassName?: string;
   onClose?: () => void;
-  actionButtons?: Array<ToastActionButton>;
+  actionButtons?: Array<NotificationActionButton>;
 }
 
-export function ToastBase({
+export function NotificationBase({
   title,
   iconName,
   iconClassName,
@@ -27,7 +26,7 @@ export function ToastBase({
   descriptionClassName,
   onClose,
   actionButtons = [],
-}: ToastBaseProps) {
+}: NotificationBaseProps) {
   return (
     <Row gap={4} className={'relative w-full rounded-2xl p-4 shadow-lg'}>
       {iconName && (

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { bodyFont, brandFont } from '@/lib/fonts';
-import ToastProvider from './_providers/toast.provider';
+import NotificationProvider from './_providers/toast.provider';
 
 export const metadata: Metadata = {
   title: 'Mothership',
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${brandFont.variable} ${bodyFont.variable} h-screen w-screen`}>
-        <ToastProvider>{children}</ToastProvider>
+        <NotificationProvider>{children}</NotificationProvider>
       </body>
     </html>
   );

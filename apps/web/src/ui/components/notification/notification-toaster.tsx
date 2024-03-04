@@ -2,9 +2,9 @@
 import { cn } from '@/lib/tailwind/utils';
 import { Toaster as Sonner } from 'sonner';
 
-type ToasterProps = React.ComponentProps<typeof Sonner>;
+type NotificationToasterProps = React.ComponentProps<typeof Sonner>;
 
-const Toaster = ({ ...props }: ToasterProps) => {
+const NotificationToaster = ({ ...props }: NotificationToasterProps) => {
   return (
     <Sonner
       className={cn(
@@ -23,4 +23,4 @@ const Toaster = ({ ...props }: ToasterProps) => {
   );
 };
 
-export { Toaster };
+export { NotificationToaster };

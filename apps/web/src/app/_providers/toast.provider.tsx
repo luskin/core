@@ -1,11 +1,11 @@
-import { Toaster } from '@/ui/components/toaster';
+import { NotificationToaster } from '@/ui/components/notification';
 import { PropsWithChildren } from 'react';
 
-export default function ToastProvider({ children }: PropsWithChildren) {
+export default function NotificationProvider({ children }: PropsWithChildren) {
   return (
     <>
       {children}
-      <Toaster />
+      <NotificationToaster />
     </>
   );
 }

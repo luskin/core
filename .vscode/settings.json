@@ -21,6 +21,7 @@
   "typescript.preferences.autoImportFileExcludePatterns": [
     "**/node_modules/@radix-ui/**",
     "**/node_modules/sonner/**",
-    "**/node_modules/lucide-react/**"
+    "**/node_modules/lucide-react/**",
+    "**/node_modules/react-day-picker/**"
   ]
 }

@@ -4,29 +4,29 @@ import { Column } from '@/ui/layout/flex';
 import { ComponentPropsGrid } from '../component-props-grid';
 import { Label, Paragraph } from '@/ui/components/typography';
 import { Button } from '@/ui/components/button';
-import { toast } from '@/ui/components/toaster';
+import { notification } from '@/ui/components/notification';
 import { Grid } from '@/ui/layout/grid';
-import { ToastSuccess } from '@/ui/components/toaster/toast.success';
-import { ToastError } from '@/ui/components/toaster/toast.error';
+import { NotificationSuccess } from '@/ui/components/notification/notification.success';
+import { NotificationError } from '@/ui/components/notification/notification.error';
 
-export default function ToasterPage() {
+export default function NotificationPage() {
   return (
     <>
       <DesignComponentHeader
-        title="Toast (Notification)"
-        description="A toast is a non-modal, unobtrusive window element used to display brief, auto-expiring windows of information to a user. Toasts are generally used to display notifications, alerts, or messages. They are often used to display notifications of new messages, updates, or other events."
+        title="Notification"
+        description="A notification is a non-modal, unobtrusive window element used to display brief, auto-expiring windows of information to a user. Notifications are generally used to display notifications, alerts, or messages. They are often used to display notifications of new messages, updates, or other events."
       />
 
       <Column gap={4} className="mt-8">
         <Paragraph>
-          Note: Many toasts may be presented at once and can stack. Press the "Show toast" buttons several times then
-          hover your mouse over the stack of notifications
+          Note: Many notifications may be presented at once and can stack. Press the "Show notification" buttons several
+          times then hover your mouse over the stack of notifications
         </Paragraph>
         <Grid numCols={2} gap={2}>
           <Button
             variant={'primary'}
             onClick={() =>
-              toast.success({
+              notification.success({
                 title: 'Success',
                 description: 'This is a success message',
                 actionButtons: [
@@ -45,7 +45,7 @@ export default function ToasterPage() {
           <Button
             variant={'destructive'}
             onClick={() =>
-              toast.error({
+              notification.error({
                 title: 'Error',
                 description: 'This is an error message',
                 actionButtons: [
@@ -63,10 +63,10 @@ export default function ToasterPage() {
         </Grid>
 
         <Label size={'lg'} className="mt-4">
-          Toasts
+          Notifications
         </Label>
         <div className="w-[465px]">
-          <ToastSuccess
+          <NotificationSuccess
             description="This is a success message"
             title="Success"
             actionButtons={[
@@ -80,7 +80,7 @@ export default function ToasterPage() {
         </div>
 
         <div className="w-[465px]">
-          <ToastError
+          <NotificationError
             description="This is an error message"
             title="Error"
             actionButtons={[
@@ -98,25 +98,25 @@ export default function ToasterPage() {
             {
               name: 'title',
               type: ['string'],
-              description: 'The title to display in the toast',
+              description: 'The title to display in the notification',
             },
             {
               name: 'description',
               type: 'object',
               optional: true,
-              description: 'The description to display in the toast',
+              description: 'The description to display in the notification',
             },
             {
               name: 'actionButtons',
               type: 'array',
               optional: true,
-              description: 'An array of action buttons (ButtonProps) to display in the toast',
+              description: 'An array of action buttons (ButtonProps) to display in the notification',
             },
             {
               name: 'duration',
               type: 'array',
               optional: true,
-              description: 'How long to display the toast in milliseconds',
+              description: 'How long to display the notification in milliseconds',
             },
           ]}
         />
