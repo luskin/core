@@ -12,17 +12,28 @@ export function MenuBar() {
     <Nav>
       <Column className={'w-full overflow-y-scroll'}>
         {routes.map((routeProps) => {
-          const isActive =
+          const routePropsHref = typeof routeProps.href === 'string' ? routeProps.href : routeProps.href.pathname;
+          const isActive = Boolean(
             currentPath === '/'
               ? currentPath === routeProps.href
-              : routeProps.href !== '/' && currentPath.startsWith(routeProps.href);
+              : routePropsHref && routePropsHref !== '/' && currentPath.startsWith(routePropsHref)
+          );
 
-          return <NavItem key={routeProps.href} {...routeProps} isActive={isActive} />;
+          return <NavItem key={routePropsHref} {...routeProps} isActive={isActive} />;
         })}
       </Column>
 
-      <Column className={'mt-auto'}>
-        <NavItem href="/help" label="Get help now" icon="chatBubblesLeftRight" />
+      <Column className={'mt-auto w-full'}>
+        <NavItem
+          href={{
+            pathname: currentPath,
+          }}
+          onClick={() => console.log('TODO: Get help clicked')}
+          label="Get help now"
+          icon="chatBubblesLeftRight"
+          isActive={true}
+          chevron
+        />
       </Column>
     </Nav>
   );

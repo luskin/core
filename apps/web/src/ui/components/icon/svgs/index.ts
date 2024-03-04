@@ -16,6 +16,7 @@ import trucks from './trucks';
 import truckSideRight from './truck-side-right';
 import userFlat from './user-flat';
 import checkmark from './checkmark';
+import chevronRight from './chevron-right';
 import exclamationPoint from './exclamation-point';
 import xmark from './xmark';
 import chatBubblesLeftRight from './chat-bubbles-left-right';
@@ -26,6 +27,7 @@ export {
   bell,
   chatBubblesLeftRight,
   checkmark,
+  chevronRight,
   claimsShield,
   exclamationPoint,
   exclamationPointSquare,
