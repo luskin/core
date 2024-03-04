@@ -40,6 +40,10 @@ export function createDesignMenuBarComponentRoutes(): Array<NavItemProps> {
       href: '/design/docs/components/icon',
     },
     {
+      label: 'Modal',
+      href: '/design/docs/components/modal',
+    },
+    {
       label: 'Notification',
       href: '/design/docs/components/notification',
     },
