@@ -70,6 +70,30 @@ export default function ModalPage() {
         <ComponentPropsGrid
           params={[
             {
+              name: 'title',
+              type: 'string',
+              optional: false,
+              description: 'The title of the modal',
+            },
+            {
+              name: 'trigger',
+              type: 'ReactNode',
+              optional: false,
+              description: 'The trigger element that opens the modal',
+            },
+            {
+              name: 'iconName',
+              type: 'string',
+              optional: true,
+              description: 'The name of the icon to display in the modal',
+            },
+            {
+              name: 'iconClassName',
+              type: 'string',
+              optional: true,
+              description: 'The class name to apply to the icon',
+            },
+            {
               name: 'actionButtons',
               type: 'array',
               optional: true,

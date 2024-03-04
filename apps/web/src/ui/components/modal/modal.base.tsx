@@ -71,13 +71,13 @@ const ModalBase = ({
           <Row gap={2} className={'w-full'} justify="end">
             {!noCloseButton && (
               <ModalClose asChild>
-                <Button size="md" variant="ghost" onClick={onClose}>
+                <Button size="lg" variant="ghost" onClick={onClose}>
                   {closeButtonLabel}
                 </Button>
               </ModalClose>
             )}
             {actionButtons?.map(({ label, ...buttonProps }, index) => (
-              <Button key={`${label}_${index}`} {...buttonProps}>
+              <Button key={`${label}_${index}`} size={'lg'} {...buttonProps}>
                 {label}
               </Button>
             ))}
