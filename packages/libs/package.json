@@ -4,13 +4,13 @@
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./src/index.d.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist",
     "src/**/*.d.ts"
   ],
   "dependencies": {
-    "@shared/utils": "*"
+    "@shared/utils": "workspace:*"
   },
   "scripts": {
     "build": "tsup && tsc --emitDeclarationOnly",

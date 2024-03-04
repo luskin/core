@@ -33,9 +33,9 @@
   },
   "devDependencies": {
     "@nestjs/schematics": "^10.1.1",
-    "@tooling/eslint": "*",
-    "@tooling/prettier": "*",
-    "@tooling/typescript": "*",
+    "@tooling/eslint": "workspace:*",
+    "@tooling/prettier": "workspace:*",
+    "@tooling/typescript": "workspace:*",
     "turbo": "^1.12.4"
   },
   "packageManager": "pnpm@8.14.3",
