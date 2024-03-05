@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 import { createDesignMenuBarComponentRoutes, createDesignMenuBarGeneralRoutes } from './routes';
 import { NavLabel } from '@/ui/components/nav/nav-label';
+import { stringUtils } from '@shared/utils';
 
 export default function DesignMenuBar() {
   const currentPath = usePathname();
@@ -15,13 +16,15 @@ export default function DesignMenuBar() {
       <Column className={'w-full overflow-y-scroll'}>
         <NavLabel>General</NavLabel>
         {generalRoutes.map((routeProps) => {
-          const isActive = currentPath.startsWith(routeProps.href);
-          return <NavItem key={routeProps.href} {...routeProps} isActive={isActive} />;
+          const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
+          const isActive = Boolean(routePropsHref && currentPath.startsWith(routePropsHref));
+          return <NavItem key={routePropsHref} {...routeProps} isActive={isActive} />;
         })}
         <NavLabel>Components</NavLabel>
         {componentRoutes.map((routeProps) => {
-          const isActive = currentPath.startsWith(routeProps.href);
-          return <NavItem key={routeProps.href} {...routeProps} isActive={isActive} />;
+          const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
+          const isActive = Boolean(routePropsHref && currentPath.startsWith(routePropsHref));
+          return <NavItem key={routePropsHref} {...routeProps} isActive={isActive} />;
         })}
       </Column>
     </Nav>
