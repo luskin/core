@@ -43,7 +43,7 @@ const ModalBase = ({
         {!noCloseXButton && (
           <div className={cn('absolute right-4 top-4 flex', closeXButtonContainerClassName)}>
             <ModalClose asChild>
-              <XButton align="top-right" />
+              <XButton align="top-right" onClick={onClose} />
             </ModalClose>
           </div>
         )}
