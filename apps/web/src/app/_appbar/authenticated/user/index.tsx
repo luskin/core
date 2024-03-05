@@ -1,6 +1,6 @@
-import { firebaseServer } from "@/lib/auth/firebase.server"
-import { AdminBoundary } from "@/ui/boundaries/admin.boundary"
-import { Button } from "@/ui/components/button"
+import { firebaseServer } from '@/lib/auth/firebase.server';
+import { AdminBoundary } from '@/ui/boundaries/admin.boundary';
+import { Button } from '@/ui/components/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,20 +8,19 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/ui/components/dropdown"
-import Link from "next/link"
+} from '@/ui/components/dropdown';
+import Link from 'next/link';
+import { SignOut } from './sign-out';
 
-export default async function UserDropdown() {
-  const user = await firebaseServer.getCurrentUser()
+export default async function User() {
+  const user = await firebaseServer.getCurrentUser();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={"ghost"} size={"md"} icon="userFlat" />
+        <Button variant={'ghost'} size={'md'} icon="userFlat" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>
-          {user?.displayName ?? user?.email ?? "Account"}
-        </DropdownMenuLabel>
+        <DropdownMenuLabel>{user?.displayName ?? user?.email ?? 'Account'}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem icon="userFlat">Profile</DropdownMenuItem>
         <DropdownMenuItem icon="paymentCard">Billing</DropdownMenuItem>
@@ -31,10 +30,7 @@ export default async function UserDropdown() {
           <DropdownMenuLabel>Admin</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <Link href="/design">
-            <DropdownMenuItem
-              icon="arrow"
-              description="Colors, components, typography... etc"
-            >
+            <DropdownMenuItem icon="arrow" description="Colors, components, typography... etc">
               Design System
             </DropdownMenuItem>
           </Link>
@@ -44,10 +40,8 @@ export default async function UserDropdown() {
           <DropdownMenuItem icon="plus">Acquisition</DropdownMenuItem>
           <DropdownMenuItem icon="bell">Actions</DropdownMenuItem>
         </AdminBoundary>
-        <DropdownMenuItem icon="logout" destructive className="mt-2">
-          Log out
-        </DropdownMenuItem>
+        <SignOut />
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

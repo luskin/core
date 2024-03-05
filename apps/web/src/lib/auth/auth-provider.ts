@@ -1,4 +1,5 @@
 export abstract class AuthProvider {
-  abstract signInWithGoogle(): Promise<boolean>
-  abstract signOut(): Promise<boolean>
+  abstract getRedirectResult(): Promise<boolean>;
+  abstract signInWithGoogle(): Promise<boolean>;
+  abstract signOut(): Promise<boolean>;
 }

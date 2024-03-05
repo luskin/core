@@ -3,7 +3,7 @@ import AppBarLayout from '../_layouts/app-bar.layout';
 import AppBar from '../_appbar';
 import MenuBarLayout from '../_layouts/menu-bar.layout';
 
-export default async function RootLayout({
+export default async function TMSLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

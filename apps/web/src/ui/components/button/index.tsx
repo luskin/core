@@ -79,10 +79,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cn(getButtonPadding(size, isIconOnly), buttonVariants({ variant, size, className }))}
+        className={cn(
+          getButtonPadding(size, isIconOnly),
+          buttonVariants({ variant, size, className }),
+          icon && 'space-x-4'
+        )}
         {...props}
       >
-        {icon && <Icon name={icon} className={getIconClassName(size)} />}
+        {icon && <Icon name={icon} className={cn(getIconClassName(size), !isIconOnly && 'mr-2')} />}
         {children}
       </Comp>
     );

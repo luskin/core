@@ -34,7 +34,7 @@ const ModalDefault = ({
   ...props
 }: ModalDefaultProps) => {
   return (
-    <ModalBase {...props} contentClassName={cn('p-6', props.contentClassName)}>
+    <ModalBase {...props} onClose={onClose} contentClassName={cn('p-6', props.contentClassName)}>
       <Column>
         <Row gap={6} className={'w-full'} align="center">
           {iconName && (
