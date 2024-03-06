@@ -4,17 +4,6 @@ import { firebaseClient } from './firebase.client';
 import { APIResponse } from '@/app/api/types/api.response';
 
 export class FirebaseAuthProvider extends AuthProvider {
-  async getRedirectResult(): Promise<boolean> {
-    try {
-      const response = await getRedirectResult(firebaseClient.auth);
-      console.log('The response from getRedirectResult is:', response);
-      return true;
-    } catch (error) {
-      console.error('Error getting redirect result', error);
-      return false;
-    }
-  }
-
   async signInWithGoogle(): Promise<boolean> {
     const provider = new GoogleAuthProvider();
 

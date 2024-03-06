@@ -1,18 +1,18 @@
-import "server-only"
+import 'server-only';
 
-import { cookies } from "next/headers"
+import { cookies } from 'next/headers';
 
-import { credential } from "firebase-admin"
-import { initializeApp, getApps, cert, App } from "firebase-admin/app"
-import { Auth, SessionCookieOptions, getAuth } from "firebase-admin/auth"
-import { config } from "@/config"
+import { credential } from 'firebase-admin';
+import { initializeApp, getApps, cert, App } from 'firebase-admin/app';
+import { Auth, SessionCookieOptions, getAuth } from 'firebase-admin/auth';
+import { serverConfig } from '@/config/server';
 
-const APP_NAME = "mothership-frontend-nextjs-app"
+const APP_NAME = 'mothership-frontend-nextjs-app';
 
 class FirebaseServerStatic {
-  private _app: App
+  private _app: App;
 
-  private _auth: Auth
+  private _auth: Auth;
 
   public constructor() {
     this._app =
@@ -20,66 +20,63 @@ class FirebaseServerStatic {
       initializeApp(
         {
           credential: credential.cert({
-            projectId: config.firebaseAdmin.projectId,
-            clientEmail: config.firebaseAdmin.clientEmail,
-            privateKey: config.firebaseAdmin.privateKey,
+            projectId: serverConfig.firebaseAdmin.projectId,
+            clientEmail: serverConfig.firebaseAdmin.clientEmail,
+            privateKey: serverConfig.firebaseAdmin.privateKey,
           }),
         },
         APP_NAME
-      )
-    this._auth = getAuth(this._app)
+      );
+    this._auth = getAuth(this._app);
   }
 
   public get auth() {
-    return this._auth
+    return this._auth;
   }
 
   async getSession() {
     try {
-      return cookies().get("__session")?.value
+      return cookies().get('__session')?.value;
     } catch (error) {
-      return undefined
+      return undefined;
     }
   }
 
   async isUserAuthenticated(session: string | undefined = undefined) {
-    const _session = session ?? (await this.getSession())
-    if (!_session) return false
+    const _session = session ?? (await this.getSession());
+    if (!_session) return false;
 
     try {
-      const isRevoked = !(await this._auth.verifySessionCookie(_session, true))
-      return !isRevoked
+      const isRevoked = !(await this._auth.verifySessionCookie(_session, true));
+      return !isRevoked;
     } catch (error) {
-      console.log(error)
-      return false
+      console.log(error);
+      return false;
     }
   }
 
   async getCurrentUser() {
-    const session = await this.getSession()
+    const session = await this.getSession();
 
     if (!(await this.isUserAuthenticated(session))) {
-      return null
+      return null;
     }
 
-    const decodedIdToken = await this._auth.verifySessionCookie(session!)
-    const currentUser = await this._auth.getUser(decodedIdToken.uid)
+    const decodedIdToken = await this._auth.verifySessionCookie(session!);
+    const currentUser = await this._auth.getUser(decodedIdToken.uid);
 
-    return currentUser
+    return currentUser;
   }
 
-  async createSessionCookie(
-    idToken: string,
-    sessionCookieOptions: SessionCookieOptions
-  ) {
-    return this._auth.createSessionCookie(idToken, sessionCookieOptions)
+  async createSessionCookie(idToken: string, sessionCookieOptions: SessionCookieOptions) {
+    return this._auth.createSessionCookie(idToken, sessionCookieOptions);
   }
 
   async revokeAllSessions(session: string) {
-    const decodedIdToken = await this._auth.verifySessionCookie(session)
+    const decodedIdToken = await this._auth.verifySessionCookie(session);
 
-    return await this._auth.revokeRefreshTokens(decodedIdToken.sub)
+    return await this._auth.revokeRefreshTokens(decodedIdToken.sub);
   }
 }
 
-export const firebaseServer = new FirebaseServerStatic()
+export const firebaseServer = new FirebaseServerStatic();

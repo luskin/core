@@ -229,6 +229,9 @@ importers:
       '@tooling/prettier':
         specifier: workspace:*
         version: link:../../tooling/prettier
+      '@types/google.accounts':
+        specifier: ^0.0.14
+        version: 0.0.14
       '@types/node':
         specifier: ^20
         version: 20.11.20
@@ -4127,6 +4130,10 @@ packages:
     dependencies:
       '@types/minimatch': 5.1.2
       '@types/node': 20.11.20
+    dev: true
+
+  /@types/google.accounts@0.0.14:
+    resolution: {integrity: sha512-HqIVkVzpiLWhlajhQQd4rIV7czanFvXblJI2J1fSrL+VKQuQwwZ63m35D/mI0flsqKE6p/hNrAG0Yn4FD6JvNA==}
     dev: true
 
   /@types/graceful-fs@4.1.9:
