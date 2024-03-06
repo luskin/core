@@ -3,7 +3,6 @@ import { Column } from '@/ui/layout/flex';
 import { Button } from '../../components/button';
 import Script from 'next/script';
 import { auth } from '@/lib/auth/auth';
-import { firebaseClient } from '@/lib/auth/firebase.client';
 
 interface LoginProps {}
 
@@ -14,14 +13,7 @@ export function Login(_props: LoginProps) {
       <Button variant={'secondary'} size={'lg'} icon="plus" className="w-full" onClick={auth.signInWithGoogle}>
         Sign in with Google
       </Button>
-      <Button
-        variant={'secondary'}
-        size={'lg'}
-        icon="plus"
-        className="mt-2 w-full"
-        disabled
-        onClick={firebaseClient.signInWithMicrosoft}
-      >
+      <Button variant={'secondary'} size={'lg'} icon="plus" className="mt-2 w-full" onClick={auth.signInWithMicrosoft}>
         Sign in with Microsoft
       </Button>
     </Column>
