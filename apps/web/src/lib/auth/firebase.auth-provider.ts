@@ -1,19 +1,32 @@
-import { GoogleAuthProvider, OAuthProvider, getRedirectResult, signInWithRedirect } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  OAuthProvider,
+  Unsubscribe,
+  UserCredential,
+  getRedirectResult,
+  signInWithRedirect,
+} from 'firebase/auth';
 import { AuthProvider } from './auth-provider';
 import { firebaseClient } from './firebase.client';
 import { APIResponse } from '@/app/api/types/api.response';
 
 export class FirebaseAuthProvider extends AuthProvider {
-  async signInWithGoogle(): Promise<boolean> {
+  async signInWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
-    await signInWithRedirect(firebaseClient.auth, provider);
-    return true;
+    signInWithRedirect(firebaseClient.auth, provider);
   }
 
-  async signInWithMicrosoft(): Promise<boolean> {
+  async signInWithMicrosoft(): Promise<void> {
     const provider = new OAuthProvider('microsoft.com');
     signInWithRedirect(firebaseClient.auth, provider);
-    return true;
+  }
+
+  onAuthStateChange(callback: (user: any) => void): Unsubscribe {
+    return firebaseClient.auth.onAuthStateChanged(callback);
+  }
+
+  async getRedirectResult(): Promise<UserCredential | null> {
+    return await getRedirectResult(firebaseClient.auth);
   }
 
   async signOut(): Promise<boolean> {
