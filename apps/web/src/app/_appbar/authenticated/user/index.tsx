@@ -1,4 +1,4 @@
-import { firebaseServer } from '@/lib/auth/firebase.server';
+'use client';
 import { AdminBoundary } from '@/ui/boundaries/admin.boundary';
 import { Button } from '@/ui/components/button';
 import {
@@ -11,16 +11,17 @@ import {
 } from '@/ui/components/dropdown';
 import Link from 'next/link';
 import { SignOut } from './sign-out';
+import { useSession } from '@/app/(auth)/_hooks';
 
-export default async function User() {
-  const user = await firebaseServer.getCurrentUser();
+export default function User() {
+  const session = useSession();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={'ghost'} size={'md'} icon="userFlat" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>{user?.displayName ?? user?.email ?? 'Account'}</DropdownMenuLabel>
+        <DropdownMenuLabel>{session?.displayName ?? session?.email ?? 'Account'}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem icon="userFlat">Profile</DropdownMenuItem>
         <DropdownMenuItem icon="paymentCard">Billing</DropdownMenuItem>

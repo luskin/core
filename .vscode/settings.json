@@ -22,6 +22,7 @@
     "**/node_modules/@radix-ui/**",
     "**/node_modules/sonner/**",
     "**/node_modules/lucide-react/**",
-    "**/node_modules/react-day-picker/**"
+    "**/node_modules/react-day-picker/**",
+    "**/node_modules/next/router/**"
   ]
 }

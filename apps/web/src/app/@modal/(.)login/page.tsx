@@ -1,6 +1,5 @@
 'use client';
-import { auth } from '@/lib/auth/auth';
-import { Button } from '@/ui/components/button';
+
 import { Modal } from '@/ui/components/modal';
 import { Login } from '@/ui/containers/auth/login';
 import { useRouter } from 'next/navigation';

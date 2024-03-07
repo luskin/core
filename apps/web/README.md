@@ -1,30 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TMS Core
 
 ## Getting Started
 
-First, run the development server:
+First, run the development server from project root:
 
 ```bash
-pnpm dev
+pnpm dev:web
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔒 Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Authentication is provided by Firbase. In order to utilize both client and server rendering strategies, we use the firebase client package as well as store an http authentication JWT session which we can use for server rendered pages. Please utilize one of the following strategies to retrieve authentication:
 
-## Learn More
+### Client side
 
-To learn more about Next.js, take a look at the following resources:
+For client side authentication, you should utilize the `useSession` hook from [`@/(auth)/_hooks`](<./src/app/(auth)/_hooks/use-session.tsx>)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Server side
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For server side authentication, you should utilize the `getSession()` method from [`@/lib/auth/auth.session.ts`](./src/lib/auth/auth.session.ts)

@@ -1,15 +1,9 @@
-import { Button } from '@/ui/components/button';
-import Link from 'next/link';
+'use client';
+
+import { useSession } from '@/app/(auth)/_hooks';
 
 export default function Billing() {
-  return (
-    <div>
-      <Link href="/login">
-        <Button variant={'ghost'} icon="userFlat">
-          Sign in
-        </Button>
-      </Link>
-      Billing
-    </div>
-  );
+  const session = useSession();
+
+  return <div>Billing for {session?.displayName ?? 'Unknown user'}</div>;
 }

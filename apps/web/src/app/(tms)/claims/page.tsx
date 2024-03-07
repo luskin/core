@@ -1,3 +1,7 @@
-export default function Claims() {
-  return <div>Claims</div>
+import { getSession } from '@/lib/auth/auth.session';
+
+export default async function Claims() {
+  const session = await getSession();
+
+  return <div>Claims</div>;
 }

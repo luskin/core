@@ -1,9 +1,13 @@
 import { Heading, Paragraph } from '@/ui/components/typography';
+import TestComponent from './tester';
+import { getSession } from '@/lib/auth/auth.session';
 
-export default function QuotePage() {
+export default async function QuotePage() {
+  const session = await getSession();
   return (
     <main>
-      <Heading size="xl">Quote and compare rates instantly</Heading>
+      <Heading size="xl">Hello, {session ? session.displayName : 'unauthed user'}</Heading>
+      <TestComponent />
       <Paragraph size={'lg'} variant={'secondary'} className="mt-4">
         Compare rates from top carriers all in one place
       </Paragraph>
