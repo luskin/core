@@ -1,6 +1,9 @@
 import { Login } from '@/ui/containers/auth/login';
 import { Heading } from '@/ui/components/typography';
 import { Column } from '@/ui/layout/flex';
+import { cookies } from 'next/headers';
+import { Cookies } from '@shared/types';
+import { redirect } from 'next/navigation';
 
 export default function SignInPage() {
   return (
