@@ -2,8 +2,9 @@ import { User } from '@/app/_providers/auth.context';
 import { Tokens, getTokens } from 'next-firebase-auth-edge';
 import { filterStandardClaims } from 'next-firebase-auth-edge/lib/auth/claims';
 import { cookies } from 'next/headers';
+import { firebaseAuthMiddleware } from './auth.middleware';
 
-const toUser = ({ decodedToken }: Tokens): User => {
+const toUser = ({ token, decodedToken }: Tokens): User => {
   const {
     uid,
     email,
@@ -25,20 +26,18 @@ const toUser = ({ decodedToken }: Tokens): User => {
     emailVerified: emailVerified ?? false,
     providerId: signInProvider,
     customClaims,
+    token,
   };
 };
 
 export async function session(): Promise<User | null> {
   const tokens = await getTokens(cookies(), {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY as string,
-    cookieName: 'AuthToken',
-    cookieSignatureKeys: [process.env.AUTH_SECRET as string, 'secret2'],
-    serviceAccount: {
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID as string,
-      clientEmail: process.env.NEXT_PUBLIC_FIREBASE_CLIENT_EMAIL as string,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY as string,
-    },
+    apiKey: firebaseAuthMiddleware.apiKey,
+    cookieName: firebaseAuthMiddleware.cookieName,
+    cookieSignatureKeys: firebaseAuthMiddleware.cookieSignatureKeys,
+    serviceAccount: firebaseAuthMiddleware.serviceAccount,
   });
+
   const session = tokens ? toUser(tokens) : null;
   return session;
 }

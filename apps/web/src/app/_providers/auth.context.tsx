@@ -5,6 +5,7 @@ import { Claims } from 'next-firebase-auth-edge/lib/auth/claims';
 export interface User extends UserInfo {
   emailVerified: boolean;
   customClaims: Claims;
+  token: string;
 }
 
 export interface AuthContextValue {

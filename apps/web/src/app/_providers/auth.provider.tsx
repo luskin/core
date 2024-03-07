@@ -4,7 +4,7 @@ import * as React from 'react';
 import { IdTokenResult, User as FirebaseUser } from 'firebase/auth';
 import { filterStandardClaims } from 'next-firebase-auth-edge/lib/auth/claims';
 import { AuthContext, User } from './auth.context';
-import { firebaseClient } from '@/lib/auth/firebase.client';
+import { auth } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
 
 export interface AuthProviderProps {
@@ -15,6 +15,7 @@ export interface AuthProviderProps {
 function toUser(user: FirebaseUser, idTokenResult: IdTokenResult): User {
   return {
     ...user,
+    token: idTokenResult.token,
     customClaims: filterStandardClaims(idTokenResult.claims),
   };
 }
@@ -40,12 +41,12 @@ export const AuthProvider: React.FunctionComponent<AuthProviderProps> = ({ serve
 
     // Removes authenticated user cookies
     await fetch('/api/logout');
-
     setUser(null);
+    router.refresh();
   };
 
   React.useEffect(() => {
-    return firebaseClient.auth.onIdTokenChanged(handleIdTokenChanged);
+    return auth.onIdTokenChanged(handleIdTokenChanged);
   }, []);
 
   return (

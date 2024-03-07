@@ -6,6 +6,7 @@ import { cn } from '@/lib/tailwind/utils';
 import { Icon, IconName } from '../icon';
 import { headingVariants } from '../typography/heading';
 import { labelVariants } from '../typography/label';
+import { Spinner, SpinnerProps } from '../spinner';
 
 const DEFAULT_BUTTON_SIZE = 'md';
 
@@ -40,6 +41,7 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   icon?: IconName;
+  loading?: boolean;
 }
 
 const getIconClassName = (size: VariantProps<typeof buttonVariants>['size']) => {
@@ -72,8 +74,23 @@ const getButtonPadding = (size: VariantProps<typeof buttonVariants>['size'], isI
   }
 };
 
+const getSpinnerSize = (size: VariantProps<typeof buttonVariants>['size']): SpinnerProps['size'] => {
+  switch (size) {
+    case 'lg':
+      return 'md';
+    case 'md':
+      return 'sm';
+    case 'sm':
+      return 'xs';
+    case 'xs':
+      return 'xs';
+    default:
+      throw new Error(`Invalid button size: ${size}`);
+  }
+};
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, icon, variant, size = DEFAULT_BUTTON_SIZE, asChild = false, ...props }, ref) => {
+  ({ className, children, icon, variant, loading, size = DEFAULT_BUTTON_SIZE, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
     const isIconOnly = Boolean(!children && icon);
     return (
@@ -82,12 +99,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           getButtonPadding(size, isIconOnly),
           buttonVariants({ variant, size, className }),
-          icon && 'space-x-4'
+          icon && 'space-x-4',
+          loading && 'cursor-wait text-opacity-0'
         )}
         {...props}
       >
         {icon && <Icon name={icon} className={cn(getIconClassName(size), !isIconOnly && 'mr-2')} />}
         {children}
+        {loading && (
+          <div className="absolute flex h-full w-full items-center justify-center">
+            <Spinner size={getSpinnerSize(size)} />
+          </div>
+        )}
       </Comp>
     );
   }

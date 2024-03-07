@@ -35,6 +35,7 @@
     "react": "^18",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18",
+    "react-use": "^17.5.0",
     "sonner": "^1.4.3",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
@@ -42,7 +43,6 @@
   },
   "devDependencies": {
     "@tooling/prettier": "workspace:*",
-    "@types/google.accounts": "^0.0.14",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

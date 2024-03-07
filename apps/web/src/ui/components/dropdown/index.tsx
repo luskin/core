@@ -7,8 +7,9 @@ import { Check, ChevronRight, Circle } from 'lucide-react';
 import { cn } from '@/lib/tailwind/utils';
 import { labelVariants } from '../typography/label';
 import { Icon, IconName } from '../icon';
-import { Column } from '@/ui/layout/flex';
+import { Column, Row } from '@/ui/layout/flex';
 import { Paragraph } from '../typography';
+import { Spinner } from '../spinner';
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
@@ -83,8 +84,9 @@ const DropdownMenuItem = React.forwardRef<
     icon?: IconName;
     destructive?: boolean;
     description?: string | React.ReactNode;
+    loading?: boolean;
   }
->(({ className, inset, icon, description, destructive, children, ...props }, ref) => (
+>(({ className, inset, icon, description, loading, destructive, children, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
@@ -98,14 +100,17 @@ const DropdownMenuItem = React.forwardRef<
   >
     {icon && <Icon name={icon} className="mr-3 h-3" />}
     <Column gap={2}>
-      <div
-        className={labelVariants({
-          size: 'lg',
-          variant: destructive ? 'destructive' : 'primary',
-        })}
-      >
-        {children}
-      </div>
+      <Row gap={2} align="start" justify="center">
+        <div
+          className={labelVariants({
+            size: 'lg',
+            variant: destructive ? 'destructive' : 'primary',
+          })}
+        >
+          {children}
+        </div>
+        {loading && <Spinner size="xs" className="ml-auto" />}
+      </Row>
       {description && (
         <Paragraph size={'md'} variant={'secondary'}>
           {description}
