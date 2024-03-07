@@ -1,19 +1,15 @@
-'use client';
+// 'use client';
 import { DropdownMenuItem } from '@/ui/components/dropdown';
-import { signOut } from 'next-auth/react';
+import Link from 'next/link';
 
 interface SignOutProps {}
 
 export function SignOut(_props: SignOutProps) {
-  const onSignOut = () => {
-    signOut({
-      callbackUrl: '/',
-    });
-  };
-
   return (
-    <DropdownMenuItem icon="logout" destructive className="mt-2" onClick={onSignOut}>
-      Log out
-    </DropdownMenuItem>
+    <Link href="/logout">
+      <DropdownMenuItem icon="logout" destructive className="mt-2">
+        Log out
+      </DropdownMenuItem>
+    </Link>
   );
 }

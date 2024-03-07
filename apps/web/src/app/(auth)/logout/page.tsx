@@ -1,19 +1,27 @@
-import { signOut } from '@/lib/next-auth';
+'use client';
+import { firebaseClient } from '@/lib/auth/firebase.client';
 import { Button } from '@/ui/components/button';
-import { redirect } from 'next/navigation';
+import { Spinner } from '@/ui/components/spinner';
+import { signOut } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
-export default async function SignOutPage() {
+export default function SignOutPage() {
+  const [isSigningOut, setIsSigningOut] = useState(false);
+  const router = useRouter();
+  async function onSignOut() {
+    setIsSigningOut(true);
+    await signOut(firebaseClient.auth);
+    await fetch('/api/logout');
+    setIsSigningOut(false);
+    router.refresh();
+  }
+
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <form
-        action={async () => {
-          'use server';
-          await signOut();
-          await redirect('/');
-        }}
-      >
-        <Button type="submit">Sign out</Button>
-      </form>
+      <Button onClick={onSignOut} size={'lg'}>
+        {isSigningOut ? <Spinner /> : <>Sign out</>}
+      </Button>
     </div>
   );
 }

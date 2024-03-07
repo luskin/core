@@ -1,15 +1,6 @@
-import { Button } from '@/ui/components/button';
-import Link from 'next/link';
-
+'use client';
+import { useAuth } from '@/app/_providers/auth.context';
 export default function Billing() {
-  return (
-    <div>
-      <Link href="/login">
-        <Button variant={'ghost'} icon="userFlat">
-          Sign in
-        </Button>
-      </Link>
-      Billing
-    </div>
-  );
+  const { user } = useAuth();
+  return <div>Billing for {user?.displayName ?? 'Unknown user'}</div>;
 }

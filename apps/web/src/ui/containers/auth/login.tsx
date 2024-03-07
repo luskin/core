@@ -3,14 +3,21 @@ import { signIn } from 'next-auth/react';
 import { Column } from '@/ui/layout/flex';
 import { Button } from '../../components/button';
 import Script from 'next/script';
+import { GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword, signInWithRedirect } from 'firebase/auth';
+import { firebaseClient } from '@/lib/auth/firebase.client';
 
 interface LoginProps {}
 
 export function Login(_props: LoginProps) {
-  const onClick = (provider: 'google' | 'microsoft') => {
-    signIn(provider, {
-      callbackUrl: '/',
-    });
+  const onClick = async (provider: 'google' | 'microsoft') => {
+    // signIn(provider, {
+    //   callbackUrl: '/',
+    // });
+    await signInWithRedirect(
+      firebaseClient.auth,
+      provider === 'google' ? new GoogleAuthProvider() : new OAuthProvider('microsoft.com')
+    );
+    // await signInWithEmailAndPassword(firebaseClient.auth, 'gregg@mothership.com', 'testing');
   };
 
   return (

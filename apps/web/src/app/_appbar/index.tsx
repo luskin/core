@@ -1,10 +1,10 @@
+'use client';
 import { Header } from '@/ui/layout/header';
 import { AuthenticatedAppBar } from './authenticated';
 import { UnauthenticatedAppBar } from './unauthenticated';
-import { auth } from '@/lib/next-auth';
+import { useAuth } from '../_providers/auth.context';
 
-export default async function AppBar() {
-  const session = await auth();
-
-  return <Header>{session ? <AuthenticatedAppBar /> : <UnauthenticatedAppBar />}</Header>;
+export default function AppBar() {
+  const { user } = useAuth();
+  return <Header>{user ? <AuthenticatedAppBar /> : <UnauthenticatedAppBar />}</Header>;
 }
