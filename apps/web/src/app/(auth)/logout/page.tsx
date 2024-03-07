@@ -1,28 +1,19 @@
-"use client"
+import { signOut } from '@/lib/next-auth';
+import { Button } from '@/ui/components/button';
+import { redirect } from 'next/navigation';
 
-import { Column } from "@/ui/layout/flex"
-import { Button } from "@/ui/components/button"
-import { Heading } from "@/ui/components/typography"
-import { auth } from "@/lib/auth/auth"
-import { useRouter } from "next/navigation"
-
-export default function SignOutPage() {
-  const router = useRouter()
-
-  async function handleSignOut() {
-    const isOk = await auth.signOut()
-
-    if (isOk) router.push("/sign-in")
-  }
-
+export default async function SignOutPage() {
   return (
-    <div className="w-full">
-      <Column gap={2}>
-        <Heading size="xl">Sign out</Heading>
-        <Button variant="primary" onClick={handleSignOut}>
-          Sign out of session
-        </Button>
-      </Column>
+    <div className="flex h-full w-full items-center justify-center">
+      <form
+        action={async () => {
+          'use server';
+          await signOut();
+          await redirect('/');
+        }}
+      >
+        <Button type="submit">Sign out</Button>
+      </form>
     </div>
-  )
+  );
 }

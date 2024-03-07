@@ -1,9 +1,11 @@
+import { auth } from '@/lib/next-auth';
 import { Heading, Paragraph } from '@/ui/components/typography';
 
-export default function QuotePage() {
+export default async function QuotePage() {
+  const session = await auth();
   return (
     <main>
-      <Heading size="xl">Quote and compare rates instantly</Heading>
+      <Heading size="xl">Hello, {session?.user?.name ?? 'User'}</Heading>
       <Paragraph size={'lg'} variant={'secondary'} className="mt-4">
         Compare rates from top carriers all in one place
       </Paragraph>

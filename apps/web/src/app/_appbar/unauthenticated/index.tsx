@@ -2,8 +2,6 @@
 import Link from 'next/link';
 import { Row } from '../../../ui/layout/flex';
 import { Button } from '@/ui/components/button';
-import { Modal } from '@/ui/components/modal';
-import { auth } from '@/lib/auth/auth';
 
 interface UnauthenticatedHeaderActionsProps {}
 

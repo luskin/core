@@ -1,11 +1,10 @@
 import { Header } from '@/ui/layout/header';
-import { firebaseServer } from '@/lib/auth/firebase.server';
 import { AuthenticatedAppBar } from './authenticated';
 import { UnauthenticatedAppBar } from './unauthenticated';
+import { auth } from '@/lib/next-auth';
 
 export default async function AppBar() {
-  const user = await firebaseServer.getCurrentUser();
-  const authenticated = Boolean(user);
+  const session = await auth();
 
-  return <Header>{authenticated ? <AuthenticatedAppBar /> : <UnauthenticatedAppBar />}</Header>;
+  return <Header>{session ? <AuthenticatedAppBar /> : <UnauthenticatedAppBar />}</Header>;
 }

@@ -1,20 +1,19 @@
-import NotFound from "@/app/not-found"
-import { firebaseServer } from "@/lib/auth/firebase.server"
-import { redirect } from "next/navigation"
-import { PropsWithChildren } from "react"
+import { auth } from '@/lib/next-auth';
+import { redirect } from 'next/navigation';
+import { PropsWithChildren } from 'react';
 
 interface AdminBoundaryProps extends PropsWithChildren {
-  redirectOnFailHref?: string
+  redirectOnFailHref?: string;
 }
 
 export async function AdminBoundary(props: AdminBoundaryProps) {
-  const { children, redirectOnFailHref } = props
-  const user = await firebaseServer.getCurrentUser()
-  if (user?.email?.endsWith("@mothership.com")) {
-    return <>{children}</>
+  const { children, redirectOnFailHref } = props;
+  const session = await auth();
+  if (session?.user?.email?.endsWith('@mothership.com')) {
+    return <>{children}</>;
   } else {
     if (redirectOnFailHref) {
-      redirect(redirectOnFailHref)
+      redirect(redirectOnFailHref);
     }
   }
 }
