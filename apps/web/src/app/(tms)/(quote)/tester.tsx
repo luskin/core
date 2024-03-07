@@ -1,13 +1,14 @@
 'use client';
-import { useAuth } from '@/app/_providers/auth.context';
+
+import { useSession } from '@/app/(auth)/_hooks';
 
 export default function TestComponent() {
-  const auth = useAuth();
+  const session = useSession();
 
   return (
     <div>
       <h1>Test Component</h1>
-      <p>{auth.user?.email}</p>
+      <p>{session?.email}</p>
     </div>
   );
 }

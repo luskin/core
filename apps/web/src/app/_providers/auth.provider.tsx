@@ -3,27 +3,31 @@
 import * as React from 'react';
 import { IdTokenResult, User as FirebaseUser } from 'firebase/auth';
 import { filterStandardClaims } from 'next-firebase-auth-edge/lib/auth/claims';
-import { AuthContext, User } from './auth.context';
 import { auth } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
+import { Session, SessionUser } from '@/lib/auth/auth.session';
 
-export interface AuthProviderProps {
-  serverUser: User | null;
-  children: React.ReactNode;
-}
-
-function toUser(user: FirebaseUser, idTokenResult: IdTokenResult): User {
+function toSessionUser(user: FirebaseUser, idTokenResult: IdTokenResult): SessionUser {
   return {
     ...user,
     token: idTokenResult.token,
     customClaims: filterStandardClaims(idTokenResult.claims),
   };
 }
+export interface AuthProviderProps {
+  initialSession: Session;
+  children: React.ReactNode;
+}
 
-export const AuthProvider: React.FunctionComponent<AuthProviderProps> = ({ serverUser, children }) => {
+export const AuthContext = React.createContext<SessionUser | null>(null);
+
+export const AuthProvider: React.FunctionComponent<AuthProviderProps> = ({ initialSession, children }) => {
   const router = useRouter();
-  const [user, setUser] = React.useState(serverUser);
+  const [session, setSession] = React.useState(initialSession);
 
+  /**
+   * Whenever the user's auth token changes, this function is called.
+   */
   const handleIdTokenChanged = async (firebaseUser: FirebaseUser | null) => {
     if (firebaseUser) {
       const idTokenResult = await firebaseUser.getIdTokenResult();
@@ -35,13 +39,13 @@ export const AuthProvider: React.FunctionComponent<AuthProviderProps> = ({ serve
         },
       });
 
-      setUser(toUser(firebaseUser, idTokenResult));
+      setSession(toSessionUser(firebaseUser, idTokenResult));
       return;
     }
 
     // Removes authenticated user cookies
     await fetch('/api/logout');
-    setUser(null);
+    setSession(null);
     router.refresh();
   };
 
@@ -49,13 +53,5 @@ export const AuthProvider: React.FunctionComponent<AuthProviderProps> = ({ serve
     return auth.onIdTokenChanged(handleIdTokenChanged);
   }, []);
 
-  return (
-    <AuthContext.Provider
-      value={{
-        user,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={session}>{children}</AuthContext.Provider>;
 };

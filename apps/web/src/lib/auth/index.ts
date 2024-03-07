@@ -8,7 +8,6 @@ import {
   signInWithRedirect,
 } from 'firebase/auth';
 import { firebase } from '../firebase';
-import { cookies } from 'next/headers';
 
 class AuthStatic {
   public async signInWithEmailAndPassword(email: string, password: string): Promise<boolean> {

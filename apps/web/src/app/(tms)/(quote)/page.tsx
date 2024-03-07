@@ -1,12 +1,12 @@
 import { Heading, Paragraph } from '@/ui/components/typography';
 import TestComponent from './tester';
-import { session } from '@/lib/auth/auth.session';
+import { getSession } from '@/lib/auth/auth.session';
 
 export default async function QuotePage() {
-  const user = await session();
+  const session = await getSession();
   return (
     <main>
-      <Heading size="xl">Hello, {user ? user.displayName : 'unauthed user'}</Heading>
+      <Heading size="xl">Hello, {session ? session.displayName : 'unauthed user'}</Heading>
       <TestComponent />
       <Paragraph size={'lg'} variant={'secondary'} className="mt-4">
         Compare rates from top carriers all in one place

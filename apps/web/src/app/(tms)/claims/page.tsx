@@ -1,7 +1,7 @@
-import { session } from '@/lib/auth/auth.session';
+import { getSession } from '@/lib/auth/auth.session';
 
 export default async function Claims() {
-  const user = await session();
+  const session = await getSession();
 
   return <div>Claims</div>;
 }

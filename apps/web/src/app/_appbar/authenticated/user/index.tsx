@@ -11,17 +11,17 @@ import {
 } from '@/ui/components/dropdown';
 import Link from 'next/link';
 import { SignOut } from './sign-out';
-import { useAuth } from '@/app/_providers/auth.context';
+import { useSession } from '@/app/(auth)/_hooks';
 
 export default function User() {
-  const { user } = useAuth();
+  const session = useSession();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={'ghost'} size={'md'} icon="userFlat" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>{user?.displayName ?? user?.email ?? 'Account'}</DropdownMenuLabel>
+        <DropdownMenuLabel>{session?.displayName ?? session?.email ?? 'Account'}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem icon="userFlat">Profile</DropdownMenuItem>
         <DropdownMenuItem icon="paymentCard">Billing</DropdownMenuItem>

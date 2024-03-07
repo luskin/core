@@ -1,10 +1,18 @@
-import { User } from '@/app/_providers/auth.context';
 import { Tokens, getTokens } from 'next-firebase-auth-edge';
-import { filterStandardClaims } from 'next-firebase-auth-edge/lib/auth/claims';
+import { Claims, filterStandardClaims } from 'next-firebase-auth-edge/lib/auth/claims';
 import { cookies } from 'next/headers';
 import { firebaseAuthMiddleware } from './auth.middleware';
+import { UserInfo as FirebaseUserInfo } from 'firebase/auth';
 
-const toUser = ({ token, decodedToken }: Tokens): User => {
+export interface SessionUser extends FirebaseUserInfo {
+  emailVerified: boolean;
+  customClaims: Claims;
+  token: string;
+}
+
+export type Session = SessionUser | null;
+
+const toUser = ({ token, decodedToken }: Tokens): SessionUser => {
   const {
     uid,
     email,
@@ -30,7 +38,7 @@ const toUser = ({ token, decodedToken }: Tokens): User => {
   };
 };
 
-export async function session(): Promise<User | null> {
+export async function getSession(): Promise<Session> {
   const tokens = await getTokens(cookies(), {
     apiKey: firebaseAuthMiddleware.apiKey,
     cookieName: firebaseAuthMiddleware.cookieName,

@@ -1,6 +1,9 @@
 'use client';
-import { useAuth } from '@/app/_providers/auth.context';
+
+import { useSession } from '@/app/(auth)/_hooks';
+
 export default function Billing() {
-  const { user } = useAuth();
-  return <div>Billing for {user?.displayName ?? 'Unknown user'}</div>;
+  const session = useSession();
+
+  return <div>Billing for {session?.displayName ?? 'Unknown user'}</div>;
 }

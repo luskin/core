@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { bodyFont, brandFont } from '@/lib/fonts';
-import NotificationProvider from './_providers/toast.provider';
+import { getSession } from '@/lib/auth/auth.session';
 import { AuthProvider } from './_providers/auth.provider';
-import { session } from '@/lib/auth/auth.session';
+import { NotificationProvider } from './_providers/notification.provider';
 
 export const metadata: Metadata = {
   title: 'Mothership',
@@ -17,10 +17,10 @@ export default async function RootLayout({
   modal: React.ReactNode;
   children: React.ReactNode;
 }>) {
-  const user = await session();
+  const session = await getSession();
   return (
     <html lang="en">
-      <AuthProvider serverUser={user}>
+      <AuthProvider initialSession={session}>
         <NotificationProvider>
           <body className={`${brandFont.variable} ${bodyFont.variable} h-screen w-screen`}>
             {modal}
