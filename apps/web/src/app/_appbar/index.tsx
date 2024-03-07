@@ -6,6 +6,5 @@ import { UnauthenticatedAppBar } from './unauthenticated';
 export default async function AppBar() {
   const user = await firebaseServer.getCurrentUser();
   const authenticated = Boolean(user);
-
   return <Header>{authenticated ? <AuthenticatedAppBar /> : <UnauthenticatedAppBar />}</Header>;
 }

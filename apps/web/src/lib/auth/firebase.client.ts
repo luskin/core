@@ -1,15 +1,16 @@
 import { clientConfig } from '@/config/client';
-import { initializeApp, getApps, FirebaseApp } from 'firebase/app';
+import { initializeApp, getApps, FirebaseApp, FirebaseOptions } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 class FirebaseClientStatic {
   private _firebaseApp: FirebaseApp;
 
   public constructor() {
-    const firebaseConfig = {
+    const firebaseConfig: FirebaseOptions = {
       apiKey: clientConfig.firebase.apiKey,
       authDomain: clientConfig.firebase.authDomain,
       projectId: clientConfig.firebase.projectId,
+      appId: 'mshp-web',
     };
 
     this._firebaseApp = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
