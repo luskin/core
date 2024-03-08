@@ -11,7 +11,7 @@ export function MenuBar() {
   const routes = useMemo(() => createMenuBarRoutes(), []);
   return (
     <Nav>
-      <Column className={'w-full overflow-y-scroll'}>
+      <Column className={'w-full'}>
         {routes.map((routeProps) => {
           const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
           const isActive = Boolean(

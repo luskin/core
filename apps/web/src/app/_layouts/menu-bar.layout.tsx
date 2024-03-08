@@ -10,7 +10,7 @@ interface MenuBarLayoutProps extends PropsWithChildren {
 export default function MenuBarLayout({ menuBar, className, ...props }: MenuBarLayoutProps) {
   return (
     <Row className={cn('h-full w-full overflow-hidden', className)}>
-      <aside className={'h-full w-[232px]'}>{menuBar}</aside>
+      <aside className={'h-full w-[232px] overflow-y-scroll'}>{menuBar}</aside>
       <main className="h-full flex-1 overflow-y-scroll" {...props} />
     </Row>
   );

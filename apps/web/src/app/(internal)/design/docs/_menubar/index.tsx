@@ -13,7 +13,7 @@ export default function DesignMenuBar() {
   const componentRoutes = useMemo(() => createDesignMenuBarComponentRoutes(), []);
   return (
     <Nav>
-      <Column className={'w-full overflow-y-scroll'}>
+      <Column className={'w-full'}>
         <NavLabel>General</NavLabel>
         {generalRoutes.map((routeProps) => {
           const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
