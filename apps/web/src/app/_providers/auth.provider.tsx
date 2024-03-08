@@ -25,6 +25,8 @@ export const AuthProvider: React.FunctionComponent<AuthProviderProps> = ({ initi
   const router = useRouter();
   const [session, setSession] = React.useState(initialSession);
 
+  console.log('In auth provider', session);
+
   /**
    * Whenever the user's auth token changes, this function is called.
    */
