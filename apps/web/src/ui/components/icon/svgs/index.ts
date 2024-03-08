@@ -20,6 +20,7 @@ import chevronRight from './chevron-right';
 import exclamationPoint from './exclamation-point';
 import xmark from './xmark';
 import chatBubblesLeftRight from './chat-bubbles-left-right';
+import magicStars from './magic-stars';
 
 export {
   alienShip,
@@ -35,6 +36,7 @@ export {
   history,
   infoSquare,
   locationArrow,
+  magicStars,
   logout,
   mothershipWordmark,
   paymentCard,

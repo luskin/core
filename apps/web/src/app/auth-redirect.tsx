@@ -2,13 +2,13 @@
 
 import { useCookie } from 'react-use';
 import { Cookies } from '@shared/types';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Spinner } from '@/ui/components/spinner';
 import { auth } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
 import { notification } from '@/ui/components/notification';
 import { AuthProviderLinkRequiredError } from '@/lib/auth/auth.error';
-import { useSession } from '../../_hooks';
+import { useSession } from './(auth)/_hooks';
 
 /**
  * This page is displayed when the user is redirected from the auth provider to the app and
@@ -52,7 +52,9 @@ export function AuthRedirect() {
 
   useEffect(() => {
     if (session) {
+      console.log('Session change: ', session);
       router.replace('/');
+      router.refresh();
     }
   }, [session]);
 

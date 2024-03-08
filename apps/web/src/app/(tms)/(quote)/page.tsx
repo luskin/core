@@ -1,11 +1,12 @@
 import { Heading, Paragraph } from '@/ui/components/typography';
 import TestComponent from './tester';
 import { getSession } from '@/lib/auth/auth.session';
+import PageView from '@/ui/layout/view/page-view';
 
 export default async function QuotePage() {
   const session = await getSession();
   return (
-    <main>
+    <PageView>
       <Heading size="xl">Hello, {session ? session.displayName : 'unauthed user'}</Heading>
       <TestComponent />
       <Paragraph size={'lg'} variant={'secondary'} className="mt-4">
@@ -101,6 +102,6 @@ export default async function QuotePage() {
       <Heading size="xl" className="mt-4">
         More page content...
       </Heading>
-    </main>
+    </PageView>
   );
 }

@@ -4,16 +4,21 @@ import { Button } from '../../components/button';
 import { useAsyncFn, useCookie } from 'react-use';
 import { auth } from '@/lib/auth';
 import { Cookies } from '@shared/types';
+import { notification } from '@/ui/components/notification';
 
-interface LoginProps {}
+interface SignInProps {}
 
-export function Login(_props: LoginProps) {
+export function SignIn(_props: SignInProps) {
   const [, setIsFromAuthRedirect] = useCookie(Cookies.AuthRedirect);
   const [onSignInWithGoogleState, onSignInWithGoogle] = useAsyncFn(auth.signInWithGoogle);
   const [onSignInWithMicrosoftState, onSignInWithMicrosoft] = useAsyncFn(auth.signInWithMicrosoft);
-  const [onSignInWithEmailAndPasswordState, onSignInWithEmailAndPassword] = useAsyncFn(() =>
-    auth.signInWithEmailAndPassword('gregg@mothership.com', 'testing')
-  );
+  const [onSignInWithEmailAndPasswordState, onSignInWithEmailAndPassword] = useAsyncFn(async () => {
+    notification.error({
+      title: 'Not implemented yet',
+      description: 'Sign in with email/password is not implemented yet.',
+    });
+    return await Promise.resolve();
+  });
 
   function onSignInWithProvider(provider: 'google' | 'microsoft') {
     setIsFromAuthRedirect('true');

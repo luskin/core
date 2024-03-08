@@ -35,7 +35,7 @@ export function NotificationBase({
         </div>
       )}
       <Column className={'flex-1'}>
-        <div className="flex h-8 w-full flex-col items-start justify-center">
+        <div className="flex min-h-8 w-full flex-col items-start justify-center">
           <Heading size={'sm'}>{title}</Heading>
           {description && (
             <Paragraph size={'lg'} className={cn('mt-2', descriptionClassName)}>

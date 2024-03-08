@@ -5,7 +5,7 @@ import { Column } from '@/ui/layout/flex';
 import Link from 'next/link';
 
 /**
- * This page is displayed when a user attempts to login to an account that is already linked to another account.
+ * This page is displayed when a user attempts to sign-in to an account that is already linked to another account.
  *
  * @param props
  * @returns
@@ -19,14 +19,14 @@ export default function AuthRedirectLink() {
           Account linking required
         </Heading>
         <Paragraph>
-          This email is linked to another account. Please login using the existing account method and link your account
-          in profile settings.
+          This email is linked to another account. Please sign-in using the existing account method and link your
+          account in profile settings.
         </Paragraph>
         <Separator />
         <Paragraph variant={'secondary'}>
           Once you have logged in using one of the methods below, you may link new accounts in your account settings.
         </Paragraph>
-        <Link href={'/login'}>
+        <Link href={'/sign-in'}>
           <Button className="btn btn-primary" variant={'secondary'} size={'lg'}>
             Sign in with another method
           </Button>

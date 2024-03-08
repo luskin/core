@@ -17,7 +17,7 @@ export interface NavItemProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchor
 const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
   ({ icon, label, href, isActive, chevron, disableHover = false, ...props }, ref) => {
     const className = cn(
-      `flex flex-row justify-start items-center h-10 px-4 w-full rounded-lg transition ease-in-out`,
+      `flex flex-row justify-start items-center h-10 px-4 w-full rounded-lg transition ease-in-out flex-shrink-0`,
       isActive && 'bg-slate-6',
       !disableHover && 'hover:bg-slate-5'
     );

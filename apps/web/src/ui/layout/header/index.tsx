@@ -12,7 +12,7 @@ type HeaderProps = PropsWithChildren & {
 function Header(props: HeaderProps) {
   const { icon = 'mothershipWordmark', onIconClickHref = '/', children, hamburgerMenu } = props;
   return (
-    <div className="flex h-16 items-center px-4">
+    <div className="flex h-16 items-center pl-8 pr-4">
       <div className="flex h-8 items-center justify-start">
         {stringUtils.isString(icon) ? (
           <Link href={onIconClickHref}>

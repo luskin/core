@@ -106,6 +106,20 @@ export default function NotificationPage() {
           />
         </div>
 
+        <div className="w-[465px]">
+          <NotificationError
+            description="This is a longer error message that spans multiple lines. The notification will grow to accommodate the content. This is a longer error message that spans multiple lines. The notification will grow to accommodate the content."
+            title="Error"
+            actionButtons={[
+              {
+                variant: 'secondary',
+                label: 'Action',
+                onClick: () => console.log('Action clicked'),
+              },
+            ]}
+          />
+        </div>
+
         <ComponentPropsGrid
           params={[
             {

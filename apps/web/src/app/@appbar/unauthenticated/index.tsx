@@ -9,11 +9,16 @@ export function UnauthenticatedAppBar(_props: UnauthenticatedHeaderActionsProps)
   return (
     <Row gap={2} justify="end" className={'flex-1'}>
       <Link href="/become-a-carrier">
-        <Button variant={'tertiary'} icon="truckSideRight">
+        <Button variant={'ghost'} icon="truckSideRight">
           Drive with us
         </Button>
       </Link>
-      <Link href="/login">
+      <Link href="/sign-up">
+        <Button variant={'ghost'} icon="magicStars">
+          Sign up in 30 seconds
+        </Button>
+      </Link>
+      <Link href="/sign-in">
         <Button variant={'ghost'} icon="userFlat">
           Sign in
         </Button>

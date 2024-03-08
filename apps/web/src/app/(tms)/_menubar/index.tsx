@@ -27,9 +27,8 @@ export function MenuBar() {
       <Column className={'mt-auto w-full'}>
         <NavItem
           href={{
-            pathname: currentPath,
+            pathname: '/help',
           }}
-          onClick={() => console.log('TODO: Get help clicked')}
           label="Get help now"
           icon="chatBubblesLeftRight"
           isActive={true}
