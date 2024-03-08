@@ -5,7 +5,7 @@ export const firebaseAuthMiddleware: AuthMiddlewareOptions = {
   logoutPath: '/api/logout',
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY as string,
   cookieName: 'auth-session',
-  cookieSignatureKeys: [process.env.AUTH_SECRET as string],
+  cookieSignatureKeys: [process.env.AUTH_SIGNATURE_SECRET_KEY as string],
   cookieSerializeOptions: {
     path: '/',
     httpOnly: true,
