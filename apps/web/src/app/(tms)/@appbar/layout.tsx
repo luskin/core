@@ -1,7 +1,7 @@
 'use client';
 import { Header } from '@/ui/layout/header';
-import { AuthenticatedAppBar } from './authenticated';
-import { UnauthenticatedAppBar } from './unauthenticated';
+import { AuthenticatedAppBar } from './_authenticated';
+import { UnauthenticatedAppBar } from './_unauthenticated';
 import { useSession } from '../../(auth)/_hooks';
 import { PropsWithChildren } from 'react';
 

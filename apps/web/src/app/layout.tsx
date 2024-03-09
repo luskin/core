@@ -14,9 +14,11 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
+  appbar,
   modal,
   children,
 }: Readonly<{
+  appbar: React.ReactNode;
   modal: React.ReactNode;
   children: React.ReactNode;
 }>) {

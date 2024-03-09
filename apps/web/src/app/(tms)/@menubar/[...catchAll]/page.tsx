@@ -9,7 +9,7 @@ import { useMenubar } from '@/app/_providers/menubar.provider';
 
 interface MenuBarProps {}
 
-export function MenuBar(_props: MenuBarProps) {
+export default function MenuBarDefault(_props: MenuBarProps) {
   const { state } = useMenubar();
   const currentPath = usePathname();
   const routes = useMemo(() => createMenuBarRoutes(), []);

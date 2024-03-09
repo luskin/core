@@ -1,3 +1,3 @@
-export default function AppBarCatchAll() {
-  return <div>AppBarCatchAll</div>;
+export default function TMSAppBarCatchAll() {
+  return <div />;
 }

@@ -44,7 +44,7 @@ export default function Page() {
             return (
               <Column gap={4} key={size}>
                 {variants.map((variant) => (
-                  <React.Fragment key={'variant'}>
+                  <React.Fragment key={variant + size}>
                     <Tooltip
                       content={
                         <Column>
@@ -71,7 +71,7 @@ export default function Page() {
               return (
                 <Column gap={4} key={size}>
                   {variants.map((variant) => (
-                    <React.Fragment key={'variant'}>
+                    <React.Fragment key={variant + size}>
                       <Tooltip
                         content={
                           <Column>
