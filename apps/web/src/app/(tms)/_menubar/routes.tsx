@@ -1,31 +1,41 @@
-import { NavItemProps } from "@/ui/components/nav"
+import { NavItemProps } from '@/ui/components/nav';
 
-export function createMenuBarRoutes(): Array<NavItemProps> {
+export function createMenuBarRoutes(): Array<
+  NavItemProps & {
+    additionalActiveHrefs?: string[];
+  }
+> {
   return [
     {
-      icon: "truckSideRight",
-      label: "Quote",
-      href: "/",
+      icon: 'truckSideRight',
+      label: 'Quote',
+      href: '/',
+      additionalActiveHrefs: ['/quote'],
     },
     {
-      icon: "locationArrow",
-      label: "Track",
-      href: "/track",
+      icon: 'locationArrow',
+      label: 'Track',
+      href: '/track',
     },
     {
-      icon: "claimsShield",
-      label: "Claims",
-      href: "/claims",
+      icon: 'claimsShield',
+      label: 'Claims',
+      href: '/claims',
     },
     {
-      icon: "alienShip",
-      label: "Reporting",
-      href: "/reporting",
+      icon: 'alienShip',
+      label: 'Reporting',
+      href: '/reporting',
     },
     {
-      icon: "paymentCard",
-      label: "Billing",
-      href: "/billing",
+      icon: 'paymentCard',
+      label: 'Billing',
+      href: '/billing',
     },
-  ]
+    {
+      icon: 'barChartSquare',
+      label: 'Recent quotes',
+      href: '/quotes/recent',
+    },
+  ];
 }

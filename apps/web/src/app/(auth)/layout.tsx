@@ -1,5 +1,5 @@
 import AppBarLayout from '../_layouts/app-bar.layout';
-import AppBar from '../@appbar/layout';
+import AppBar from '../(tms)/@appbar/layout';
 import { cookies } from 'next/headers';
 import { Cookies } from '@shared/types';
 import { AuthRedirect } from './auth/link/auth-redirect-handler';

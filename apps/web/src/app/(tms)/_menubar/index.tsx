@@ -5,22 +5,29 @@ import { createMenuBarRoutes } from './routes';
 import { useMemo } from 'react';
 import { Column } from '@/ui/layout/flex';
 import { stringUtils } from '@shared/utils';
+import { useMenubar } from '@/app/_providers/menubar.provider';
 
-export function MenuBar() {
+interface MenuBarProps {}
+
+export function MenuBar(_props: MenuBarProps) {
+  const { state } = useMenubar();
   const currentPath = usePathname();
   const routes = useMemo(() => createMenuBarRoutes(), []);
+
   return (
     <Nav>
       <Column className={'w-full'}>
         {routes.map((routeProps) => {
+          const { additionalActiveHrefs, ...restProps } = routeProps;
           const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
           const isActive = Boolean(
             currentPath === '/'
               ? currentPath === routeProps.href
-              : routePropsHref && routePropsHref !== '/' && currentPath.startsWith(routePropsHref)
+              : (routePropsHref && routePropsHref !== '/' && currentPath.startsWith(routePropsHref)) ||
+                  routeProps.additionalActiveHrefs?.some((href) => currentPath.startsWith(href))
           );
 
-          return <NavItem key={routePropsHref} {...routeProps} isActive={isActive} />;
+          return <NavItem key={routePropsHref} {...restProps} isActive={isActive} collapsed={state.collapsed} />;
         })}
       </Column>
 
@@ -31,8 +38,8 @@ export function MenuBar() {
           }}
           label="Get help now"
           icon="chatBubblesLeftRight"
-          isActive={true}
           chevron
+          collapsed={state.collapsed}
         />
       </Column>
     </Nav>

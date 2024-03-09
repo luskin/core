@@ -2,6 +2,7 @@ import { Icon, IconName } from '@/ui/components/icon';
 import { stringUtils } from '@shared/utils';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
+import { Row } from '../flex';
 
 type HeaderProps = PropsWithChildren & {
   icon?: IconName | React.ReactNode;
@@ -12,19 +13,17 @@ type HeaderProps = PropsWithChildren & {
 function Header(props: HeaderProps) {
   const { icon = 'mothershipWordmark', onIconClickHref = '/', children, hamburgerMenu } = props;
   return (
-    <div className="flex h-16 items-center pl-8 pr-4">
-      <div className="flex h-8 items-center justify-start">
-        {stringUtils.isString(icon) ? (
-          <Link href={onIconClickHref}>
-            <Icon name={icon as IconName} className="h-4" />
-          </Link>
-        ) : (
-          icon
-        )}
-        {hamburgerMenu && <Icon name="hamburgerMenu" className="ml-4 h-3" />}
-      </div>
+    <Row className="h-16 w-full items-center pl-8 pr-4">
+      {stringUtils.isString(icon) ? (
+        <Link href={onIconClickHref}>
+          <Icon name={icon as IconName} className="h-4" />
+        </Link>
+      ) : (
+        icon
+      )}
+      {hamburgerMenu && <Icon name="hamburgerMenu" className="ml-4 h-3" />}
       {children}
-    </div>
+    </Row>
   );
 }
 

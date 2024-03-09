@@ -21,10 +21,12 @@ import exclamationPoint from './exclamation-point';
 import xmark from './xmark';
 import chatBubblesLeftRight from './chat-bubbles-left-right';
 import magicStars from './magic-stars';
+import barChartSquare from './bar-chart-square';
 
 export {
   alienShip,
   arrow,
+  barChartSquare,
   bell,
   chatBubblesLeftRight,
   checkmark,

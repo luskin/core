@@ -12,10 +12,11 @@ export interface NavItemProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchor
   isActive?: boolean;
   disableHover?: boolean;
   chevron?: boolean;
+  collapsed?: boolean;
 }
 
 const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
-  ({ icon, label, href, isActive, chevron, disableHover = false, ...props }, ref) => {
+  ({ icon, label, collapsed, href, isActive, chevron, disableHover = false, ...props }, ref) => {
     const className = cn(
       `flex flex-row justify-start items-center h-10 px-4 w-full rounded-lg transition ease-in-out flex-shrink-0`,
       isActive && 'bg-slate-6',
@@ -24,11 +25,19 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
 
     return (
       <Link className={className} href={href} ref={ref} {...props}>
-        {icon && <Icon name={icon} className={cn('h-4', isActive ? 'text-slate-12' : 'text-slate-8')} />}
-        <Label size={'md'} variant={isActive ? 'primary' : 'secondary'} className={cn('flex-1', icon && 'ml-4')}>
+        {icon && <Icon name={icon} className={cn('h-4 flex-shrink-0', isActive ? 'text-slate-12' : 'text-slate-8')} />}
+        <Label
+          size={'md'}
+          variant={isActive ? 'primary' : 'secondary'}
+          className={cn(
+            'flex-1 whitespace-nowrap transition-opacity duration-300',
+            icon && 'ml-4',
+            collapsed && 'opacity-0'
+          )}
+        >
           {label}
         </Label>
-        {chevron && <Icon name="chevronRight" className={cn('text-slate-9 h-2')} />}
+        {chevron && !collapsed && <Icon name="chevronRight" className={cn('text-slate-9 h-2')} />}
       </Link>
     );
   }

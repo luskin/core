@@ -163,8 +163,8 @@ const config: MshpTailwindConfig = {
     }),
     fontMetrics: {
       brand: {
-        capHeight: 706,
-        ascent: 707,
+        capHeight: 755,
+        ascent: 720,
         descent: -192,
         lineGap: 279,
         unitsPerEm: 1000,
