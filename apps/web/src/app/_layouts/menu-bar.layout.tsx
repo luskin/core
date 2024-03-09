@@ -11,6 +11,7 @@ interface MenuBarLayoutProps extends PropsWithChildren {
 
 function ProvidedMenuBarLayout({ menuBar, className, ...props }: MenuBarLayoutProps) {
   const { state } = useMenubar();
+
   return (
     <Row className={cn('h-full w-full overflow-hidden', className)}>
       <aside
