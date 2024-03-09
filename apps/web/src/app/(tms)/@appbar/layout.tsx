@@ -4,7 +4,6 @@ import { AuthenticatedAppBar } from './authenticated';
 import { UnauthenticatedAppBar } from './unauthenticated';
 import { useSession } from '../../(auth)/_hooks';
 import { PropsWithChildren } from 'react';
-import { Row } from '@/ui/layout/flex';
 
 interface AppBarProps extends PropsWithChildren {}
 

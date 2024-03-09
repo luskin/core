@@ -11,11 +11,10 @@ export default async function TMSLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Column>
-      {appbar}
+    <AppBarLayout appBar={appbar}>
       <MenuBarLayout menuBar={<MenuBar />} className="bg-slate-3">
         {children}
       </MenuBarLayout>
-    </Column>
+    </AppBarLayout>
   );
 }
