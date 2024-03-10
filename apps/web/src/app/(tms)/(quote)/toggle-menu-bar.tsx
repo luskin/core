@@ -1,7 +1,6 @@
 'use client';
 
-import { useAppbarStore } from '@/app/_providers/appbar.provider';
-import { useMenubar } from '@/app/_providers/menubar.provider';
+import { useMenubar } from '@/ui/layout/menubar.provider';
 import { Button } from '@/ui/components/button';
 import { Column } from '@/ui/layout/flex';
 

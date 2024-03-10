@@ -2,7 +2,7 @@
 import { cn } from '@/lib/tailwind/utils';
 import { Row } from '@/ui/layout/flex';
 import { PropsWithChildren } from 'react';
-import { MenubarProvider, useMenubar } from '../_providers/menubar.provider';
+import { MenubarProvider, useMenubar } from './menubar.provider';
 
 interface MenuBarLayoutProps extends PropsWithChildren {
   menuBar: React.ReactNode;

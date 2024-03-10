@@ -1,4 +1,4 @@
-import MenuBarLayout from '../_layouts/menu-bar.layout';
+import MenuBarLayout from '../../ui/layout/menubar.layout';
 import MenuBar from './_menubar';
 
 export default async function TMSLayout({

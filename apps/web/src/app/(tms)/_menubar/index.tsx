@@ -5,7 +5,7 @@ import { createMenuBarRoutes } from './routes';
 import { useMemo } from 'react';
 import { Column } from '@/ui/layout/flex';
 import { stringUtils } from '@shared/utils';
-import { useMenubar } from '@/app/_providers/menubar.provider';
+import { useMenubar } from '@/ui/layout/menubar.provider';
 
 interface MenuBarProps {}
 

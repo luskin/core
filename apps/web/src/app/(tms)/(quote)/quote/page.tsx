@@ -1,17 +1,17 @@
 'use client';
 
-import { useAppbarStore } from '@/app/_providers/appbar.provider';
-import { useMenubar } from '@/app/_providers/menubar.provider';
+import { useMenubar } from '@/ui/layout/menubar.provider';
 import { Button } from '@/ui/components/button';
 import { Heading, Label } from '@/ui/components/typography';
 import PageView from '@/ui/layout/view/page-view';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { QuoteAppBarContent } from './quote-app-bar-content';
+import { useAppbar } from '@/app/_appbar/_hooks/useAppbar';
 
 export default function QuotePage() {
   const { collapse } = useMenubar();
-  const setContent = useAppbarStore((state) => state.setContent);
+  const setContent = useAppbar((state) => state.setContent);
   useEffect(() => {
     collapse();
     setContent(<QuoteAppBarContent />);

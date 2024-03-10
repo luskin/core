@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import MenuBarLayout from '@/app/_layouts/menu-bar.layout';
+import MenuBarLayout from '@/ui/layout/menubar.layout';
 import DesignMenuBar from './_menubar';
 
 export default function Layout({ children }: PropsWithChildren) {
