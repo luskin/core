@@ -7,6 +7,9 @@ import { NotificationProvider } from './_providers/notification.provider';
 import { cookies } from 'next/headers';
 import { Cookies } from '@shared/types';
 import { AuthRedirect } from './auth-redirect';
+import { AppbarStoreProvider } from './_providers/appbar.provider';
+import AppBarLayout from './_layouts/app-bar.layout';
+import AppBar from './_appbar';
 
 export const metadata: Metadata = {
   title: 'Mothership',
@@ -14,11 +17,9 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  appbar,
   modal,
   children,
 }: Readonly<{
-  appbar: React.ReactNode;
   modal: React.ReactNode;
   children: React.ReactNode;
 }>) {
@@ -33,10 +34,12 @@ export default async function RootLayout({
             {isFromAuthRedirect ? (
               <AuthRedirect />
             ) : (
-              <>
-                {modal}
-                {children}
-              </>
+              <AppbarStoreProvider>
+                <AppBarLayout appbar={<AppBar />}>
+                  {modal}
+                  {children}
+                </AppBarLayout>
+              </AppbarStoreProvider>
             )}
           </body>
         </NotificationProvider>

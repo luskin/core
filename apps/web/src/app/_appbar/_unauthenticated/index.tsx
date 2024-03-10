@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Row } from '../../../../ui/layout/flex';
+import { Row } from '../../../ui/layout/flex';
 import { Button } from '@/ui/components/button';
 
 interface UnauthenticatedHeaderActionsProps {}

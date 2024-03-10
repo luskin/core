@@ -1,5 +1,5 @@
 import { Button } from '@/ui/components/button';
-import { Row } from '../../../../ui/layout/flex';
+import { Row } from '../../../ui/layout/flex';
 import User from './user';
 import Link from 'next/link';
 
