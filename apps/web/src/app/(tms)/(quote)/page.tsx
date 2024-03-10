@@ -2,7 +2,6 @@ import { Heading, Paragraph } from '@/ui/components/typography';
 import { getSession } from '@/lib/auth/auth.session';
 import PageView from '@/ui/layout/view/page-view';
 import QuoteDetailsWrapper from './quote-details-wrapper';
-import { Button } from '@/ui/components/button';
 import { ToggleMenuBar } from './toggle-menu-bar';
 
 export default async function QuotePage() {

@@ -7,13 +7,14 @@ import { Heading, Label } from '@/ui/components/typography';
 import PageView from '@/ui/layout/view/page-view';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { QuoteAppBarContent } from './quote-app-bar-content';
 
 export default function QuotePage() {
   const { collapse } = useMenubar();
   const setContent = useAppbarStore((state) => state.setContent);
   useEffect(() => {
     collapse();
-    setContent(<div className="flex h-full w-full items-center justify-center">Custom stuff</div>);
+    setContent(<QuoteAppBarContent />);
 
     return () => {
       setContent(null);
