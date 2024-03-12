@@ -7,10 +7,11 @@ import { Label, Paragraph } from '@/ui/components/typography';
 import { ComponentPropsGrid } from '../component-props-grid';
 import { Button } from '@/ui/components/button';
 import { copyToClipboard } from '@/lib/clipboard/copyToClipboard';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function IconPage() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Icons"
         description="Explore our comprehensive library of icons. This collection provides a wide range of symbols to help you create intuitive and visually pleasing interfaces. Each icon is designed with simplicity and consistency in mind, ensuring they blend seamlessly with your design."
@@ -34,6 +35,7 @@ export default function IconPage() {
         })}
       </div>
       <ComponentPropsGrid
+        label="Params"
         params={[
           {
             name: 'name',
@@ -42,6 +44,6 @@ export default function IconPage() {
           },
         ]}
       />
-    </>
+    </PageView>
   );
 }

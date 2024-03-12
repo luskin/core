@@ -3,17 +3,19 @@ import { stringUtils } from '@shared/utils';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 import { Row } from '../flex';
+import { cn } from '@/lib/tailwind/utils';
 
 type HeaderProps = PropsWithChildren & {
   icon?: IconName | React.ReactNode;
   onIconClickHref?: string;
   hamburgerMenu?: boolean;
+  className?: string;
 };
 
 function Header(props: HeaderProps) {
-  const { icon = 'mothershipWordmark', onIconClickHref = '/', children, hamburgerMenu } = props;
+  const { icon = 'mothershipWordmark', onIconClickHref = '/', className, children, hamburgerMenu } = props;
   return (
-    <Row className="h-16 w-full items-center pl-8 pr-4">
+    <Row className={cn('h-16 w-full items-center pl-8 pr-4', className)}>
       {stringUtils.isString(icon) ? (
         <Link href={onIconClickHref}>
           <Icon name={icon as IconName} className="h-4" />

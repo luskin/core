@@ -1,20 +1,21 @@
-import { DesignComponentHeader } from "../component-header"
-import { Column } from "@/ui/layout/flex"
-import { Avatar } from "@/ui/components/avatar"
-import { ComponentPropsGrid } from "../component-props-grid"
-import { Label, Paragraph } from "@/ui/components/typography"
+import { DesignComponentHeader } from '../component-header';
+import { Column } from '@/ui/layout/flex';
+import { Avatar } from '@/ui/components/avatar';
+import { ComponentPropsGrid } from '../component-props-grid';
+import { Label, Paragraph } from '@/ui/components/typography';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function AvatarPage() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Avatar"
         description="The avatar component is used to display a user's profile picture or initials. It is often used in lists, comments, and other places where a user's identity is important."
       />
 
       <Paragraph className="mt-2">
-        The order of precedence for the avatar is imageSrc, initials, icon. If
-        you only set one, it will be the one used.
+        The order of precedence for the avatar is imageSrc, initials, icon. If you only set one, it will be the one
+        used.
       </Paragraph>
 
       <Column gap={4} className="mt-8">
@@ -27,27 +28,26 @@ export default function AvatarPage() {
         <ComponentPropsGrid
           params={[
             {
-              name: "initials",
-              type: "string",
+              name: 'initials',
+              type: 'string',
               optional: true,
-              description:
-                "The initials to display in the avatar, max 3 characters",
+              description: 'The initials to display in the avatar, max 3 characters',
             },
             {
-              name: "imageSrc",
-              type: "string",
+              name: 'imageSrc',
+              type: 'string',
               optional: true,
-              description: "The image src url to display in the avatar",
+              description: 'The image src url to display in the avatar',
             },
             {
-              name: "icon",
-              type: "string",
+              name: 'icon',
+              type: 'string',
               optional: true,
-              description: "The icon name to display in the avatar",
+              description: 'The icon name to display in the avatar',
             },
           ]}
         />
       </Column>
-    </>
-  )
+    </PageView>
+  );
 }

@@ -3,6 +3,10 @@ import { NavItemProps } from '@/ui/components/nav';
 export function createDesignMenuBarGeneralRoutes(): Array<NavItemProps> {
   return [
     {
+      label: 'Introduction',
+      href: '/design/docs',
+    },
+    {
       label: 'Typography',
       href: '/design/docs/typography',
     },

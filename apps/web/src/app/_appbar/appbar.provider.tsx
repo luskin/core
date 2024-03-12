@@ -1,6 +1,6 @@
 'use client';
 
-import { type ReactNode, createContext, useRef, useContext } from 'react';
+import { type ReactNode, createContext, useRef } from 'react';
 import { type StoreApi } from 'zustand';
 
 import { type AppbarStore, createAppbarStore } from '@/app/_appbar/appbar.store';

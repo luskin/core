@@ -1,5 +1,6 @@
 import { Separator } from '@/ui/components/separator';
 import { Heading, Label, Paragraph } from '@/ui/components/typography';
+import { Column } from '@/ui/layout/flex';
 import { Grid } from '@/ui/layout/grid';
 import { arrayUtils, stringUtils } from '@shared/utils';
 import React, { PropsWithChildren } from 'react';
@@ -19,12 +20,12 @@ interface ComponentPropsGridProps {
 
 export function ComponentPropsGrid(props: ComponentPropsGridProps) {
   return (
-    <>
-      <Separator className="mt-4" />
+    <Column className={'mt-4 w-full'} gap={4}>
+      <Separator />
       <Heading size={'md'} className="mt-4">
         {props.label || 'Params'}
       </Heading>
-      <Grid numCols={3} className={'border-slate-5 divide-slate-5 divide-x divide-y border-b border-r'}>
+      <Grid numCols={3} className={'border-slate-5 divide-slate-5 mt-2 w-full divide-x divide-y border-b border-r'}>
         <Label className="border-slate-5 border-l border-t p-2">parameter</Label>
         <Label className="p-2">type</Label>
         <Label className="p-2">description</Label>
@@ -60,6 +61,6 @@ export function ComponentPropsGrid(props: ComponentPropsGridProps) {
           </>
         )}
       </Grid>
-    </>
+    </Column>
   );
 }

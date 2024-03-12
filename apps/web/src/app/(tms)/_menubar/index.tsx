@@ -16,7 +16,7 @@ export default function MenuBar(_props: MenuBarProps) {
 
   return (
     <Nav>
-      <Column className={'w-full'}>
+      <Column className={'w-full space-y-2'}>
         {routes.map((routeProps) => {
           const { additionalActiveHrefs, ...restProps } = routeProps;
           const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;

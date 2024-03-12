@@ -6,10 +6,11 @@ import { Grid } from '@/ui/layout/grid';
 import { Modal } from '@/ui/components/modal';
 import { Label, Paragraph } from '@/ui/components/typography';
 import { notification } from '@/ui/components/notification';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function ModalPage() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Modal"
         description="A modal is a dialog box or popup, displayed over the current page. Modals are used to display content that requires user interaction. They are often used to prompt the user for information or to confirm an action."
@@ -175,6 +176,6 @@ export default function ModalPage() {
           ]}
         />
       </Column>
-    </>
+    </PageView>
   );
 }

@@ -4,10 +4,11 @@ import { ComponentPropsGrid } from '../component-props-grid';
 import { Popover, PopoverContent, PopoverTrigger } from '@/ui/components/popover';
 import { Button } from '@/ui/components/button';
 import { Label, Paragraph } from '@/ui/components/typography';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function PopoverPage() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Popover"
         description="The popover component is used to display additional information or actions in a small, non-modal window. It is often used to display additional information or actions when a user hovers over or clicks on an element. The popover component is a great way to present additional information or actions to users in a way that is easy to understand and use."
@@ -38,6 +39,6 @@ export default function PopoverPage() {
           ]}
         />
       </Column>
-    </>
+    </PageView>
   );
 }

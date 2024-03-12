@@ -1,6 +1,6 @@
 import Link, { LinkProps } from 'next/link';
 import { Icon, IconName } from '../icon';
-import { Label, Paragraph } from '../typography';
+import { Paragraph } from '../typography';
 import React from 'react';
 import { cn } from '@/lib/tailwind/utils';
 
@@ -20,13 +20,13 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
     const className = cn(
       `flex flex-row justify-start items-center h-10 px-4 w-full rounded-lg transition ease-in-out flex-shrink-0`,
       isActive && 'bg-slate-6',
-      !disableHover && 'hover:bg-slate-5'
+      !disableHover && 'hover:ring-1 hover:ring-slate-12'
     );
 
     return (
       <Link className={className} href={href} ref={ref} {...props}>
         {icon && <Icon name={icon} className={cn('h-4 flex-shrink-0', isActive ? 'text-slate-12' : 'text-slate-8')} />}
-        <Label
+        <Paragraph
           size={'md'}
           variant={isActive ? 'primary' : 'secondary'}
           className={cn(
@@ -36,7 +36,7 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
           )}
         >
           {label}
-        </Label>
+        </Paragraph>
         {chevron && !collapsed && <Icon name="chevronRight" className={cn('text-slate-9 h-2')} />}
       </Link>
     );

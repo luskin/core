@@ -13,17 +13,17 @@ export default function DesignMenuBar() {
   const componentRoutes = useMemo(() => createDesignMenuBarComponentRoutes(), []);
   return (
     <Nav>
-      <Column className={'w-full'}>
+      <Column className={'w-full space-y-2'}>
         <NavLabel>General</NavLabel>
         {generalRoutes.map((routeProps) => {
           const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
-          const isActive = Boolean(routePropsHref && currentPath.startsWith(routePropsHref));
+          const isActive = Boolean(routePropsHref && currentPath == routePropsHref);
           return <NavItem key={routePropsHref} {...routeProps} isActive={isActive} />;
         })}
         <NavLabel>Components</NavLabel>
         {componentRoutes.map((routeProps) => {
           const routePropsHref = stringUtils.isString(routeProps.href) ? routeProps.href : routeProps.href.pathname;
-          const isActive = Boolean(routePropsHref && currentPath.startsWith(routePropsHref));
+          const isActive = Boolean(routePropsHref && currentPath == routePropsHref);
           return <NavItem key={routePropsHref} {...routeProps} isActive={isActive} />;
         })}
       </Column>

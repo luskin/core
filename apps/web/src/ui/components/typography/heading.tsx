@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/tailwind/utils';
 import { Slot } from '@radix-ui/react-slot';
 
-const headingVariants = cva('mt-0 leading-normal', {
+const headingVariants = cva('', {
   variants: {
     variant: {
       primary: 'text-slate-12',
@@ -52,7 +52,7 @@ function sizeToHeading(size?: 'xl' | 'lg' | 'md' | 'sm' | 'xs' | null): 'h1' | '
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ className, variant, size = 'sm', asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : sizeToHeading(size);
-    return <Comp className={cn(headingVariants({ variant, size, className }))} ref={ref} {...props} />;
+    return <Comp className={cn(headingVariants({ variant, size }), className)} ref={ref} {...props} />;
   }
 );
 Heading.displayName = 'Heading';

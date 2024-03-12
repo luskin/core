@@ -6,6 +6,7 @@ import { DesignComponentHeader } from '../component-header';
 import { Tooltip } from '@/ui/components/tooltip';
 import { ComponentPropsGrid } from '../component-props-grid';
 import { Heading, Label } from '@/ui/components/typography';
+import PageView from '@/ui/layout/view/page-view';
 
 const sizes: Array<'xs' | 'sm' | 'md' | 'lg'> = ['lg', 'md', 'sm', 'xs'];
 const variants: Array<'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'> = [
@@ -31,7 +32,7 @@ function sizeToName(size: 'xs' | 'sm' | 'md' | 'lg') {
 
 export default function Page() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Button"
         description={
@@ -145,6 +146,6 @@ export default function Page() {
           ]}
         />
       </Column>
-    </>
+    </PageView>
   );
 }

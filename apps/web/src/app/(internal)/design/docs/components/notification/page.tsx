@@ -8,10 +8,11 @@ import { notification } from '@/ui/components/notification';
 import { Grid } from '@/ui/layout/grid';
 import { NotificationSuccess } from '@/ui/components/notification/notification.success';
 import { NotificationError } from '@/ui/components/notification/notification.error';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function NotificationPage() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Notification"
         description="A notification is a non-modal, unobtrusive window element used to display brief, auto-expiring windows of information to a user. Notifications are generally used to display notifications, alerts, or messages. They are often used to display notifications of new messages, updates, or other events."
@@ -148,6 +149,6 @@ export default function NotificationPage() {
           ]}
         />
       </Column>
-    </>
+    </PageView>
   );
 }

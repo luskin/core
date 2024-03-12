@@ -1,14 +1,15 @@
-"use client"
-import { DesignComponentHeader } from "../component-header"
-import { Column } from "@/ui/layout/flex"
-import { Radio } from "@/ui/components/radio"
-import { useState } from "react"
-import { ComponentPropsGrid } from "../component-props-grid"
+'use client';
+import { DesignComponentHeader } from '../component-header';
+import { Column } from '@/ui/layout/flex';
+import { Radio } from '@/ui/components/radio';
+import { useState } from 'react';
+import { ComponentPropsGrid } from '../component-props-grid';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function RadioPage() {
-  const [value, setValue] = useState("option1")
+  const [value, setValue] = useState('option1');
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Radio"
         description="The radio component is used to allow users to select a single option from a list of options. It is often used in forms to allow users to make a single selection from a list of options. The radio component is a great way to present a list of options to users in a way that is easy to understand and use."
@@ -20,35 +21,35 @@ export default function RadioPage() {
           value={value}
           options={[
             {
-              value: "option1",
-              label: "Option 1",
+              value: 'option1',
+              label: 'Option 1',
             },
             {
-              value: "option2",
-              label: "Option 2",
+              value: 'option2',
+              label: 'Option 2',
             },
             {
-              value: "option3",
-              label: "Option 3",
+              value: 'option3',
+              label: 'Option 3',
             },
           ]}
         />
         <ComponentPropsGrid
           params={[
             {
-              name: "value",
-              type: "boolean",
+              name: 'value',
+              type: 'boolean',
               optional: true,
-              description: "The current selection of the radio group.",
+              description: 'The current selection of the radio group.',
             },
             {
-              name: "onValueChange",
-              type: "function",
-              description: "Callback when the state of the selection changes",
+              name: 'onValueChange',
+              type: 'function',
+              description: 'Callback when the state of the selection changes',
             },
           ]}
         />
       </Column>
-    </>
-  )
+    </PageView>
+  );
 }

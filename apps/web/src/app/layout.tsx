@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <AuthProvider initialSession={session}>
-        <body className={`${brandFont.variable} ${bodyFont.variable} h-screen w-screen`}>
+        <body className={`${brandFont.variable} ${bodyFont.variable} bg-slate-3 h-screen w-screen`}>
           {isFromAuthRedirect ? (
             <AuthRedirect />
           ) : (

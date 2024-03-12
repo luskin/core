@@ -9,7 +9,7 @@ export default async function ReviewPage() {
     }, 2000)
   );
   return (
-    <PageView>
+    <PageView className="bg-slate-2">
       <Heading size={'lg'}>This is a review page: {test}</Heading>
     </PageView>
   );

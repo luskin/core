@@ -1,12 +1,13 @@
-import { DesignComponentHeader } from "../component-header"
-import { Column } from "@/ui/layout/flex"
-import { ComponentPropsGrid } from "../component-props-grid"
-import { Spinner } from "@/ui/components/spinner"
-import { Label } from "@/ui/components/typography"
+import { DesignComponentHeader } from '../component-header';
+import { Column } from '@/ui/layout/flex';
+import { ComponentPropsGrid } from '../component-props-grid';
+import { Spinner } from '@/ui/components/spinner';
+import { Label } from '@/ui/components/typography';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function SpinnerPage() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Spinner"
         description="The spinner component is used to indicate that a page or component is loading. It is often used in forms to indicate that a request is being processed."
@@ -27,18 +28,18 @@ export default function SpinnerPage() {
         <ComponentPropsGrid
           params={[
             {
-              name: "size",
-              type: "string",
+              name: 'size',
+              type: 'string',
               description: "The size of the spinner, defaults to 'md'",
             },
             {
-              name: "iconName",
-              type: "string",
-              description: "The name of the icon to spin, defaults to spinner",
+              name: 'iconName',
+              type: 'string',
+              description: 'The name of the icon to spin, defaults to spinner',
             },
           ]}
         />
       </Column>
-    </>
-  )
+    </PageView>
+  );
 }

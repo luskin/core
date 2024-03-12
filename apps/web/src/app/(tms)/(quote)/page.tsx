@@ -1,11 +1,21 @@
+'use client';
 import { Heading, Paragraph } from '@/ui/components/typography';
-import { getSession } from '@/lib/auth/auth.session';
 import PageView from '@/ui/layout/view/page-view';
 import QuoteDetailsWrapper from './quote-details-wrapper';
 import { ToggleMenuBar } from './toggle-menu-bar';
+import { useMenubar } from '@/ui/layout/menubar.provider';
+import { useEffect } from 'react';
+import { useAppbar } from '@/app/_appbar/_hooks/useAppbar';
 
-export default async function QuotePage() {
-  const session = await getSession();
+export default function QuotePage() {
+  const menubar = useMenubar();
+  const setBackgroundSolid = useAppbar((state) => state.setBackgroundSolid);
+
+  useEffect(() => {
+    menubar.expand();
+    setBackgroundSolid(false);
+  }, []);
+
   return (
     <PageView>
       <Heading size="xl">Quote and compare rates instantly</Heading>

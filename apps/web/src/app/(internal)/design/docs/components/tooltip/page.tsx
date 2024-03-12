@@ -1,50 +1,46 @@
-import { Column } from "@/ui/layout/flex"
-import { DesignComponentHeader } from "../component-header"
-import { Tooltip } from "@/ui/components/tooltip"
-import { Button } from "@/ui/components/button"
-import { ComponentPropsGrid } from "../component-props-grid"
+import { Column } from '@/ui/layout/flex';
+import { DesignComponentHeader } from '../component-header';
+import { Tooltip } from '@/ui/components/tooltip';
+import { Button } from '@/ui/components/button';
+import { ComponentPropsGrid } from '../component-props-grid';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function Page() {
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Tooltip"
-        description={
-          "Serve contextual information to the user when hovering over an element."
-        }
+        description={'Serve contextual information to the user when hovering over an element.'}
       />
-      <Column gap={4} className={"mt-4"}>
+      <Column gap={4} className={'mt-4'}>
         <Tooltip content="This is a primary tooltip">
-          <Button variant={"ghost"}>Hover over me (Primary)</Button>
+          <Button variant={'ghost'}>Hover over me (Primary)</Button>
         </Tooltip>
 
-        <Tooltip content="This is a secondary tooltip" variant={"secondary"}>
-          <Button variant={"secondary"}>Hover over me (Secondary)</Button>
+        <Tooltip content="This is a secondary tooltip" variant={'secondary'}>
+          <Button variant={'secondary'}>Hover over me (Secondary)</Button>
         </Tooltip>
 
-        <Tooltip
-          content="This is a destructive tooltip"
-          variant={"destructive"}
-        >
-          <Button variant={"destructive"}>Hover over me (Destructive)</Button>
+        <Tooltip content="This is a destructive tooltip" variant={'destructive'}>
+          <Button variant={'destructive'}>Hover over me (Destructive)</Button>
         </Tooltip>
         <ComponentPropsGrid
           params={[
             {
-              name: "content",
-              type: ["string", "ReactNode"],
+              name: 'content',
+              type: ['string', 'ReactNode'],
               optional: true,
-              description: "The current selection of the radio group.",
+              description: 'The current selection of the radio group.',
             },
             {
-              name: "variant",
-              type: "string",
+              name: 'variant',
+              type: 'string',
               optional: true,
-              description: "The style variant of the tooltip.",
+              description: 'The style variant of the tooltip.',
             },
           ]}
         />
       </Column>
-    </>
-  )
+    </PageView>
+  );
 }

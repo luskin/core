@@ -1,10 +1,10 @@
-"use client"
-import { DesignComponentHeader } from "../component-header"
-import { Column } from "@/ui/layout/flex"
-import { Radio } from "@/ui/components/radio"
-import { useState } from "react"
-import { ComponentPropsGrid } from "../component-props-grid"
-import { Heading, Paragraph } from "@/ui/components/typography"
+'use client';
+import { DesignComponentHeader } from '../component-header';
+import { Column } from '@/ui/layout/flex';
+import { Radio } from '@/ui/components/radio';
+import { useState } from 'react';
+import { ComponentPropsGrid } from '../component-props-grid';
+import { Heading, Paragraph } from '@/ui/components/typography';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,13 +12,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/ui/components/dropdown"
-import { Button } from "@/ui/components/button"
+} from '@/ui/components/dropdown';
+import { Button } from '@/ui/components/button';
+import PageView from '@/ui/layout/view/page-view';
 
 export default function RadioPage() {
-  const [value, setValue] = useState("option1")
+  const [value, setValue] = useState('option1');
   return (
-    <>
+    <PageView>
       <DesignComponentHeader
         title="Dropdown"
         description="The dropdown component is used to allow users to select an option from a list."
@@ -30,7 +31,7 @@ export default function RadioPage() {
         </Column>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant={"ghost"} size={"md"} icon="userFlat" />
+            <Button variant={'ghost'} size={'md'} icon="userFlat" />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
             <DropdownMenuLabel>Dropdown title</DropdownMenuLabel>
@@ -49,19 +50,19 @@ export default function RadioPage() {
         <ComponentPropsGrid
           params={[
             {
-              name: "value",
-              type: "boolean",
+              name: 'value',
+              type: 'boolean',
               optional: true,
-              description: "The current selection of the radio group.",
+              description: 'The current selection of the radio group.',
             },
             {
-              name: "onValueChange",
-              type: "function",
-              description: "Callback when the state of the selection changes",
+              name: 'onValueChange',
+              type: 'function',
+              description: 'Callback when the state of the selection changes',
             },
           ]}
         />
       </Column>
-    </>
-  )
+    </PageView>
+  );
 }
