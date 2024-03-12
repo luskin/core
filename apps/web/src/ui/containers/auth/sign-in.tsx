@@ -54,10 +54,10 @@ export function SignIn(_props: SignInProps) {
         Sign in with Google
       </Button>
       <Button
-        variant={'secondary'}
+        variant={'ghost'}
         size={'lg'}
         icon="plus"
-        className="mt-2 w-full"
+        className="w-full"
         loading={onSignInWithMicrosoftState.loading}
         onClick={() => onSignInWithProvider('microsoft')}
       >
