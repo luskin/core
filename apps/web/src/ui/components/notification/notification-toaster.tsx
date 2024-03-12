@@ -15,7 +15,7 @@ const NotificationToaster = ({ ...props }: NotificationToasterProps) => {
       )}
       toastOptions={{
         classNames: {
-          toast: 'group toast group-[.toaster]:bg-slate-1 group-[.toaster]:shadow-lg w-full',
+          toast: 'group toast w-full',
         },
       }}
       {...props}

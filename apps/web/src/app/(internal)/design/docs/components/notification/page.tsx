@@ -29,6 +29,7 @@ export default function NotificationPage() {
             onClick={() =>
               notification.success({
                 title: 'Success',
+                duration: 99999999,
                 description: 'This is a success message',
                 actionButtons: [
                   {

@@ -28,7 +28,7 @@ export function NotificationBase({
   actionButtons = [],
 }: NotificationBaseProps) {
   return (
-    <Row gap={4} className={'w-full rounded-2xl p-4 shadow-lg'}>
+    <Row gap={4} className={'w-full rounded-2xl bg-white p-4 shadow-lg'}>
       {iconName && (
         <div className={cn(iconClassName, 'flex h-8 w-8 items-center justify-center rounded-lg')}>
           <Icon name={iconName} className="h-4" />
