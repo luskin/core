@@ -6,9 +6,11 @@ import { ToggleMenuBar } from './toggle-menu-bar';
 import { useMenubar } from '@/ui/containers/menubar/menubar.provider';
 import { useEffect } from 'react';
 import { useAppbar } from '@/app/_appbar/_hooks/useAppbar';
+import { useSession } from '@/app/(auth)/_hooks';
 
 export default function QuotePage() {
   const menubar = useMenubar();
+  const session = useSession();
   const setBackgroundSolid = useAppbar((state) => state.setBackgroundSolid);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function QuotePage() {
       </Paragraph>
       <QuoteDetailsWrapper className="mt-8" />
       <ToggleMenuBar />
+      {session && <div className="mt-4">Since you are logged in, you can see this part of the page.</div>}
     </PageView>
   );
 }

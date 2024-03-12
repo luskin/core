@@ -27,7 +27,7 @@ export default function QuotePage() {
   return (
     <PageView className="bg-slate-2">
       <Heading size={'lg'}>This is a quote page</Heading>
-      <Link href="/quote/review">
+      <Link href="/quote/MS3848282">
         <Button variant={'secondary'} size={'lg'} className="mt-4">
           Simulate review
         </Button>
