@@ -7,8 +7,6 @@ import Link from 'next/link';
 /**
  * This page is displayed when a user attempts to sign-in to an account that is already linked to another account.
  *
- * @param props
- * @returns
  * @todo This flow needs to be designed and handled better, but it's an edge case so we will just display this for now.
  */
 export default function AuthRedirectLink() {

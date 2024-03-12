@@ -42,7 +42,7 @@ export function AuthRedirect() {
 
     // Redirect to root after 5 seconds as fallback
     const timeoutId = setTimeout(() => {
-      router.replace('/sign-in');
+      router.replace('/');
     }, 5000);
 
     return () => {
@@ -52,7 +52,6 @@ export function AuthRedirect() {
 
   useEffect(() => {
     if (session) {
-      console.log('Session change: ', session);
       router.replace('/');
       router.refresh();
     }

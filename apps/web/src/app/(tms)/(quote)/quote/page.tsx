@@ -1,6 +1,6 @@
 'use client';
 
-import { useMenubar } from '@/ui/layout/menubar.provider';
+import { useMenubar } from '@/ui/containers/menubar/menubar.provider';
 import { Button } from '@/ui/components/button';
 import { Heading } from '@/ui/components/typography';
 import PageView from '@/ui/layout/view/page-view';

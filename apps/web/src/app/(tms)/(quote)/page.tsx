@@ -3,7 +3,7 @@ import { Heading, Paragraph } from '@/ui/components/typography';
 import PageView from '@/ui/layout/view/page-view';
 import QuoteDetailsWrapper from './quote-details-wrapper';
 import { ToggleMenuBar } from './toggle-menu-bar';
-import { useMenubar } from '@/ui/layout/menubar.provider';
+import { useMenubar } from '@/ui/containers/menubar/menubar.provider';
 import { useEffect } from 'react';
 import { useAppbar } from '@/app/_appbar/_hooks/useAppbar';
 
