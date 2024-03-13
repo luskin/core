@@ -93,3 +93,12 @@ export function createDesignMenuBarComponentRoutes(): Array<NavItemProps> {
     },
   ];
 }
+
+export function createDesignMenuBarCompoundRoutes(): Array<NavItemProps> {
+  return [
+    {
+      label: 'Value Prop',
+      href: '/design/docs/compounds/value-prop',
+    },
+  ];
+}

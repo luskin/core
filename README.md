@@ -10,10 +10,20 @@
   - [/utils](#utils)
   - [/types](#types)
 
-#### Development Commands
+### Development Commands
 
-web: `pnpm dev:web`
+> web: `pnpm dev:web`
 
-api: `pnpm dev:api`
+- Starts the web application
 
-worker: `pnpm dev:worker`
+> api: `pnpm dev:api`
+
+- Starts the API
+
+> codegen: `pnpm codegen`
+
+- Generates API SDK
+
+> worker: `pnpm dev:worker`
+
+- Starts the worker

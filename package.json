@@ -7,7 +7,7 @@
     "build:packages": "turbo build --filter=./packages/*",
     "build:web": "turbo build --filter web",
     "clean": "./scripts/clean.sh",
-    "codegen": "pnpm -r --filter api run codegen",
+    "codegen": "pnpm -r --filter server run codegen",
     "db:migrate": "pnpm -r --filter api run migrate",
     "dev": "turbo dev",
     "dev:api": "turbo dev --filter server -- -c src/api/nest-cli.json",

@@ -7,5 +7,5 @@ interface AppBarHeaderProps extends PropsWithChildren {}
 
 export default function AppBarHeader({ children }: AppBarHeaderProps) {
   const backgroundSolid = useAppbar((state) => state.backgroundSolid);
-  return <Header className={backgroundSolid ? 'border-b-border border bg-white' : 'bg-transparent'}>{children}</Header>;
+  return <Header className={backgroundSolid ? 'border-border border-b bg-white' : 'bg-transparent'}>{children}</Header>;
 }

@@ -10,7 +10,7 @@ async function generate(): Promise<void> {
     logger: false,
   });
   const document = MshpDocumentBuilder.create(app, MainApiDocs);
-  writeFileSync('./api/openapi/spec.internal.json', JSON.stringify(document));
+  writeFileSync('./src/api/openapi/spec.internal.json', JSON.stringify(document));
 }
 
 generate()

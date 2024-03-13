@@ -24,8 +24,8 @@ export function createMenuBarRoutes(): Array<
     },
     {
       icon: 'alienShip',
-      label: 'Reporting',
-      href: '/reporting',
+      label: 'Reports',
+      href: '/reports',
     },
     {
       icon: 'paymentCard',

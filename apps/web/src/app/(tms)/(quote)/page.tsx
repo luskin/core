@@ -7,6 +7,7 @@ import { useMenubar } from '@/ui/containers/menubar/menubar.provider';
 import { useEffect } from 'react';
 import { useAppbar } from '@/app/_appbar/_hooks/useAppbar';
 import { useSession } from '@/app/(auth)/_hooks';
+import { QuoteValueProps } from './_marketing/value-props';
 
 export default function QuotePage() {
   const menubar = useMenubar();
@@ -25,6 +26,10 @@ export default function QuotePage() {
         Compare rates from top carriers all in one place
       </Paragraph>
       <QuoteDetailsWrapper className="mt-8" />
+      <Heading size={'md'} className="mt-20">
+        Reliable freight shipping powered by technology
+      </Heading>
+      <QuoteValueProps className="mt-10" />
       <ToggleMenuBar />
       {session && <div className="mt-4">Since you are logged in, you can see this part of the page.</div>}
     </PageView>
